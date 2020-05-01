@@ -1,4 +1,4 @@
-# Step 7: Analyze Images With Your Model<a name="gs-step-detect-custom-label-cli"></a>
+# Step 7: Analyze Images with Your Model<a name="gs-step-detect-custom-label-cli"></a>
 
 To analyze images with your model, you call [DetectCustomLabels](https://docs.aws.amazon.com/rekognition/latest/dg/API_DetectCustomLabels)\. This operation takes an input image from either an Amazon S3 bucket or from a local file system\. The response includes the custom labels for objects, scenes, and concepts found in the input image\. A custom label has an associated confidence score that tells you Amazon Rekognition Custom Labels's confidence in the accuracy of the predicted custom label\. Object location bounding boxes for objects that are detected in the image are also returned\. For more information, see [Analyzing an Image with a Trained Model](detecting-custom-labels.md)\. 
 

@@ -1,4 +1,4 @@
-# Accessing Training Results \(SDK\)<a name="tr-sdk"></a>
+# Accessing the Summary File and Evaluation Manifest Snapshot \(SDK\)<a name="tr-sdk"></a>
 
 To get training results, you call [DescribeProjectVersions](https://docs.aws.amazon.com/rekognition/latest/dg/API_DescribeProjectVersions)\. By default, `DescribeProjectVersions` returns information about all model versions in a project\. To specify a specific model version, add the model version ARN to the `ProjectVersionArns` input parameter\. 
 
@@ -9,7 +9,7 @@ The location of the metrics is returned in the `ProjectVersionDescription` respo
 **Note**  
 The amount of time, in seconds, that you are billed for training is returned in `BillableTrainingTimeInSeconds`\. 
 
-For information about the metrics that are returned by the Amazon Rekognition Custom Labels, see [Using the Amazon Rekognition Custom Labels API to Access Metrics](tr-metrics-api.md)\.
+For information about the metrics that are returned by the Amazon Rekognition Custom Labels, see [Accessing Amazon Rekognition Custom Labels Training Results \(SDK\)](tr-metrics-api.md)\.
 
 **To access training results \(SDK\)**
 
@@ -111,18 +111,19 @@ For information about the metrics that are returned by the Amazon Rekognition Cu
 
 ------
 
-The training results F1 score and summary information are in `EvaluationResult`\. For example:
+The F1 score and summary file location are returned in `EvaluationResult`\. For example:
 
 ```
 "EvaluationResult": {
-                "F1Score": 0.39382708072662354,
+                "F1Score": 1.0,
                 "Summary": {
                     "S3Object": {
-                        "Bucket": "my bucket",
-                        "Name": "output/EvaluationResultSummary.json"
+                        "Bucket": "echo-dot-scans",
+                        "Name": "test-output/EvaluationResultSummary-my-echo-dots-project-v2.json"
                     }
                 }
             }
+        }
 ```
 
 The evaluation manifest snapshot is stored in the location specified in the ` --output-config` input parameter that you specified in [Training a Model \(SDK\)](tm-sdk.md)\. 

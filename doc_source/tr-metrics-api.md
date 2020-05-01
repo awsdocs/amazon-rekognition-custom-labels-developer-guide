@@ -1,4 +1,4 @@
-# Using the Amazon Rekognition Custom Labels API to Access Metrics<a name="tr-metrics-api"></a>
+# Accessing Amazon Rekognition Custom Labels Training Results \(SDK\)<a name="tr-metrics-api"></a>
 
 The Amazon Rekognition API provides metrics beyond those provided in the console\. 
 
@@ -14,14 +14,14 @@ The API also provides the following metrics for classification and image detecti
 + *Mean Average Precision \(mAP\)* for image detection\.
 + *Mean Average Recall \(mAR\)* for image detection\.
 
-The API also provides true positive, false positive, false negative, and true negative values\. For more information, see [Metrics You Can Use](tr-metrics-use.md)\.
+The API also provides true positive, false positive, false negative, and true negative values\. For more information, see [Metrics for Evaluating Your Model](tr-metrics-use.md)\.
 
 The aggregate F1 score metric is returned directly by the API\. Other metrics are accessible from a [Summary File](tr-summary-file-api.md) and [Evaluation Manifest Snapshot](tr-evaluation-manifest-snapshot-api.md) files stored in an Amazon S3 bucket\. 
 
-For example code, see [Accessing Training Results \(SDK\)](tr-sdk.md)\.
+For example code, see [Accessing the Summary File and Evaluation Manifest Snapshot \(SDK\)](tr-sdk.md)\.
 
 **Topics**
 + [Summary File](tr-summary-file-api.md)
 + [Evaluation Manifest Snapshot](tr-evaluation-manifest-snapshot-api.md)
-+ [Accessing Training Results \(SDK\)](tr-sdk.md)
++ [Accessing the Summary File and Evaluation Manifest Snapshot \(SDK\)](tr-sdk.md)
 + [Reference: Training Results Summary File](tr-summary-file.md)

@@ -8,7 +8,7 @@ Follow the steps to download and configure the AWS SDKs\.
 
 **To set up the AWS CLI and the AWS SDKs**
 
-1. Download and install the AWS CLI and the AWS SDKs that you want to use\. This guide provides examples for the AWS CLI, Java, and Python\. For information about other AWS SDKs, see [Tools for Amazon Web Services](https://aws.amazon.com/tools/)\.
+1. Download and install the [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install) and the AWS SDKs that you want to use\. This guide provides examples for the AWS CLI, Java, and Python\. For information about installing AWS SDKs, see [Tools for Amazon Web Services](https://aws.amazon.com/tools/)\.
 
 1. Create an access key for the user you created in [Step 2: Create an IAM Administrator User and Group](su-account-user.md)\.
 

@@ -1,8 +1,8 @@
-# Starting a Model \(SDK\)<a name="rm-start-model-sdk"></a>
+# Starting an Amazon Rekognition Custom Labels Model \(SDK\)<a name="rm-start-model-sdk"></a>
 
 You start a model by calling the [StartProjectVersion](https://docs.aws.amazon.com/rekognition/latest/dg/API_StartProjectVersion) API and passing the Amazon Resource Name \(ARN\) of the model in the `ProjectVersionArn` input parameter\. You also specify the number of inference units that you want to use\. For more information, see [Running a Trained Amazon Rekognition Custom Labels Model](rm-run-model.md)\.
 
-A model might take a while to start\. The Python and Java examples in this topic use waiters to wait for the model to start\. Alternatively, you can check the current status by calling [DescribeProjectVersions](https://docs.aws.amazon.com/rekognition/latest/dg/API_DescribeProjectVersions)\. 
+A model might take a while to start\. The Python and Java examples in this topic use waiters to wait for the model to start\. A waiter is a utility method that polls for a particular state to occur\. Alternatively, you can check the current status by calling [DescribeProjectVersions](https://docs.aws.amazon.com/rekognition/latest/dg/API_DescribeProjectVersions)\. 
 
 **To start a model \(SDK\)**
 

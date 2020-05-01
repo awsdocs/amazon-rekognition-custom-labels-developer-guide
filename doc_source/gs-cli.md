@@ -9,7 +9,7 @@ The Amazon Rekognition Custom Labels API is documented as part of the Amazon Rek
 
 ## Creating a Project<a name="ud-create-project-sdk"></a>
 
-To create a model with the API, use [CreateProject](https://docs.aws.amazon.com/rekognition/latest/dg/API_CreateProject)\. For more information, see [Create a Project \(SDK\)](cp-sdk.md)\. After you create a project, you need to create or add a dataset by using the Amazon Rekognition Custom Labels console\. For more information, see [Creating an Amazon Rekognition Custom Labels Dataset](cd-create-dataset.md)\.
+To create a model with the API, use [CreateProject](https://docs.aws.amazon.com/rekognition/latest/dg/API_CreateProject)\. For more information, see [Creating an Amazon Rekognition Custom Labels Project \(SDK\)](cp-create-project.md#cp-sdk)\. After you create a project, you need to create or add a dataset by using the Amazon Rekognition Custom Labels console\. For more information, see [Creating an Amazon Rekognition Custom Labels Dataset](cd-create-dataset.md)\.
 
 ## Creating a Dataset<a name="ud-create-dataset-sdk"></a>
 
@@ -17,7 +17,7 @@ A dataset contains the images, labels, and bounding box information that you use
 
 Dataset files are stored in an Amazon S3 bucket\. If you aren't using a dataset that was created in the Amazon Rekognition Custom Labels console, you need to add permissions to your bucket or buckets so that Amazon Rekognition Custom Labels can access the bucket contents\. For more information, see [Step 4: Set Up Amazon S3 Bucket Permissions for SDK Use](su-sdk-bucket-permssions.md)\.
 
-For more information about the workflow for creating and managing a dataset, see [Managing Datasets](cd-managing-datasets.md)\.
+For more information about the workflow for creating and managing a dataset, see [Managing a Dataset](cd-managing-datasets.md)\.
 
 ## Training and Evaluating a Model<a name="ud-train-evaluate-sdk"></a>
 
@@ -43,7 +43,7 @@ For more information about evaluating a model, see [Evaluating a Trained Amazon 
 Amazon Rekognition Custom Labels provides an API that you use, with your model, to detect custom labels in images\. The model must be running before you can detect custom labels\. 
 
 **Running a model**  
-When your model is ready to use, you start it by calling [StartProjectVersion](https://docs.aws.amazon.com/rekognition/latest/dg/API_StartProjectVersion)\. For more information, see [Starting a Model \(SDK\)](rm-start-model-sdk.md)\. You are charged for the amount of time, in minutes, that the model is running\. For more information, see [Inference hours](https://aws.amazon.com/rekognition/pricing/#Amazon_Rekognition_Custom_Labels_pricing)\. To stop a running model, call [StopProjectVersion](https://docs.aws.amazon.com/rekognition/latest/dg/API_StopProjectVersion)\. For more information, see [Stopping a Model \(SDK\)](rm-stop-model-sdk.md)\. 
+When your model is ready to use, you start it by calling [StartProjectVersion](https://docs.aws.amazon.com/rekognition/latest/dg/API_StartProjectVersion)\. For more information, see [Starting an Amazon Rekognition Custom Labels Model \(SDK\)](rm-start-model-sdk.md)\. You are charged for the amount of time, in minutes, that the model is running\. For more information, see [Inference hours](https://aws.amazon.com/rekognition/pricing/#Amazon_Rekognition_Custom_Labels_pricing)\. To stop a running model, call [StopProjectVersion](https://docs.aws.amazon.com/rekognition/latest/dg/API_StopProjectVersion)\. For more information, see [Stopping an Amazon Rekognition Custom Labels Model \(SDK\)](rm-stop-model-sdk.md)\. 
 
 **Analyzing images**  
 To analyze new images with your running model, you call [DetectCustomLabels](https://docs.aws.amazon.com/rekognition/latest/dg/API_DetectCustomLabels)\. This operation takes an input image from either an Amazon S3 bucket or from a local file system\. It also requires the Amazon Resource Name \(ARN\) of the model that you want to use\. The response includes predictions for the presence of custom labels in the input image\. A custom label has an associated confidence score that tells you the model's confidence in the accuracy of the prediction\. Object location information for objects detected in the image is also returned\. For more information, see [Analyzing an Image with a Trained Model](detecting-custom-labels.md)\. 

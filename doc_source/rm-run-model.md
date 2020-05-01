@@ -11,6 +11,6 @@ Starting a model might take a few minutes to complete\. To check the current sta
 After the model is started you use [DetectCustomLabels](https://docs.aws.amazon.com/rekognition/latest/dg/API_DetectCustomLabels), to analyze images using the model\. For more information, see [Analyzing an Image with a Trained Model](detecting-custom-labels.md)\. The console also provides example code to call `DetectCustomLabels`\. 
 
 **Topics**
-+ [Starting or Stopping a Model \(Console\)](rm-start-model-console.md)
-+ [Starting a Model \(SDK\)](rm-start-model-sdk.md)
-+ [Stopping a Model \(SDK\)](rm-stop-model-sdk.md)
++ [Starting or Stopping an Amazon Rekognition Custom Labels Model \(Console\)](rm-start-model-console.md)
++ [Starting an Amazon Rekognition Custom Labels Model \(SDK\)](rm-start-model-sdk.md)
++ [Stopping an Amazon Rekognition Custom Labels Model \(SDK\)](rm-stop-model-sdk.md)

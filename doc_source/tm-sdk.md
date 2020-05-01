@@ -7,7 +7,7 @@ You train a model by calling [CreateProjectVersion](https://docs.aws.amazon.com/
 + Testing dataset – Test images and labels used to evaluate the model after training\. You can use a dataset created in the Amazon Rekognition Custom Labels console \(stored in the console's Amazon S3 bucket\)\. Alternatively, you can use an Amazon SageMaker Ground Truth format manifest file stored in an external Amazon S3 bucket\. You can also split the training dataset to use it as a test dataset\. 
 + Training results location – The Amazon S3 location where the results are placed\. You can use the same location as the console Amazon S3 bucket, or you can choose a different location\. We recommend choosing a different location because this allows you to set permissions and avoid potential naming conflicts with training output from using the Amazon Rekognition Custom Labels console\.
 
-The response from `CreateProjectVersion` is an ARN that you use to identify the model version in subsequent requests\. You can also use the ARN to secure the model version\. Training a model version takes a while to complete\. The Python and Java examples in this topic use waiters to wait for training to complete\. Alternatively, you can get the current status of training by calling `DescribeProjectVersions`\. Training is completed when the `Status` field value is `TRAINING_COMPLETED`\. After training is completed, you can evaluate model’s quality by reviewing the evaluation results\. 
+The response from `CreateProjectVersion` is an ARN that you use to identify the model version in subsequent requests\. You can also use the ARN to secure the model version\. Training a model version takes a while to complete\. The Python and Java examples in this topic use waiters to wait for training to complete\. A waiter is a utility method that polls for a particular state to occur\. Alternatively, you can get the current status of training by calling `DescribeProjectVersions`\. Training is completed when the `Status` field value is `TRAINING_COMPLETED`\. After training is completed, you can evaluate model’s quality by reviewing the evaluation results\. 
 
 **To train a model \(SDK\)**
 
@@ -22,7 +22,7 @@ The response from `CreateProjectVersion` is an ARN that you use to identify the 
 1. Use the following example code to train a project\.
 
 ------
-#### [ CLI ]
+#### [ AWS CLI ]
 
    The following example creates a model\. The training dataset is split to create the test dataset\. Replace the following:
    + `my_project_arn` with the Amazon Resource Name \(ARN\) of the project\.
@@ -52,13 +52,13 @@ The response from `CreateProjectVersion` is an ARN that you use to identify the 
    + `training_bucket` with the name of the Amazon S3 bucket that contains the training manifest file and images\.
    + `training_manifest` with the name and path to the training manifest file\.
    + The example splits the training dataset to create a test dataset\. If you want to use your own test dataset, do the following\.
-     + uncomment the following line of code:
+     + Uncomment the following line of code:
 
        ```
        #testing_dataset= json.loads('{"Assets": [{ "GroundTruthManifest": { "S3Object": { "Bucket": "testing_bucket", "Name": "testing_output" } } } ]}')
        ```
-     +  replace `testing_bucket` with the name of the Amazon S3 bucket that contains the testing manifest file and images\. 
-     + `testing_manifest` with the name and path to the testing manifest file\.
+     + Replace `testing_bucket` with the name of the Amazon S3 bucket that contains the testing manifest file and images\. 
+     + Replace `testing_manifest` with the name and path to the testing manifest file\.
 
    ```
    #Copyright 2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
@@ -124,7 +124,7 @@ The response from `CreateProjectVersion` is an ARN that you use to identify the 
    + `trainingBucket` with the name of the Amazon S3 bucket that contains the training manifest file and images\.
    + `trainingManifest` with the name and path to the training manifest file\.
    + The example splits the training dataset to create a test dataset\. If you want to use your own test dataset, do the following\.
-     + uncomment the following lines of code:
+     + Uncomment the following lines of code:
 
        ```
               /* TestingData testingData = new TestingData()
@@ -132,8 +132,8 @@ The response from `CreateProjectVersion` is an ARN that you use to identify the 
                      .withGroundTruthManifest(testingGroundTruthManifest)});
                 */
        ```
-     +  replace `testingBucket` with the name of the Amazon S3 bucket that contains the testing manifest file and images\. 
-     + `testingManifest` with the name and path to the testing manifest file\.
+     + Replace `testingBucket` with the name of the Amazon S3 bucket that contains the testing manifest file and images\. 
+     + Replace `testingManifest` with the name and path to the testing manifest file\.
 
    ```
    //Copyright 2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.

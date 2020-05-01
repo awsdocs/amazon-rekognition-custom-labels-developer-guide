@@ -1,4 +1,4 @@
-# Stopping a Model \(SDK\)<a name="rm-stop-model-sdk"></a>
+# Stopping an Amazon Rekognition Custom Labels Model \(SDK\)<a name="rm-stop-model-sdk"></a>
 
 You stop a model by calling the [StopProjectVersion](https://docs.aws.amazon.com/rekognition/latest/dg/API_StopProjectVersion) API and passing the Amazon Resource Name \(ARN\) of the model in the `ProjectVersionArn` input parameter\. 
 

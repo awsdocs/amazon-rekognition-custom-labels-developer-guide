@@ -1,4 +1,4 @@
-# Starting or Stopping a Model \(Console\)<a name="rm-start-model-console"></a>
+# Starting or Stopping an Amazon Rekognition Custom Labels Model \(Console\)<a name="rm-start-model-console"></a>
 
 The Amazon Rekognition Custom Labels console provides example code that you can use to start and stop a model\. 
 

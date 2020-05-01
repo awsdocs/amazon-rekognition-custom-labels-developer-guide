@@ -6,6 +6,10 @@ The Getting Started instructions show you how to create, train, evaluate, and us
 
 To prepare, evaluate, train, and use the model to analyze images, you do the following\.
 
+## Prepare your Images<a name="ud-general-images"></a>
+
+Collect the images that contain the objects, scenes, and concepts that are specific to your business needs\. For example, you can find your logo in social media posts, identify your products on store shelves, classify machine parts in an assembly line, distinguish healthy and infected plants, or detect animated characters in videos\. Later in these Getting Started instructions you label the images so that they can be used to train and test a model\.
+
 ## Create a Project<a name="ud-general-project"></a>
 
 Create a project to manage the files used to create a model\. A project is where you manage your model files, train and evaluate your model, and make it ready for use\. The first time you open the Amazon Rekognition Custom Labels console in a supported AWS Region, you are asked to create a bucket to store your project files\. 

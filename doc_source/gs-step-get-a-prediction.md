@@ -14,7 +14,7 @@ To run the example code, you need to set up the AWS SDK\. For more information, 
 
 1. In the **Use Model** section, choose **API code**\. 
 
-1. At the command prompt, use the code snippet that calls `detect-custom-labels` to analyze an image\. It should look like the following example\. The value of `--project-version-arn` should be Amazon Resource Name \(ARN\) of your model\. Change `MY_BUCKET` and `PATH_TO_MY_IMAGE` to the Amazon S3 bucket and image that you used in step 1\. For more information, see [Step 7: Analyze Images With Your Model](gs-step-detect-custom-label-cli.md)\. 
+1. At the command prompt, use the code snippet that calls `detect-custom-labels` to analyze an image\. It should look like the following example\. The value of `--project-version-arn` should be Amazon Resource Name \(ARN\) of your model\. Change `MY_BUCKET` and `PATH_TO_MY_IMAGE` to the Amazon S3 bucket and image that you used in step 1\. For more information, see [Step 7: Analyze Images with Your Model](gs-step-detect-custom-label-cli.md)\. 
 
    ```
    aws rekognition detect-custom-labels \

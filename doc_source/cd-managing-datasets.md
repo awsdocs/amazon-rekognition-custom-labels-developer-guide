@@ -1,4 +1,4 @@
-# Managing Datasets<a name="cd-managing-datasets"></a>
+# Managing a Dataset<a name="cd-managing-datasets"></a>
 
 In an Amazon Rekognition Custom Labels project, datasets contain the images, associated labels, and bounding boxes that you use to train and test a custom model\. You create and manage datasets by using the Amazon Rekognition Custom Labels console\. You can't create a dataset with the Amazon Rekognition Custom Labels API\.
 

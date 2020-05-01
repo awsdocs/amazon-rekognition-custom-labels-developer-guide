@@ -109,8 +109,8 @@ For information about securing `DetectCustomLabels`, see [Securing DetectCustomL
    
                print('Left: ' + '{0:.0f}'.format(left))
                print('Top: ' + '{0:.0f}'.format(top))
-               print('Face Width: ' + "{0:.0f}".format(width))
-               print('Face Height: ' + "{0:.0f}".format(height))
+               print('Label Width: ' + "{0:.0f}".format(width))
+               print('Label Height: ' + "{0:.0f}".format(height))
    
                points = (
                    (left,top),

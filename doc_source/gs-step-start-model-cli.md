@@ -1,6 +1,6 @@
 # Step 6: Start Your Model<a name="gs-step-start-model-cli"></a>
 
-When your model is ready to use, you start it by calling [StartProjectVersion](https://docs.aws.amazon.com/rekognition/latest/dg/API_StartProjectVersion)\. For more information, see [Starting a Model \(SDK\)](rm-start-model-sdk.md)\. To stop a running model, call [StopProjectVersion](https://docs.aws.amazon.com/rekognition/latest/dg/API_StopProjectVersion)\. 
+When your model is ready to use, you start it by calling [StartProjectVersion](https://docs.aws.amazon.com/rekognition/latest/dg/API_StartProjectVersion)\. For more information, see [Starting an Amazon Rekognition Custom Labels Model \(SDK\)](rm-start-model-sdk.md)\. To stop a running model, call [StopProjectVersion](https://docs.aws.amazon.com/rekognition/latest/dg/API_StopProjectVersion)\. 
 
 In this step, you start the model\.
 

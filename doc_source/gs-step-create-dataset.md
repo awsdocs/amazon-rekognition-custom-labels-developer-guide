@@ -2,7 +2,7 @@
 
 In this step, you create a training [Dataset](ud-terminology.md#ud-dataset) that holds your images and the label data needed to train your model\. You add images to the dataset using images that you upload from your computer\. You can also add images and label data to a dataset in other ways\. For more information, see [Creating an Amazon Rekognition Custom Labels Dataset](cd-create-dataset.md)\. Later, you create another dataset to test your model by splitting your training dataset\. For information about other ways that you can create a testing dataset, see [Training an Amazon Rekognition Custom Labels Model](tm-train-model.md)\.
 
-For more information about the workflow for creating and managing a dataset, see [Managing Datasets](cd-managing-datasets.md)\.
+For more information about the workflow for creating and managing a dataset, see [Managing a Dataset](cd-managing-datasets.md)\.
 
 To ensure that Amazon Rekognition Custom Labels chooses the best algorithm to train your model, we recommend that you use domain\-specific datasets\. For example, create a dataset specifically for detecting scenic views, and use another dataset for a model that detects company logos\. 
 

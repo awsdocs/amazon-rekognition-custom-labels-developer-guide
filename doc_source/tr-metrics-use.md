@@ -1,4 +1,4 @@
-# Metrics You Can Use<a name="tr-metrics-use"></a>
+# Metrics for Evaluating Your Model<a name="tr-metrics-use"></a>
 
 After your model is trained, Amazon Rekognition Custom Labels returns a number of metrics from model testing that you can use to evaluate the performance of your model\. This topic describes the metrics available to you, and how to understand if your trained model is performing well\. 
 
@@ -61,7 +61,7 @@ For more information, see [F1 score](https://en.wikipedia.org/wiki/F1_score)\.
 
 For a given model that you have trained and depending on your application, you can make a trade\-off between *precision* and *recall* by changing the threshold\. At a higher threshold, you will generally get higher *precision* \(more correct predictions of soccer balls\), but lower *recall* \(more actual soccer balls will be missed\)\. At a lower threshold, you will get higher *recall* \(more actual soccer balls will be correctly predicted\), but lower *precision* \(more of the soccer ball predictions will be wrong\)\. 
 
-The metrics also inform you on the steps you might take to improve model performance if needed\. For more information, see [How to Improve Your Model](tr-improve-model.md)\. 
+The metrics also inform you on the steps you might take to improve model performance if needed\. For more information, see [Improving an Amazon Rekognition Custom Labels Model](tr-improve-model.md)\. 
 
 **Note**  
 `DetectCustomLabels` returns predictions ranging from 0 to 100 which correspond to the metric range of 0\-1\.
