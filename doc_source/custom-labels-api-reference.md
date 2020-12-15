@@ -1,4 +1,4 @@
-# Amazon Rekognition Custom Labels API Reference<a name="custom-labels-api-reference"></a>
+# Amazon Rekognition Custom Labels API reference<a name="custom-labels-api-reference"></a>
 
 The Amazon Rekognition Custom Labels API is documented as part of the Amazon Rekognition API reference content\. This is a list of the Amazon Rekognition Custom Labels API operations with links to the appropriate Amazon Rekognition API reference topic\. Also, API reference links within this document go to the appropriate Amazon Rekognition Developer Guide API reference topic\.
 

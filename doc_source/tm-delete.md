@@ -74,7 +74,7 @@ You can't delete a model if it is running or is training\. To determine if the m
 
    ```
    #Copyright 2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-   #PDX-License-Identifier: MIT-0 (For details, see https://github.com/awsdocs/amazon-rekognition-developer-guide/blob/master/LICENSE-SAMPLECODE.)
+   #PDX-License-Identifier: MIT-0 (For details, see https://github.com/awsdocs/amazon-rekognition-custom-labels-developer-guide/blob/master/LICENSE-SAMPLECODE.)
    
    import boto3
    
@@ -103,7 +103,7 @@ You can't delete a model if it is running or is training\. To determine if the m
 
    ```
    //Copyright 2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-   //PDX-License-Identifier: MIT-0 (For details, see https://github.com/awsdocs/amazon-rekognition-developer-guide/blob/master/LICENSE-SAMPLECODE.)
+   //PDX-License-Identifier: MIT-0 (For details, see https://github.com/awsdocs/amazon-rekognition-custom-labels-developer-guide/blob/master/LICENSE-SAMPLECODE.)
    
    
    

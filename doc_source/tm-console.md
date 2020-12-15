@@ -24,9 +24,11 @@ You can train a model by using the Amazon Rekognition Custom Labels console\.
 
    1. In **Choose training set**, choose the training dataset that you want to use\.
 
-   1. In **Create test set**, choose how you want to create the test dataset, and follow the instructions\.  
+   1. In **Create test set**, choose how you want to create the testing dataset, and follow the instructions\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/rekognition/latest/customlabels-dg/images/train-model.png)
 
 1. Choose **Train** to start training the model\. The project resources page is shown\.
 
 1. Wait until training has finished\. You can check the current status in the **Status** field of the **Model** section\.
+
+1. If training fails, read [Debugging a Failed Model Training](tm-debugging.md)\. 

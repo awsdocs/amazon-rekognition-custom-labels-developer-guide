@@ -15,3 +15,4 @@ You are charged for the amount of time that it takes to successfully train a mod
 **Topics**
 + [Training a Model \(Console\)](tm-console.md)
 + [Training a Model \(SDK\)](tm-sdk.md)
++ [Debugging a Failed Model Training](tm-debugging.md)

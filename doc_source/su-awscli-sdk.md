@@ -59,7 +59,7 @@ Follow the steps to download and configure the AWS SDKs\.
    region = your_aws_region
    ```
 
-   Substitute your desired AWS Region \(for example, "us\-west\-2"\) for *your\_aws\_region*\. 
+   Substitute your desired AWS Region \(for example, `us-west-2`\) for *your\_aws\_region*\. 
 **Note**  
 If you don't select a Region, then us\-east\-1 is used by default\. 
 

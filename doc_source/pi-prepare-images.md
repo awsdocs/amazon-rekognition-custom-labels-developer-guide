@@ -2,7 +2,9 @@
 
  The images you use to train a model contain the object, scenes, or concepts that you want Amazon Rekognition Custom Labels to find\. 
 
-The content of images should be in a variety of backgrounds and lighting that represent the images that you want the trained model to identify\. Each image needs an assigned label \(or labels\) that identifies the objects, scenes, or concepts in the image\. Images with objects also need bounding boxes\. 
+The content of images should be in a variety of backgrounds and lighting that represent the images that you want the trained model to identify\. Each image needs an assigned label \(or labels\) that identifies the objects, scenes, or concepts in the image\. If you want to your model to find the location of objects on an image, you need to define bounding boxes for the objects on the image\. For more information, see [Purposing Datasets](cd-create-dataset.md#cd-dataset-purpose)\.
+
+ 
 
 This section provides information about the images you use to train and test a model\.
 

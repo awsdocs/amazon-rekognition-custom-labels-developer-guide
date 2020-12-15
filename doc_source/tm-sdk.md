@@ -3,8 +3,8 @@
 You train a model by calling [CreateProjectVersion](https://docs.aws.amazon.com/rekognition/latest/dg/API_CreateProjectVersion)\. To train a model, the following information is needed:
 + Name – A unique name for the model version\.
 + Project ARN – The Amazon Resource Name \(ARN\) of the project that manages the model\.
-+ Training dataset – An Amazon SageMaker Ground Truth–formatted manifest file and images that are used to train the model\. You can create the dataset in the Amazon Rekognition Custom Labels console\. Another option is to provide an external manifest file such as an Amazon SageMaker Ground Truth labeling job\. The dataset is stored in an Amazon S3 bucket\. 
-+ Testing dataset – Test images and labels used to evaluate the model after training\. You can use a dataset created in the Amazon Rekognition Custom Labels console \(stored in the console's Amazon S3 bucket\)\. Alternatively, you can use an Amazon SageMaker Ground Truth format manifest file stored in an external Amazon S3 bucket\. You can also split the training dataset to use it as a test dataset\. 
++ Training dataset – An SageMaker Ground Truth–formatted manifest file and images that are used to train the model\. You can create the dataset in the Amazon Rekognition Custom Labels console\. Another option is to provide an external manifest file such as an SageMaker Ground Truth labeling job\. The dataset is stored in an Amazon S3 bucket\. 
++ Testing dataset – Test images and labels used to evaluate the model after training\. You can use a dataset created in the Amazon Rekognition Custom Labels console \(stored in the console's Amazon S3 bucket\)\. Alternatively, you can use an SageMaker Ground Truth format manifest file stored in an external Amazon S3 bucket\. You can also split the training dataset to use it as a testing dataset\. 
 + Training results location – The Amazon S3 location where the results are placed\. You can use the same location as the console Amazon S3 bucket, or you can choose a different location\. We recommend choosing a different location because this allows you to set permissions and avoid potential naming conflicts with training output from using the Amazon Rekognition Custom Labels console\.
 
 The response from `CreateProjectVersion` is an ARN that you use to identify the model version in subsequent requests\. You can also use the ARN to secure the model version\. Training a model version takes a while to complete\. The Python and Java examples in this topic use waiters to wait for training to complete\. A waiter is a utility method that polls for a particular state to occur\. Alternatively, you can get the current status of training by calling `DescribeProjectVersions`\. Training is completed when the `Status` field value is `TRAINING_COMPLETED`\. After training is completed, you can evaluate model’s quality by reviewing the evaluation results\. 
@@ -24,7 +24,7 @@ The response from `CreateProjectVersion` is an ARN that you use to identify the 
 ------
 #### [ AWS CLI ]
 
-   The following example creates a model\. The training dataset is split to create the test dataset\. Replace the following:
+   The following example creates a model\. The training dataset is split to create the testing dataset\. Replace the following:
    + `my_project_arn` with the Amazon Resource Name \(ARN\) of the project\.
    + `version_name` with a unique version name of your choosing\.
    + `output_bucket` with the name of the Amazon S3 bucket where Amazon Rekognition Custom Labels saves the training results\.
@@ -51,7 +51,7 @@ The response from `CreateProjectVersion` is an ARN that you use to identify the 
    + `output_folder` with the name of the folder where the training results are saved\.
    + `training_bucket` with the name of the Amazon S3 bucket that contains the training manifest file and images\.
    + `training_manifest` with the name and path to the training manifest file\.
-   + The example splits the training dataset to create a test dataset\. If you want to use your own test dataset, do the following\.
+   + The example splits the training dataset to create a testing dataset\. If you want to use your own testing dataset, do the following\.
      + Uncomment the following line of code:
 
        ```
@@ -61,8 +61,8 @@ The response from `CreateProjectVersion` is an ARN that you use to identify the 
      + Replace `testing_manifest` with the name and path to the testing manifest file\.
 
    ```
-   #Copyright 2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-   #PDX-License-Identifier: MIT-0 (For details, see https://github.com/awsdocs/amazon-rekognition-developer-guide/blob/master/LICENSE-SAMPLECODE.)
+   #Copyright 2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+   #PDX-License-Identifier: MIT-0 (For details, see https://github.com/awsdocs/amazon-rekognition-custom-labels-developer-guide/blob/master/LICENSE-SAMPLECODE.)
    
    import boto3
    import json
@@ -123,7 +123,7 @@ The response from `CreateProjectVersion` is an ARN that you use to identify the 
    + `outputFolder` with the name of the folder where the training results are saved\.
    + `trainingBucket` with the name of the Amazon S3 bucket that contains the training manifest file and images\.
    + `trainingManifest` with the name and path to the training manifest file\.
-   + The example splits the training dataset to create a test dataset\. If you want to use your own test dataset, do the following\.
+   + The example splits the training dataset to create a testing dataset\. If you want to use your own testing dataset, do the following\.
      + Uncomment the following lines of code:
 
        ```
@@ -136,8 +136,8 @@ The response from `CreateProjectVersion` is an ARN that you use to identify the 
      + Replace `testingManifest` with the name and path to the testing manifest file\.
 
    ```
-   //Copyright 2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-   //PDX-License-Identifier: MIT-0 (For details, see https://github.com/awsdocs/amazon-rekognition-developer-guide/blob/master/LICENSE-SAMPLECODE.)
+   //Copyright 2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+   //PDX-License-Identifier: MIT-0 (For details, see https://github.com/awsdocs/amazon-rekognition-custom-labels-developer-guide/blob/master/LICENSE-SAMPLECODE.)
    
    package com.amazonaws.samples;
    
@@ -248,3 +248,5 @@ The response from `CreateProjectVersion` is an ARN that you use to identify the 
    ```
 
 ------
+
+1. If training fails, read [Debugging a Failed Model Training](tm-debugging.md)\. 

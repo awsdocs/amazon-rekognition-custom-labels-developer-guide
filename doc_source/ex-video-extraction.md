@@ -13,8 +13,8 @@ The following example shows how you can use `DetectCustomLabels` with frames ext
 1. Use the following example code\. Change the value of `videoFile` to the name of a video file\. Change the value of `projectVersionArn` to the Amazon Resource Name \(ARN\) of your Amazon Rekognition Custom Labels model\. 
 
    ```
-   #Copyright 2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-   #PDX-License-Identifier: MIT-0 (For details, see https://github.com/awsdocs/amazon-rekognition-developer-guide/blob/master/LICENSE-SAMPLECODE.)
+   #Copyright 2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+   #PDX-License-Identifier: MIT-0 (For details, see https://github.com/awsdocs/amazon-rekognition-custom-labels-developer-guide/blob/master/LICENSE-SAMPLECODE.)
    
    import json
    import boto3

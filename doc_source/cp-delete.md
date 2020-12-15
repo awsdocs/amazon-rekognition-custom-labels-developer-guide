@@ -67,7 +67,7 @@ Before you can delete a project, you must first delete all models in the project
 ------
 #### [ AWS CLI ]
 
-   Change the value of `project-arn` to the name of the project that you want to create\.
+   Change the value of `project-arn` to the name of the project that you want to delete\.
 
    ```
    aws rekognition delete-project --project-arn project_arn 
@@ -80,7 +80,7 @@ Before you can delete a project, you must first delete all models in the project
 
    ```
    #Copyright 2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-   #PDX-License-Identifier: MIT-0 (For details, see https://github.com/awsdocs/amazon-rekognition-developer-guide/blob/master/LICENSE-SAMPLECODE.)
+   #PDX-License-Identifier: MIT-0 (For details, see https://github.com/awsdocs/amazon-rekognition-custom-labels-developer-guide/blob/master/LICENSE-SAMPLECODE.)
    
    import boto3
    
@@ -109,7 +109,7 @@ Before you can delete a project, you must first delete all models in the project
 
    ```
    //Copyright 2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-   //PDX-License-Identifier: MIT-0 (For details, see https://github.com/awsdocs/amazon-rekognition-developer-guide/blob/master/LICENSE-SAMPLECODE.)
+   //PDX-License-Identifier: MIT-0 (For details, see https://github.com/awsdocs/amazon-rekognition-custom-labels-developer-guide/blob/master/LICENSE-SAMPLECODE.)
    
    
    

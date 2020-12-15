@@ -1,14 +1,12 @@
 # Assigning Image\-Level Labels to an Image<a name="rv-assign-labels"></a>
 
-To train an Amazon Rekognition Custom Labels model, your images need to be labeled\. A label indicates that an image contains an object, scene or concept\.
+To train an Amazon Rekognition Custom Labels model that finds objects, scenes or concepts, your dataset images need to be labeled with image\-level labels\. An image\-level label indicates that an image contains an object, scene or concept\.
 
-A dataset needs at least two labels defined\. Each image needs at least one assigned label that identifies the object, scene, or concept in the image\. 
-
-You can apply labels to an image as a whole\. These are known as image\-level labels\. They are useful for identifying scenes or concepts that you want to detect\. For example, the following image shows the Columbia river\. To train a model to detect rivers, you would add a 'river' label that applies to the entire image\. 
+For example, the following image shows the Columbia river\. To train a model to detect rivers, you would add a 'river' label that applies to the entire image\. You can add other labels, as needed\.
 
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/rekognition/latest/customlabels-dg/images/pateros.png)
 
-Images that contain objects that you want to detect require labels so that they can be assigned to the object's bounding box\. For information about creating bounding boxes, see [Drawing Bounding Boxes](rv-bounding-box.md)\.
+A dataset that contains image\-level labels, needs at least two labels defined\. Each image needs at least one assigned label that identifies the object, scene, or concept in the image\.
 
 **To assign labels to an image \(console\)**
 

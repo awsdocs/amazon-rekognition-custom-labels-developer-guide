@@ -4,7 +4,7 @@ In this step, you create a training [Dataset](ud-terminology.md#ud-dataset) that
 
 For more information about the workflow for creating and managing a dataset, see [Managing a Dataset](cd-managing-datasets.md)\.
 
-To ensure that Amazon Rekognition Custom Labels chooses the best algorithm to train your model, we recommend that you use domain\-specific datasets\. For example, create a dataset specifically for detecting scenic views, and use another dataset for a model that detects company logos\. 
+To ensure that Amazon Rekognition Custom Labels chooses the best algorithm to train your model, we recommend that you use domain\-specific datasets\. For example, create a dataset specifically for detecting scenic views, and use another dataset for a model that detects the location of a logo on an image\. For more information, see [Purposing Datasets](cd-create-dataset.md#cd-dataset-purpose)\. 
 
 The images you upload won't have labels associated with them\. You add them in subsequent steps\.<a name="gs-create-dataset-procedure"></a>
 
@@ -20,7 +20,8 @@ The images you upload won't have labels associated with them\. You add them in s
 1. Choose **Submit**\.   
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/rekognition/latest/customlabels-dg/images/create-dataset.png)
 
-1. A **Tool Guide** is shown\. Choose **Next** to read each page\. After you have finished reading, the dataset gallery is shown\. The gallery is placed in labeling mode so that you can add your images\. 
+1. A **Tool Guide** is shown\. Choose **Next** to read each page\. After you have finished reading, the dataset gallery is shown\. The gallery is placed in labeling mode so that you can add your images\.   
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/rekognition/latest/customlabels-dg/images/empty-dataset-gallery.png)
 
 1. Choose **\+ Add Images**\. The **Add images** dialog box is shown\.
 
@@ -28,7 +29,7 @@ The images you upload won't have labels associated with them\. You add them in s
 
     You can load up to 30 images at a time\.
 
-1. Choose **Add images**\. The images are uploaded, and the dataset is created\. You should see the dataset gallery page\.  
+1. Choose **Add images**\. The images are uploaded and added to the dataset\. You should see the dataset gallery page with your images\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/rekognition/latest/customlabels-dg/images/add-images-from-computer.png)
 
 1. If you need to add more images, do steps 6\-8 until all of your images are added\. 

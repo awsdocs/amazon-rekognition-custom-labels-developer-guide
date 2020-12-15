@@ -4,7 +4,7 @@ The evaluation manifest snapshot contains detailed information about the test re
 
 The files are a snapshot since only images that could be used for testing and training are included\. Images that can't be verified, such as images in the wrong format, aren't included in the manifest\. The testing snapshot location is accessible from the `TestingDataResult` object returned by `DescribeProjectVersions`\. The training snapshot location is accessible from `TrainingDataResult` object returned by `DescribeProjectVersions`\. 
 
-The snapshot is in Amazon SageMaker Ground Truth manifest output format with fields added to provide additional information, such as the result of a detection's binary classification\. The following snippet shows the additional fields\.
+The snapshot is in SageMaker Ground Truth manifest output format with fields added to provide additional information, such as the result of a detection's binary classification\. The following snippet shows the additional fields\.
 
 ```
 "rekognition-custom-labels-evaluation-details": {
@@ -22,7 +22,7 @@ The snapshot is in Amazon SageMaker Ground Truth manifest output format with fie
 + *is\-present\-in\-ground\-truth* – True if the prediction made by the model is present in the ground truth information used for training, otherwise false\. This value isn't based on whether the confidence score exceeds the minimum threshold calculated by the model\. 
 + *ground\-truth\-labeling\-jobs* – A list of ground truth fields in the manifest line that are used for training\.
 
-For information about the Amazon SageMaker Ground Truth manifest format, see [Output](https://docs.aws.amazon.com/sagemaker/latest/dg/sms-data-output.html)\. 
+For information about the SageMaker Ground Truth manifest format, see [Output](https://docs.aws.amazon.com/sagemaker/latest/dg/sms-data-output.html)\. 
 
 The following is an example testing manifest snapshot that shows metrics for image classification and object detection\.
 

@@ -5,7 +5,9 @@ Amazon Rekognition Custom Labels provides an API that you can use to create Amaz
 For information about the general flow of creating and using a model, see [Getting Started with Amazon Rekognition Custom Labels](gs-introduction.md)\.
 
 **Note**  
-The Amazon Rekognition Custom Labels API is documented as part of the Amazon Rekognition API reference content\. For more information, see [Amazon Rekognition Custom Labels API Reference](custom-labels-api-reference.md)\.
+The Amazon Rekognition Custom Labels API is documented as part of the Amazon Rekognition API reference content\. For more information, see [Amazon Rekognition Custom Labels API reference](custom-labels-api-reference.md)\.
+
+This section provides AWS CLI command examples\. For information about formatting CLI commands, see [Formatting the AWS CLI Examples](https://docs.aws.amazon.com/rekognition/latest/dg/get-started-exercise.html#format-cli)\.
 
 ## Creating a Project<a name="ud-create-project-sdk"></a>
 
@@ -13,7 +15,7 @@ To create a model with the API, use [CreateProject](https://docs.aws.amazon.com/
 
 ## Creating a Dataset<a name="ud-create-dataset-sdk"></a>
 
-A dataset contains the images, labels, and bounding box information that you use to train a model\. Alternatively, you can use an Amazon SageMaker Ground Truth manifest file to train a model\. The Amazon Rekognition Custom Labels API doesn't create datasets, import images, or label images\. To do these tasks, you need to use the Amazon Rekognition Custom Labels console or provide your own Amazon SageMaker Ground Truth format manifest file\. An option for creating a manifest file is to create an Amazon SageMaker Ground Truth labeling job\. For more information, see [Amazon SageMaker Ground Truth](https://docs.aws.amazon.com/sagemaker/latest/dg/sms.html)\.
+A dataset contains the images, labels, and bounding box information that you use to train a model\. Alternatively, you can use an SageMaker Ground Truth manifest file to train a model\. The Amazon Rekognition Custom Labels API doesn't create datasets, import images, or label images\. To do these tasks, you need to use the Amazon Rekognition Custom Labels console or provide your own SageMaker Ground Truth format manifest file\. An option for creating a manifest file is to create an SageMaker Ground Truth labeling job\. For more information, see [SageMaker Ground Truth](https://docs.aws.amazon.com/sagemaker/latest/dg/sms.html)\.
 
 Dataset files are stored in an Amazon S3 bucket\. If you aren't using a dataset that was created in the Amazon Rekognition Custom Labels console, you need to add permissions to your bucket or buckets so that Amazon Rekognition Custom Labels can access the bucket contents\. For more information, see [Step 4: Set Up Amazon S3 Bucket Permissions for SDK Use](su-sdk-bucket-permssions.md)\.
 

@@ -2,7 +2,7 @@
 
 To train models with the SDK, Amazon Rekognition Custom Labels needs access to the Amazon S3 buckets that hold your training and testing images\. If your images are stored in the Amazon S3 bucket that Amazon Rekognition Custom Labels creates on your behalf, when you first open the console, the permissions are already set up\. 
 
-If your images are in different buckets, such as buckets that contain the images for an Amazon SageMaker Ground Truth manifest, you need to add the following policies\. For information about applying permissions policy to an Amazon S3 bucket, see [How Do I Add an S3 Bucket Policy?](https://docs.aws.amazon.com/AmazonS3/latest/user-guide/add-bucket-policy.html)\.
+If your images are in different buckets, such as buckets that contain the images for an SageMaker Ground Truth manifest, you need to add the following policies\. For information about applying permissions policy to an Amazon S3 bucket, see [How Do I Add an S3 Bucket Policy?](https://docs.aws.amazon.com/AmazonS3/latest/user-guide/add-bucket-policy.html)\.
 
 **To set up permissions policy**
 
@@ -70,3 +70,22 @@ If your images are in different buckets, such as buckets that contain the images
        ]
    }
    ```
+
+## Decrypting Files Encrypted with AWS Key Management Service<a name="su-kms-encryption"></a>
+
+If you use AWS Key Management Service \(KMS\) to encrypt your Amazon Rekognition Custom Labels manifest files, image files, or the training output files, Amazon Rekognition Custom Labels needs to decrypt your files before they can be used to train a model\. To give Amazon Rekognition Custom Labels permission to access your KMS keys, update the key policy for your customer master key \(CMK\) with the following policy\. For more information, see [Changing a key policy](https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-modifying.html)\.
+
+```
+{
+    "Sid": "AllowRekognition",
+    "Effect": "Allow",
+    "Principal": {
+        "Service": "rekognition.amazonaws.com"
+    },
+    "Action": [
+        "kms:GenerateDataKey*",
+        "kms:Decrypt"
+     ],
+    "Resource": "*"
+ }
+```

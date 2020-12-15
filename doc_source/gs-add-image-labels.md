@@ -1,15 +1,15 @@
-# Step 5: Identify Scenes and Concepts with Image\-Level Labels<a name="gs-add-image-labels"></a>
+# Step 5: Identify Objects, Scenes and Concepts with Image\-Level Labels<a name="gs-add-image-labels"></a>
 
-To train your model, Amazon Rekognition Custom Labels requires the images in a dataset to be labeled with information about the object, scenes, and concepts in your images\. 
+To train your model to detect objects, scenes, and concepts in your images, Amazon Rekognition Custom Labels requires the images in your dataset to be labeled with image\-level labels\. 
 
-If your image represents a scene or concept, such as a wedding or sport, the image as a whole needs an identifying image\-level label\. For example, to train a model to detect scenic views with rivers, the labels for the following image might be *river*\. An image needs at least one label\. You can add others so that the model can detect different classes of information—for example, *countryside* or *sky*\. In this step, you add image\-level labels to an image\. 
+**Note**  
+If you're training a model to detect the location of objects on an image, you don't need to do this step\.
+
+An image\-level label applies to an image as a whole\. For example, to train a model to detect scenic views, the labels for the following image might be *river*, *countryside* or *sky*\. An image needs at least one label\. Your dataset needs at least two labels\. In this step, you add image\-level labels to an image\. 
 
  
 
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/rekognition/latest/customlabels-dg/images/pateros.png)
-
-**Note**  
-If you are training your model to detect scenes or concepts, you don't need to do the next step, [Step 6: Identify Objects with Bounding Boxes](gs-draw-bounding-boxes.md)\. Similarly, if you're training a model to detect objects, you don't need to do this step\.
 
 **To assign image\-level labels to images**
 

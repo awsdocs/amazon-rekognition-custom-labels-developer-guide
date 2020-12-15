@@ -6,6 +6,8 @@ To call `DetectCustomLabels`, you specify the following:
 + The Amazon Resource Name \(ARN\) of the Amazon Rekognition Custom Labels model that you want to use\.
 + The image that you want the model to make a prediction with\. You can provide an input image as an image byte array \(base64\-encoded image bytes\), or as an Amazon S3 object\. For more information, see [Image](https://docs.aws.amazon.com/rekognition/latest/dg/API_Image)\.
 
+
+
 Custom labels are returned in an array of [Custom Label](https://docs.aws.amazon.com/rekognition/latest/dg/API_CustomLabel) objects\. Each custom label represents a single object, scene, or concept found in the image\. A custom label includes:
 + A label for the object, scene, or concept found in the image\.
 + A bounding box for objects found in the image\. The bounding box coordinates show where the object is located on the source image\. The coordinate values are a ratio of the overall image size\. For more information, see [BoundingBox](https://docs.aws.amazon.com/rekognition/latest/dg/API_BoundingBox)\.
@@ -61,8 +63,8 @@ For information about securing `DetectCustomLabels`, see [Securing DetectCustomL
    + `model` with the ARN of the model that you want use with the input image\. 
 
    ```
-   #Copyright 2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-   #PDX-License-Identifier: MIT-0 (For details, see https://github.com/awsdocs/amazon-rekognition-developer-guide/blob/master/LICENSE-SAMPLECODE.)
+   #Copyright 2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+   #PDX-License-Identifier: MIT-0 (For details, see https://github.com/awsdocs/amazon-rekognition-custom-labels-developer-guide/blob/master/LICENSE-SAMPLECODE.)
    
    import boto3
    import io
@@ -150,8 +152,8 @@ For information about securing `DetectCustomLabels`, see [Securing DetectCustomL
    + `projectVersionArn` with the ARN of the model that you want use with the input image\. 
 
    ```
-   //Copyright 2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-   //PDX-License-Identifier: MIT-0 (For details, see https://github.com/awsdocs/amazon-rekognition-developer-guide/blob/master/LICENSE-SAMPLECODE.)
+   //Copyright 2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+   //PDX-License-Identifier: MIT-0 (For details, see https://github.com/awsdocs/amazon-rekognition-custom-labels-developer-guide/blob/master/LICENSE-SAMPLECODE.)
    
    package com.amazonaws.samples;
    
@@ -175,7 +177,7 @@ For information about securing `DetectCustomLabels`, see [Securing DetectCustomL
    import com.amazonaws.services.s3.AmazonS3ClientBuilder;
    import com.amazonaws.services.s3.model.S3ObjectInputStream;
    
-   // Calls DetectFaces and displays a bounding box around each detected image.
+   // Calls DetectCustomLabels and displays a bounding box around each detected image.
    public class DisplayCustomLabels extends JPanel {
    
    
@@ -194,7 +196,7 @@ For information about securing `DetectCustomLabels`, see [Securing DetectCustomL
    
            
        }
-       // Draws the bounding box around the detected faces.
+       // Draws the bounding box around the detected custom labels.
        public void paintComponent(Graphics g) {
            float left = 0;
            float top = 0;
@@ -207,7 +209,7 @@ For information about securing `DetectCustomLabels`, see [Securing DetectCustomL
            g2d.drawImage(image, 0, 0, width / scale, height / scale, this);
            g2d.setColor(new Color(0, 212, 0));
    
-           // Iterate through faces and display bounding boxes.
+           // Iterate through results and display bounding boxes.
            List<CustomLabel> customLabels = result.getCustomLabels();
            for (CustomLabel customLabel : customLabels) {
                
@@ -248,11 +250,11 @@ For information about securing `DetectCustomLabels`, see [Securing DetectCustomL
            width = image.getWidth();
            height = image.getHeight();
    
-           // Call DetectFaces    
+           // Call DetectCustomLabels  
            AmazonRekognition amazonRekognition = AmazonRekognitionClientBuilder.defaultClient();
            DetectCustomLabelsResult result = amazonRekognition.detectCustomLabels(request);
            
-           //Show the bounding box info for each face.
+           //Show the bounding box info for each custom label.
            List<CustomLabel> customLabels = result.getCustomLabels();
            for (CustomLabel customLabel : customLabels) {
    

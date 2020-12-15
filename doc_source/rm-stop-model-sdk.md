@@ -31,8 +31,8 @@ A model might take a while to stop\. To check the current status, use `DescribeP
    Change the value of `model_arn` to the name of the model that you want to stop\.
 
    ```
-   #Copyright 2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-   #PDX-License-Identifier: MIT-0 (For details, see https://github.com/awsdocs/amazon-rekognition-developer-guide/blob/master/LICENSE-SAMPLECODE.)
+   #Copyright 2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+   #PDX-License-Identifier: MIT-0 (For details, see https://github.com/awsdocs/amazon-rekognition-custom-labels-developer-guide/blob/master/LICENSE-SAMPLECODE.)
    
    import boto3
    import time
@@ -71,8 +71,8 @@ A model might take a while to stop\. To check the current status, use `DescribeP
    Change the value of `projectVersionArn` to the name of the model that you want to stop\.
 
    ```
-   //Copyright 2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-   //PDX-License-Identifier: MIT-0 (For details, see https://github.com/awsdocs/amazon-rekognition-developer-guide/blob/master/LICENSE-SAMPLECODE.)
+   //Copyright 2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+   //PDX-License-Identifier: MIT-0 (For details, see https://github.com/awsdocs/amazon-rekognition-custom-labels-developer-guide/blob/master/LICENSE-SAMPLECODE.)
    
    package com.amazonaws.samples;
    import com.amazonaws.services.rekognition.AmazonRekognition;

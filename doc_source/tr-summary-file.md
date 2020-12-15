@@ -6,6 +6,8 @@ The training results summary contains metrics you can use to evaluate your model
 
 The following JSON is the format of the summary file\.
 
+
+
 **EvaluationDetails \(section 3\)**  
 Overview information about the training task\. This includes the ARN of the project that the model belongs to \(`ProjectVersionArn)`, the date and time that training finished, the version of the model that was evaluated \(`EvaluationEndTimestamp`\), and a list of labels detected during training \(`Labels`\)\. Also included is the number of images used for training \(`NumberOfTrainingImages`\) and evaluation \(`NumberOfTestingImages`\)\. 
 

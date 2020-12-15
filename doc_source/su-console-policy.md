@@ -2,7 +2,9 @@
 
 ## Console Access<a name="su-console-access"></a>
 
-The Identity and Access Management \(IAM\) user or group that uses the Amazon Rekognition Custom Labels consoles needs the following IAM policy that covers Amazon S3, Amazon SageMaker Ground Truth, and Amazon Rekognition Custom Labels\. For information about adding IAM policies, see [Creating IAM Policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_create.html)\.
+The Identity and Access Management \(IAM\) user or group that uses the Amazon Rekognition Custom Labels consoles needs the following IAM policy that covers Amazon S3, SageMaker Ground Truth, and Amazon Rekognition Custom Labels\. For information about adding IAM policies, see [Creating IAM Policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_create.html)\.
+
+
 
 ```
 {

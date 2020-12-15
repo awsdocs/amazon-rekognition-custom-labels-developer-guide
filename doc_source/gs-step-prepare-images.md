@@ -14,6 +14,3 @@ Amazon Rekognition Custom Labels requires images to train and test your model\. 
 + Use images that have sufficient contrast with the background\. 
 + Use images that are bright and sharp\. Avoid using images that may be blurry due to subject and camera motion as much as possible\.
 + Use an image where the object occupies a large proportion of the image\.
-
-**Note**  
-If you are training your model to detect scenes or concepts, you don't need to do [Step 6: Identify Objects with Bounding Boxes](gs-draw-bounding-boxes.md)\. Similarly, if you're training a model to detect objects, you don't need to do [Step 5: Identify Scenes and Concepts with Image\-Level Labels](gs-add-image-labels.md)\.

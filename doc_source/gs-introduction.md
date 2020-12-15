@@ -10,19 +10,25 @@ To prepare, evaluate, train, and use the model to analyze images, you do the fol
 
 Collect the images that contain the objects, scenes, and concepts that are specific to your business needs\. For example, you can find your logo in social media posts, identify your products on store shelves, classify machine parts in an assembly line, distinguish healthy and infected plants, or detect animated characters in videos\. Later in these Getting Started instructions you label the images so that they can be used to train and test a model\.
 
+
+
 ## Create a Project<a name="ud-general-project"></a>
 
-Create a project to manage the files used to create a model\. A project is where you manage your model files, train and evaluate your model, and make it ready for use\. The first time you open the Amazon Rekognition Custom Labels console in a supported AWS Region, you are asked to create a bucket to store your project files\. 
+Create a project to manage the files used to create a model\. A project is where you manage your model files, train and evaluate your model, and make it ready for use\. The first time you open the Amazon Rekognition Custom Labels console in a supported AWS Region, you are asked to create an Amazon S3 bucket \(console bucket\) to store your project files\. The format of the bucket name is *custom\-labels\-console\-\{region\}\-\{random value\}*\. The random value ensures that there isn't a collision between bucket names\. 
 
 ## Create a Dataset<a name="ud-general-dataset"></a>
 
-To create a dataset, import labeled or unlabeled images\. A dataset is a set of images and labels that describe those images\. You use datasets to train and test the models you create\. A dataset is stored in the Amazon SageMaker Ground Truth format manifest\. 
+To create a dataset, import labeled or unlabeled images\. A dataset is a set of images and labels that describe those images\. You use datasets to train and test the models you create\. A dataset is stored in the SageMaker Ground Truth format manifest\. It's important to know how you want to use your dataset\. For more information, see [Purposing Datasets](cd-create-dataset.md#cd-dataset-purpose)\.
 
-You create your dataset by importing the images used to train the model\. You can bring in images from Amazon S3, your local computer, an Amazon SageMaker Ground Truth manifest file, or an already labeled dataset\.
+
+
+You create your dataset by importing the images used to train the model\. You can bring in images from Amazon S3, your local computer, an SageMaker Ground Truth manifest file, or an already labeled dataset\.
 
 For unlabeled images, you have to annotate the images with the labels you want to train the model with\. This can be at the image level or, for objects within the image, bounding boxes that isolate the object within an image\.
 
 For these Getting Started instructions, you use images loaded from your computer\. The images are unlabeled\. 
+
+
 
 ## Create a Test Dataset<a name="ud-general-test-dataset"></a>
 
