@@ -1,6 +1,69 @@
-# Starting an Amazon Rekognition Custom Labels Model \(SDK\)<a name="rm-start-model-sdk"></a>
+# Starting an Amazon Rekognition Custom Labels model<a name="start-running-model"></a>
 
-You start a model by calling the [StartProjectVersion](https://docs.aws.amazon.com/rekognition/latest/dg/API_StartProjectVersion) API and passing the Amazon Resource Name \(ARN\) of the model in the `ProjectVersionArn` input parameter\. You also specify the number of inference units that you want to use\. For more information, see [Running a Trained Amazon Rekognition Custom Labels Model](rm-run-model.md)\.
+You can start running an Amazon Rekognition Custom Labels model by using the console or by using the [StartProjectVersion](https://docs.aws.amazon.com/rekognition/latest/dg/API_StartProjectVersion) operation\.
+
+**Note**  
+You are charged for the amount of time your model is running and for the number of inference units that your model uses\. For more information, see [Running a trained Amazon Rekognition Custom Labels model](rm-run-model.md)\.
+
+**Topics**
++ [Starting an Amazon Rekognition Custom Labels model \(Console\)](#rm-start-model-console)
++ [Starting an Amazon Rekognition Custom Labels model \(SDK\)](#rm-start-model-sdk)
+
+## Starting an Amazon Rekognition Custom Labels model \(Console\)<a name="rm-start-model-console"></a>
+
+Use the following procedure to start running an Amazon Rekognition Custom Labels model with the console\. You can start the model directly from the console or use the AWS SDK code provided by the console\. 
+
+**To start a model \(console\)**
+
+1. Open the Amazon Rekognition console at [https://console\.aws\.amazon\.com/rekognition/](https://console.aws.amazon.com/rekognition/)\.
+
+1. Choose **Use Custom Labels**\.
+
+1. Choose **Get started**\. 
+
+1. In the left navigation pane, choose **Projects**\.
+
+1. On the **Projects** resources page, choose the project that contains the trained model that you want to start\.
+
+1. In the **Models** section, choose the model that you want to start\. 
+
+1. Choose the **Use model** tab\.
+
+1. 
+
+------
+#### [ Start model using the console ]
+
+   In the **Start or stop model** section do the following:
+
+   1. Select the number of inference units that you want to use\. For more information, see [Running a trained Amazon Rekognition Custom Labels model](rm-run-model.md)\.
+
+   1. Choose **Start**\.
+
+   1. In the **Start model** dialog box, choose **Start**\. 
+
+------
+#### [ Start model using the AWS SDK ]
+
+   In the **Use your model** section do the following:
+
+   1. Choose **API Code\.**
+
+   1. Choose either **AWS CLI** or **Python**\.
+
+   1. In **Start model** copy the example code\.
+
+   1. Use the example code to start your model\. For more information, see [Starting an Amazon Rekognition Custom Labels model \(SDK\)](#rm-start-model-sdk)\.
+
+------
+
+1. Choose your project name at the top of the page to go back to the project overview page\.
+
+1. In the **Model** section, check the status of the model\. When the model status is **RUNNING**, you can use the model to analyze images\. For more information, see [Analyzing an image with a trained model](detecting-custom-labels.md)\.
+
+## Starting an Amazon Rekognition Custom Labels model \(SDK\)<a name="rm-start-model-sdk"></a>
+
+You start a model by calling the [StartProjectVersion](https://docs.aws.amazon.com/rekognition/latest/dg/API_StartProjectVersion) API and passing the Amazon Resource Name \(ARN\) of the model in the `ProjectVersionArn` input parameter\. You also specify the number of inference units that you want to use\. For more information, see [Running a trained Amazon Rekognition Custom Labels model](rm-run-model.md)\.
 
 A model might take a while to start\. The Python and Java examples in this topic use waiters to wait for the model to start\. A waiter is a utility method that polls for a particular state to occur\. Alternatively, you can check the current status by calling [DescribeProjectVersions](https://docs.aws.amazon.com/rekognition/latest/dg/API_DescribeProjectVersions)\. 
 
@@ -8,9 +71,9 @@ A model might take a while to start\. The Python and Java examples in this topic
 
 1. If you haven't already:
 
-   1. Create or update an IAM user with `AmazonRekognitionFullAccess` and permissions\. For more information, see [Step 2: Create an IAM Administrator User and Group](su-account-user.md)\.
+   1. Create or update an IAM user with `AmazonRekognitionFullAccess` and permissions\. For more information, see [Step 2: Create an IAM administrator user and group](su-account-user.md)\.
 
-   1. Install and configure the AWS CLI and the AWS SDKs\. For more information, see [Step 2: Set Up the AWS CLI and AWS SDKs](su-awscli-sdk.md)\.
+   1. Install and configure the AWS CLI and the AWS SDKs\. For more information, see [Step 3: Set Up the AWS CLI and AWS SDKs](su-awscli-sdk.md)\.
 
 1. Use the following example code to start a model\.
 

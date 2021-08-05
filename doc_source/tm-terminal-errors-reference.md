@@ -1,6 +1,6 @@
-# Terminal Manifest File Errors<a name="tm-terminal-errors-reference"></a>
+# Terminal manifest file errors<a name="tm-terminal-errors-reference"></a>
 
-This topic describes the [Terminal Manifest File Errors](tm-debugging.md#tm-error-category-terminal)\. Manifest file errors do not have an associated error code\. The validation results manifests are not created when a terminal manifest file error occurs\. For more information, see [Understanding the Manifest Summary](tm-debugging-summary.md)\. Terminal manifest errors prevent the reporting of [Non\-Terminal JSON Line Validation Errors](tm-debugging-json-line-errors.md)\. 
+This topic describes the [Terminal manifest file errors](tm-debugging.md#tm-error-category-terminal)\. Manifest file errors do not have an associated error code\. The validation results manifests are not created when a terminal manifest file error occurs\. For more information, see [Understanding the manifest summary](tm-debugging-summary.md)\. Terminal manifest errors prevent the reporting of [Non\-Terminal JSON Line Validation Errors](tm-debugging-json-line-errors.md)\. 
 
 ## The manifest file extension or contents are invalid\.<a name="tm-error-message-ERROR_MANIFEST_INACCESSIBLE_OR_UNSUPPORTED_FORMAT"></a>
 
@@ -21,7 +21,7 @@ The training or testing manifest file used for training exists, but it is empty\
 
 1. Check which of the training or testing manifests are empty\.
 
-1. Add JSON Lines to the empty manifest file\. For more information, see [Creating a Manifest File](cd-manifest-files.md)\. Alternatively, create a new dataset with the console\. For more information, see [Creating an Amazon Rekognition Custom Labels Dataset](cd-create-dataset.md)\.
+1. Add JSON Lines to the empty manifest file\. For more information, see [Creating a manifest file](cd-manifest-files.md)\. Alternatively, create a new dataset with the console\. For more information, see [Creating an Amazon Rekognition Custom Labels dataset](cd-create-dataset.md)\.
 
 
 
@@ -29,7 +29,7 @@ The training or testing manifest file used for training exists, but it is empty\
 
 
 
-The training or testing manifest file size \(in bytes\) is too large\. For more information, see [Limits in Amazon Rekognition Custom Labels](limits.md)\. A manifest file can have less than the maximum number of JSON Lines and still exceed the maximum file size\.
+The training or testing manifest file size \(in bytes\) is too large\. For more information, see [Guidelines and quotas in Amazon Rekognition Custom Labels](limits.md)\. A manifest file can have less than the maximum number of JSON Lines and still exceed the maximum file size\.
 
 You can't use the Amazon Rekognition Custom Labels console to fix error *The manifest file size exceeds the maximum supported size*\.
 
@@ -37,7 +37,7 @@ You can't use the Amazon Rekognition Custom Labels console to fix error *The man
 
 1. Check which of the training and testing manifests exceed the maximum file size\.
 
-1. Reduce the number of JSON Lines in the manifest files that are too large\. For more information, see [Creating a Manifest File](cd-manifest-files.md)\.
+1. Reduce the number of JSON Lines in the manifest files that are too large\. For more information, see [Creating a manifest file](cd-manifest-files.md)\.
 
 ## The S3 bucket permissions are incorrect\.<a name="tm-error-message-ERROR_INVALID_PERMISSIONS_MANIFEST_S3_BUCKET"></a>
 
@@ -46,7 +46,7 @@ Amazon Rekognition Custom Labels doesn't have permissions to one or more of the 
 You can't use the Amazon Rekognition Custom Labels console to fix this error\.
 
 **To fix error *The S3 bucket permissions are incorrect\.***
-+ Check the permissions for the bucket\(s\) containing the training and testing manifests\. For more information, see [Step 5: Set Up Amazon Rekognition Custom Labels Console Permissions](su-console-policy.md)\.
++ Check the permissions for the bucket\(s\) containing the training and testing manifests\. For more information, see [Step 4: Set up Amazon Rekognition Custom Labels permissions](su-console-policy.md)\.
 
 ## Unable to write to output S3 bucket\.<a name="tm-error-message-ERROR_CANNOT_WRITE_OUTPUT_S3_BUCKET"></a>
 

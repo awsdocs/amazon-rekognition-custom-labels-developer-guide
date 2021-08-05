@@ -1,4 +1,4 @@
-# Accessing the Summary File and Evaluation Manifest Snapshot \(SDK\)<a name="tr-sdk"></a>
+# Accessing the summary file and evaluation manifest snapshot \(SDK\)<a name="tr-sdk"></a>
 
 To get training results, you call [DescribeProjectVersions](https://docs.aws.amazon.com/rekognition/latest/dg/API_DescribeProjectVersions)\. By default, `DescribeProjectVersions` returns information about all model versions in a project\. To specify a specific model version, add the model version ARN to the `ProjectVersionArns` input parameter\. 
 
@@ -9,17 +9,17 @@ The location of the metrics is returned in the `ProjectVersionDescription` respo
 **Note**  
 The amount of time, in seconds, that you are billed for training is returned in `BillableTrainingTimeInSeconds`\. 
 
-For information about the metrics that are returned by the Amazon Rekognition Custom Labels, see [Accessing Amazon Rekognition Custom Labels Training Results \(SDK\)](tr-metrics-api.md)\.
+For information about the metrics that are returned by the Amazon Rekognition Custom Labels, see [Accessing Amazon Rekognition Custom Labels training results \(SDK\)](tr-metrics-api.md)\.
 
 **To access training results \(SDK\)**
 
 1. If you haven't already:
 
-   1. Create or update an IAM user with `AmazonRekognitionFullAccess` permissions\. For more information, see [Step 2: Create an IAM Administrator User and Group](su-account-user.md)\.
+   1. Create or update an IAM user with `AmazonRekognitionFullAccess` permissions\. For more information, see [Step 2: Create an IAM administrator user and group](su-account-user.md)\.
 
-   1. Install and configure the AWS CLI and the AWS SDKs\. For more information, see [Step 2: Set Up the AWS CLI and AWS SDKs](su-awscli-sdk.md)\.
+   1. Install and configure the AWS CLI and the AWS SDKs\. For more information, see [Step 3: Set Up the AWS CLI and AWS SDKs](su-awscli-sdk.md)\.
 
-1. Use the following examples to get the locations of the summary file and the evaluation manifest snapshot\. Replace `project_arn` with the Amazon Resource Name \(ARN\) of the project that contains the model\. For more information, see [Creating an Amazon Rekognition Custom Labels Project](cp-create-project.md)\. Replace `version_name` with the name of the model version\. For more information, see [Training a Model \(SDK\)](tm-sdk.md)\.
+1. Use the following examples to get the locations of the summary file and the evaluation manifest snapshot\. Replace `project_arn` with the Amazon Resource Name \(ARN\) of the project that contains the model\. For more information, see [Creating an Amazon Rekognition Custom Labels project](cp-create-project.md)\. Replace `version_name` with the name of the model version\. For more information, see [Training a model \(SDK\)](tm-sdk.md)\.
 
 ------
 #### [ CLI ]
@@ -134,4 +134,4 @@ The F1 score and summary file location are returned in `EvaluationResult`\. For 
         }
 ```
 
-The evaluation manifest snapshot is stored in the location specified in the ` --output-config` input parameter that you specified in [Training a Model \(SDK\)](tm-sdk.md)\. 
+The evaluation manifest snapshot is stored in the location specified in the ` --output-config` input parameter that you specified in [Training a model \(SDK\)](tm-sdk.md)\. 

@@ -1,9 +1,9 @@
-# Understanding Training and Testing Validation Result Manifests<a name="tm-debugging-scope-json-line"></a>
+# Understanding training and testing validation result manifests<a name="tm-debugging-scope-json-line"></a>
 
-During training, Amazon Rekognition Custom Labels creates validation result manifests to hold non\-terminal JSON Line errors\. The validation results manifests are copies of the training and testing datasets with error information added\. You can access the validation manifests after training completes\. For more information, see [Getting the Validation Results](tm-debugging-getting-validation-data.md)\. Amazon Rekognition Custom Labels also creates a manifest summary that includes overview information for JSON Line errors, such as error locations and JSON Line error counts\. For more information, see [Understanding the Manifest Summary](tm-debugging-summary.md)\.
+During training, Amazon Rekognition Custom Labels creates validation result manifests to hold non\-terminal JSON Line errors\. The validation results manifests are copies of the training and testing datasets with error information added\. You can access the validation manifests after training completes\. For more information, see [Getting the validation results](tm-debugging-getting-validation-data.md)\. Amazon Rekognition Custom Labels also creates a manifest summary that includes overview information for JSON Line errors, such as error locations and JSON Line error counts\. For more information, see [Understanding the manifest summary](tm-debugging-summary.md)\.
 
 **Note**  
-Validation results \(Training and Testing Validation Result Manifests and Manifest Summary\) are only created if there are no [Terminal Manifest File Errors](tm-debugging.md#tm-error-category-terminal)\.
+Validation results \(Training and Testing Validation Result Manifests and Manifest Summary\) are only created if there are no [Terminal manifest file errors](tm-debugging.md#tm-error-category-terminal)\.
 
 A manifest contains JSON Lines for each image in the dataset\. Within the validation results manifests, JSON Line error information is added to the JSON Lines where errors occur\.
 
@@ -11,24 +11,24 @@ A JSON Line error is a non\-terminal error related to a single image\. A non\-te
 
 Within a JSON Line, an error might mean the JSON Line can stil be used for training\. For example, if the left value for one of four bounding boxes associated with a label is negative, the model is still trained using the other valid bounding boxes\. JSON Line error information is returned for the invalid bounding box \([ERROR\_INVALID\_BOUNDING\_BOX](tm-debugging-json-line-errors.md#tm-error-ERROR_INVALID_BOUNDING_BOX)\)\. In this example, the error information is added to the `annotation` object where the error occurs\. 
 
-Warning errors, such as [WARNING\_NO\_ANNOTATIONS](tm-debugging-json-line-errors.md#tm-warning-WARNING_NO_ANNOTATIONS), aren't used for training and count as ignored JSON lines \(`ignored_json_lines`\) in the manifest summary\. For more information, see [Understanding the Manifest Summary](tm-debugging-summary.md)\. Additionally, ignored JSON Lines don't count towards the 20% error threshold for training and testing\.
+Warning errors, such as [WARNING\_NO\_ANNOTATIONS](tm-debugging-json-line-errors.md#tm-warning-WARNING_NO_ANNOTATIONS), aren't used for training and count as ignored JSON lines \(`ignored_json_lines`\) in the manifest summary\. For more information, see [Understanding the manifest summary](tm-debugging-summary.md)\. Additionally, ignored JSON Lines don't count towards the 20% error threshold for training and testing\.
 
   For information about specific non\-terminal data validation errors, see [Non\-Terminal JSON Line Validation Errors](tm-debugging-json-line-errors.md)\. 
 
 **Note**  
 If there are too many data validation errors, training is stopped and a [ERROR\_TOO\_MANY\_INVALID\_ROWS\_IN\_MANIFEST](tm-debugging-aggregate-errors.md#tm-error-ERROR_TOO_MANY_INVALID_ROWS_IN_MANIFEST) terminal error is reported in the manifest summary\.
 
-For information about correcting JSON Line errors, see [Fixing Training Errors](tm-debugging-fixing-validation-errors.md)\. 
+For information about correcting JSON Line errors, see [Fixing training errors](tm-debugging-fixing-validation-errors.md)\. 
 
 
 
-## JSON Line Error Format<a name="tm-json-line-error-format"></a>
+## JSON line error format<a name="tm-json-line-error-format"></a>
 
-Amazon Rekognition Custom Labels adds non\-terminal validation error information to image level and object localization format JSON Lines\. For more information, see [Creating a Manifest File](cd-manifest-files.md)\.
+Amazon Rekognition Custom Labels adds non\-terminal validation error information to image level and object localization format JSON Lines\. For more information, see [Creating a manifest file](cd-manifest-files.md)\.
 
 ### Image Level Errors<a name="tm-debugging-image-level"></a>
 
-The following example shows the `Error` arrays in an image level JSON Line\. There are two sets of errors\. Errors related to label attribute metadata \(in this example, sport\-metadata\) and errors related to the image\. An error includes an error code \(code\), error message \(message\)\. For more information, see [Image\-Level Labels in Manifest Files](cd-manifest-files-classification.md)\. 
+The following example shows the `Error` arrays in an image level JSON Line\. There are two sets of errors\. Errors related to label attribute metadata \(in this example, sport\-metadata\) and errors related to the image\. An error includes an error code \(code\), error message \(message\)\. For more information, see [Image\-Level labels in manifest files](cd-manifest-files-classification.md)\. 
 
 ```
 {
@@ -57,7 +57,7 @@ The following example shows the `Error` arrays in an image level JSON Line\. The
 }
 ```
 
-### Object Localization Errors<a name="tm-debugging-object-localization"></a>
+### Object localization errors<a name="tm-debugging-object-localization"></a>
 
 The following example show the error arrays in an object localization JSON Line\. The JSON Line contains an `Errors` array information for fields in the following JSON Line sections\. Each `Error` object includes the error code and the error message\.
 + *label attribute* – Errors for the label attribute fields\. See `bounding-box` in the example\. 
@@ -65,7 +65,7 @@ The following example show the error arrays in an object localization JSON Line\
 + *label attribute\-metadata* – Errors for the label attribute metadata\. See `bounding-box-metadata` in the example\.
 + *image* – Errors not related to the label attribute, annotation, and label attribute metadata fields\. 
 
-For more information, see [Object Localization in Manifest Files](cd-manifest-files-object-detection.md)\. 
+For more information, see [Object localization in manifest files](cd-manifest-files-object-detection.md)\. 
 
 ```
 {
@@ -129,7 +129,7 @@ For more information, see [Object Localization in Manifest Files](cd-manifest-fi
  }
 ```
 
-## Example JSON Line Error<a name="tm-debugging-scope-json-line-example"></a>
+## Example JSON line error<a name="tm-debugging-scope-json-line-example"></a>
 
 The following object localization JSON Line \(formatted for readability\) shows an [ERROR\_BOUNDING\_BOX\_TOO\_SMALL](tm-debugging-json-line-errors.md#tm-error-ERROR_BOUNDING_BOX_TOO_SMALL) error\. In this example, the bounding box dimensions \(height and width\) aren't greater than 1 x 1\.
 

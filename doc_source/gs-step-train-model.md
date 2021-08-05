@@ -1,25 +1,22 @@
-# Step 7: Train Your Model<a name="gs-step-train-model"></a>
+# Step 2: Train your model<a name="gs-step-train-model"></a>
 
-To train the model, you use the dataset that you created in [Step 3: Create a Dataset](gs-step-create-dataset.md)\. You also need a dataset to test the model\. In this step, you create a testing dataset by splitting the training dataset\. You can also choose to create a new dataset or use an existing dataset for training\. The original dataset remains unchanged\. For more information, see [Training an Amazon Rekognition Custom Labels Model](tm-train-model.md)\.
+In this step you train your model\. The training and test datasets are automatically configured for you\. After training successfully completes, you can see the overall evaluation results, and evaluation results for individual test images\. For more information, see [Training an Amazon Rekognition Custom Labels model](tm-train-model.md)\. 
 
-A new version of a model is created every time the model is trained\. Amazon Rekognition Custom Labels creates a name for the model that is a combination of the project name and the timestamp for when the model is created\. 
+**To train your model**
 
-**Note**  
-You are charged for the amount of time that it takes to train a model\. For more information, see [Training hours](https://aws.amazon.com/rekognition/pricing/#Amazon_Rekognition_Custom_Labels_pricing)\. 
+1. On the dataset page, choose **Train model**\.  
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/rekognition/latest/customlabels-dg/images/get-started-train-model.jpg)
 
-**To a train a model \(console\)**
+1. On the **Train model** page, choose **Train**\. The training and test datasets are automatically populated\. Note the dataset names\. If you train the model later, the train model page doesn't populate the dataset names\.   
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/rekognition/latest/customlabels-dg/images/get-started-train-model-page.jpg)
 
-1. In the dataset gallery, choose **Train Model** and the **Train model** page is displayed\. 
+1. After training completes, choose the model name\. Training is finished when the model status is **TRAINING\_COMPLETED**\.  
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/rekognition/latest/customlabels-dg/images/get-started-choose-model.jpg)
 
-1. In **Training details**, do the following:
+1. Choose the **Evaluate** button to see the evaluation results\. For information about evaluating a model, see [Evaluating a trained Amazon Rekognition Custom Labels model](tr-train-results.md)\.
 
-   1. In **Choose project**, choose the project that you created earlier\.
+1. Choose **View test results** to see the results for individual test images\.   
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/rekognition/latest/customlabels-dg/images/get-started-training-results.jpg)
 
-   1. In **Choose training set**, choose the training dataset that you previously created\.
-
-   1. In **Create test set**, choose **Split training dataset**\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/rekognition/latest/customlabels-dg/images/train-model.png)
-
-1. Choose **Train** to start training the model\. The project resources page is shown\.
-
-1. Wait until training has finished\. You can check the current status in the **Status** field of the **Model** section\.
+1. After viewing the test results, choose the project name to return to the model page\.  
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/rekognition/latest/customlabels-dg/images/get-started-image-test-results.jpg)

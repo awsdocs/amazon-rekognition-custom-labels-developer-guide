@@ -1,4 +1,4 @@
-# Custom Labels Demonstration<a name="ex-custom-labels-demo"></a>
+# Amazon Rekognition Custom Labels demonstration<a name="ex-custom-labels-demo"></a>
 
 The Amazon Rekognition Custom Labels Demonstration shows a user interface that analyzes images from your local computer by using the [DetectCustomLabels](https://docs.aws.amazon.com/rekognition/latest/dg/API_DetectCustomLabels) API\.
 

@@ -1,10 +1,10 @@
-# Creating an Amazon Rekognition Custom Labels Project<a name="cp-create-project"></a>
+# Creating an Amazon Rekognition Custom Labels project<a name="cp-create-project"></a>
 
 You can create a project with the Amazon Rekognition Custom Labels console or with the API\. When you first use the console, you specify the Amazon S3 bucket where Amazon Rekognition Custom Labels stores your project files\. If you're using the API, you can also use Amazon S3 buckets that are external to the Amazon Rekognition Custom Labels console\.
 
 **Topics**
 + [Creating an Amazon Rekognition Custom Labels Project \(Console\)](#cp-console)
-+ [Creating an Amazon Rekognition Custom Labels Project \(SDK\)](#cp-sdk)
++ [Creating an Amazon Rekognition Custom Labels project \(SDK\)](#cp-sdk)
 
 ## Creating an Amazon Rekognition Custom Labels Project \(Console\)<a name="cp-console"></a>
 
@@ -32,17 +32,17 @@ You can use the Amazon Rekognition Custom Labels console to create a project\.
 1. Choose **Create project** to create your project\. The project page is shown\. A success message should be shown at the top of the page\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/rekognition/latest/customlabels-dg/images/create-project.png)
 
-## Creating an Amazon Rekognition Custom Labels Project \(SDK\)<a name="cp-sdk"></a>
+## Creating an Amazon Rekognition Custom Labels project \(SDK\)<a name="cp-sdk"></a>
 
-You create an Amazon Rekognition Custom Labels project by calling [CreateProject](https://docs.aws.amazon.com/rekognition/latest/dg/API_CreateProject)\. The response is an Amazon Resource Name \(ARN\) as an identifier for the project\. After you create a project, you create datasets for training and testing a model\. For more information, see [Creating an Amazon Rekognition Custom Labels Dataset](cd-create-dataset.md)\. 
+You create an Amazon Rekognition Custom Labels project by calling [CreateProject](https://docs.aws.amazon.com/rekognition/latest/dg/API_CreateProject)\. The response is an Amazon Resource Name \(ARN\) as an identifier for the project\. After you create a project, you create datasets for training and testing a model\. For more information, see [Creating an Amazon Rekognition Custom Labels dataset](cd-create-dataset.md)\. 
 
 **To create a project \(SDK\)**
 
 1. If you haven't already:
 
-   1. Create or update an IAM user with `AmazonRekognitionFullAccess` permissions\. For more information, see [Step 2: Create an IAM Administrator User and Group](su-account-user.md)\.
+   1. Create or update an IAM user with `AmazonRekognitionFullAccess` permissions\. For more information, see [Step 2: Create an IAM administrator user and group](su-account-user.md)\.
 
-   1. Install and configure the AWS CLI and the AWS SDKs\. For more information, see [Step 2: Set Up the AWS CLI and AWS SDKs](su-awscli-sdk.md)\.
+   1. Install and configure the AWS CLI and the AWS SDKs\. For more information, see [Step 3: Set Up the AWS CLI and AWS SDKs](su-awscli-sdk.md)\.
 
 1. Use the following code to create a project\. 
 

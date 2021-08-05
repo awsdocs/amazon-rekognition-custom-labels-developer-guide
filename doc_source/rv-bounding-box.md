@@ -1,14 +1,14 @@
-# Drawing Bounding Boxes<a name="rv-bounding-box"></a>
+# Drawing bounding boxes<a name="rv-bounding-box"></a>
 
 You can train a model to detect the location of objects on an image\. To do this, the dataset needs information about the location of the object\(s\) in the image, and a corresponding label that identifies the type of the object\(s\)\. This is known as localization information\. The location of the device is expressed as a bounding box, which is a box that tightly surrounds an object\. The following image shows a bounding box surrounding an Amazon Echo Dot\. The image also contains an Amazon Echo without a bounding box\. 
 
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/rekognition/latest/customlabels-dg/images/dot.png)
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/rekognition/latest/customlabels-dg/images/dot.jpg)
 
 The accuracy of your model is affected by the accuracy of the bounding boxes\. Try to draw them as closes as possible to the object\.
 
 Amazon Rekognition Custom Labels can detect logos and animated characters\. The testing images must contain bounding boxes around the logo or animated character\. 
 
-Before you can add bounding boxes, you must add at least one label to the dataset\. For more information, see [Labeling the Dataset](rv-editing-labels.md)\.
+Before you can add bounding boxes, you must add at least one label to the dataset\. For more information, see [Labeling the dataset](rv-editing-labels.md)\.
 
 **To draw a bounding box and assign a label \(console\)**
 

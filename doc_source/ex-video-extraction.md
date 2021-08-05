@@ -1,4 +1,4 @@
-# Video Analysis<a name="ex-video-extraction"></a>
+# Video analysis<a name="ex-video-extraction"></a>
 
 The following example shows how you can use `DetectCustomLabels` with frames extracted from a video\. The code has been tested with video files in *mov* and *mp4* format\.
 
@@ -6,9 +6,9 @@ The following example shows how you can use `DetectCustomLabels` with frames ext
 
 1. If you haven't already:
 
-   1. Create or update an IAM user with `AmazonRekognitionFullAccess` and `AmazonS3ReadOnlyAccess` permissions\. For more information, see [Step 2: Create an IAM Administrator User and Group](su-account-user.md)\.
+   1. Create or update an IAM user with `AmazonRekognitionFullAccess` and `AmazonS3ReadOnlyAccess` permissions\. For more information, see [Step 2: Create an IAM administrator user and group](su-account-user.md)\.
 
-   1. Install and configure the AWS CLI and the AWS SDKs\. For more information, see [Step 2: Set Up the AWS CLI and AWS SDKs](su-awscli-sdk.md)\.
+   1. Install and configure the AWS CLI and the AWS SDKs\. For more information, see [Step 3: Set Up the AWS CLI and AWS SDKs](su-awscli-sdk.md)\.
 
 1. Use the following example code\. Change the value of `videoFile` to the name of a video file\. Change the value of `projectVersionArn` to the Amazon Resource Name \(ARN\) of your Amazon Rekognition Custom Labels model\. 
 

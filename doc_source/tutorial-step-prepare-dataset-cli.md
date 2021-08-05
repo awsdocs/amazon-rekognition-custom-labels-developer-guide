@@ -1,0 +1,5 @@
+# Step 2: Prepare your dataset<a name="tutorial-step-prepare-dataset-cli"></a>
+
+You need a dataset to train a model\. A dataset contains labeled images\. You can create a dataset using the Amazon Rekognition Custom Labels console\. Alternatively, you can use an SageMaker Ground Truth manifest format file and images\. For more information, see [Managing an Amazon Rekognition Custom Labels dataset](cd-managing-datasets.md)\. 
+
+For this tutorial, create a dataset by using the Amazon Rekognition Custom Labels console\. For more information, see [Step 4: Create a training dataset](tutorial-step-create-dataset.md)\. Alternatively, If you're not ready to train you're own model, you can use datasets from the example projects\. For more information, see [Getting started with Amazon Rekognition Custom Labels](gs-introduction.md)\.

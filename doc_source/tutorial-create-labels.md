@@ -1,6 +1,6 @@
-# Step 4: Create Labels<a name="gs-create-labels"></a>
+# Step 5: Add labels<a name="tutorial-create-labels"></a>
 
-After uploading your images into a dataset, you use the dataset gallery to add new labels to the dataset\. A label identifies an object, scene, concept, or bounding box around an object in an image\. For example, if your dataset contains images of dogs, you might add labels for breeds of dogs\. Your dataset needs at least two labels if you are using it to create a model that identifies objects, scenes, and concepts\. You only need one label if your dataset is used to create a model that finds the location of objects on an image\. For more information, see [Purposing Datasets](cd-create-dataset.md#cd-dataset-purpose)\. 
+After uploading your images into a dataset, you use the dataset gallery to add new labels to the dataset\. A label identifies an object, scene, concept, or bounding box around an object in an image\. For example, if your dataset contains images of dogs, you might add labels for breeds of dogs\. Your dataset needs at least two labels if you are using it to create a model that identifies objects, scenes, and concepts\. You only need one label if your dataset is used to create a model that finds the location of objects on an image\. For more information, see [Purposing datasets](cd-create-dataset.md#cd-dataset-purpose)\. 
 
 **Note**  
 Amazon Rekognition Custom Labels doesn't use Exif orientation metadata in images to rotate images for display\. Depending on the orientation of the camera at the time the image was photographed, images in the dataset gallery might appear with the wrong orientation\. This doesn't affect the training of your model\.
@@ -17,8 +17,7 @@ In this step, you create the labels that you assign to your images as a whole \(
 
 1. Enter a new label name\.
 
-1. Choose **Add label**\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/rekognition/latest/customlabels-dg/images/create-label.png)
+1. Choose **Add label**\.
 
 1. Repeat steps 4 and 5 until you have created all the labels you need\. 
 

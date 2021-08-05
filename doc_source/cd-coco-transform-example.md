@@ -6,9 +6,9 @@ Use the following Python example to transform bounding box information from a CO
 
 1. If you haven't already:
 
-   1. Create or update an IAM user with `AmazonS3FullAccess` permissions\. For more information, see [Step 2: Create an IAM Administrator User and Group](su-account-user.md)\.
+   1. Create or update an IAM user with `AmazonS3FullAccess` permissions\. For more information, see [Step 2: Create an IAM administrator user and group](su-account-user.md)\.
 
-   1. Install and configure the AWS CLI and the AWS SDKs\. For more information, see [Step 2: Set Up the AWS CLI and AWS SDKs](su-awscli-sdk.md)\.
+   1. Install and configure the AWS CLI and the AWS SDKs\. For more information, see [Step 3: Set Up the AWS CLI and AWS SDKs](su-awscli-sdk.md)\.
 
 1. Use the following Python code to transform a COCO dataset\. Set the following values\.
    + `s3_bucket` – The name of the S3 bucket in which you want to store the images and Amazon Rekognition Custom Labels manifest file\. 
@@ -166,6 +166,6 @@ Use the following Python example to transform bounding box information from a CO
 
 1. In the program output, note the S3 URL path to the manifest file\. You need it in the next step\.
 
-1. Follow the instruction at [Creating a Manifest File](cd-manifest-files.md) to create a dataset with the uploaded manifest file\. You don't need to do steps 1\-6\. For step 14, use the Amazon S3 URL you noted in the previous step\. 
+1. Follow the instruction at [Creating a manifest file](cd-manifest-files.md) to create a dataset with the uploaded manifest file\. You don't need to do steps 1\-6\. For step 14, use the Amazon S3 URL you noted in the previous step\. 
 
-1. Build your model\. For more information, see [Training an Amazon Rekognition Custom Labels Model](tm-train-model.md)\.
+1. Build your model\. For more information, see [Training an Amazon Rekognition Custom Labels model](tm-train-model.md)\.

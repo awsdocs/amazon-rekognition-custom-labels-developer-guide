@@ -1,4 +1,4 @@
-# Step 2: Set Up the AWS CLI and AWS SDKs<a name="su-awscli-sdk"></a>
+# Step 3: Set Up the AWS CLI and AWS SDKs<a name="su-awscli-sdk"></a>
 
 The following steps show you how to install the AWS Command Line Interface \(AWS CLI\) and AWS SDKs that the examples in this documentation use\. There are a number of different ways to authenticate AWS SDK calls\. The examples in this guide assume that you're using a default credentials profile for calling AWS CLI commands and AWS SDK API operations\.
 
@@ -10,13 +10,13 @@ Follow the steps to download and configure the AWS SDKs\.
 
 1. Download and install the [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install) and the AWS SDKs that you want to use\. This guide provides examples for the AWS CLI, Java, and Python\. For information about installing AWS SDKs, see [Tools for Amazon Web Services](https://aws.amazon.com/tools/)\.
 
-1. Create an access key for the user you created in [Step 2: Create an IAM Administrator User and Group](su-account-user.md)\.
+1. Create an access key for the user you created in [Step 2: Create an IAM administrator user and group](su-account-user.md)\.
 
    1. Sign in to the AWS Management Console and open the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
 
    1. In the navigation pane, choose **Users**\.
 
-   1. Choose the name of the user you created in [Step 2: Create an IAM Administrator User and Group](su-account-user.md)\.
+   1. Choose the name of the user you created in [Step 2: Create an IAM administrator user and group](su-account-user.md)\.
 
    1. Choose the **Security credentials** tab\.
 

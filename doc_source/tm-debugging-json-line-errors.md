@@ -1,16 +1,16 @@
 # Non\-Terminal JSON Line Validation Errors<a name="tm-debugging-json-line-errors"></a>
 
-This topic lists the non\-terminal JSON Line validation errors reported by Amazon Rekognition Custom Labels during training\. The errors are reported in the training and testing validation manifest\. For more information, see [Understanding Training and Testing Validation Result Manifests](tm-debugging-scope-json-line.md)\. You can fix a non\-terminal JSON Line error by updating the JSON Line in the training or test manifest file\. You can also remove the JSON Line from the manifest, but doing so might reduce the quality of your model\. If there are many non\-terminal validation errors, you might find it easier to recreate the manifest file\. Validation errors typically occur in manually created manifest files\. For more information, see [Creating a Manifest File](cd-manifest-files.md)\. For information about fixing validation errors, see [Fixing Training Errors](tm-debugging-fixing-validation-errors.md)\. Some errors can be fixed by using the Amazon Rekognition Custom Labels console\. 
+This topic lists the non\-terminal JSON Line validation errors reported by Amazon Rekognition Custom Labels during training\. The errors are reported in the training and testing validation manifest\. For more information, see [Understanding training and testing validation result manifests](tm-debugging-scope-json-line.md)\. You can fix a non\-terminal JSON Line error by updating the JSON Line in the training or test manifest file\. You can also remove the JSON Line from the manifest, but doing so might reduce the quality of your model\. If there are many non\-terminal validation errors, you might find it easier to recreate the manifest file\. Validation errors typically occur in manually created manifest files\. For more information, see [Creating a manifest file](cd-manifest-files.md)\. For information about fixing validation errors, see [Fixing training errors](tm-debugging-fixing-validation-errors.md)\. Some errors can be fixed by using the Amazon Rekognition Custom Labels console\. 
 
 ## ERROR\_MISSING\_SOURCE\_REF<a name="tm-error-ERROR_MISSING_SOURCE_REF"></a>
 
-### Error Message<a name="tm-error-message-ERROR_MISSING_SOURCE_REF"></a>
+### Error message<a name="tm-error-message-ERROR_MISSING_SOURCE_REF"></a>
 
 The source\-ref key is missing\.
 
-### More Information<a name="tm-error-description-ERROR_MISSING_SOURCE_REF"></a>
+### More information<a name="tm-error-description-ERROR_MISSING_SOURCE_REF"></a>
 
-The JSON Line `source-ref` field provides the Amazon S3 location of an image\. This error occurs when the `source-ref` key is missing or is misspelt\. This error typically occurs in manually created manifest files\. For more information, see [Creating a Manifest File](cd-manifest-files.md)\.
+The JSON Line `source-ref` field provides the Amazon S3 location of an image\. This error occurs when the `source-ref` key is missing or is misspelt\. This error typically occurs in manually created manifest files\. For more information, see [Creating a manifest file](cd-manifest-files.md)\.
 
 **To fix `ERROR_MISSING_SOURCE_REF`**
 
@@ -22,13 +22,13 @@ You can't use the Amazon Rekognition Custom Labels console to fix this error\.
 
 ## ERROR\_INVALID\_SOURCE\_REF\_FORMAT<a name="tm-error-ERROR_INVALID_SOURCE_REF_FORMAT"></a>
 
-### Error Message<a name="tm-error-message-ERROR_INVALID_SOURCE_REF_FORMAT"></a>
+### Error message<a name="tm-error-message-ERROR_INVALID_SOURCE_REF_FORMAT"></a>
 
 The format of the source\-ref value is invalid\. 
 
-### More Information<a name="tm-error-description-ERROR_INVALID_SOURCE_REF_FORMAT"></a>
+### More information<a name="tm-error-description-ERROR_INVALID_SOURCE_REF_FORMAT"></a>
 
-The `source-ref` key is present in the JSON Line, but the schema of the Amazon S3 path is incorrect\. For example, the path is `https://....` instead of `S3://....`\. An ERROR\_INVALID\_SOURCE\_REF\_FORMAT error typically occurs in manually created manifest files\. For more information, see [Creating a Manifest File](cd-manifest-files.md)\. 
+The `source-ref` key is present in the JSON Line, but the schema of the Amazon S3 path is incorrect\. For example, the path is `https://....` instead of `S3://....`\. An ERROR\_INVALID\_SOURCE\_REF\_FORMAT error typically occurs in manually created manifest files\. For more information, see [Creating a manifest file](cd-manifest-files.md)\. 
 
 **To fix `ERROR_INVALID_SOURCE_REF_FORMAT`**
 
@@ -40,13 +40,13 @@ The `source-ref` key is present in the JSON Line, but the schema of the Amazon S
 
 ## ERROR\_NO\_LABEL\_ATTRIBUTES<a name="tm-error-ERROR_NO_LABEL_ATTRIBUTES"></a>
 
-### Error Message<a name="tm-error-message-ERROR_NO_LABEL_ATTRIBUTES"></a>
+### Error message<a name="tm-error-message-ERROR_NO_LABEL_ATTRIBUTES"></a>
 
 No label attributes found\.
 
-### More Information<a name="tm-error-description-ERROR_NO_LABEL_ATTRIBUTES"></a>
+### More information<a name="tm-error-description-ERROR_NO_LABEL_ATTRIBUTES"></a>
 
-The label attribute or the label attribute `-metadata` key name \(or both\) is invalid or missing\. In the following example, `ERROR_NO_LABEL_ATTRIBUTES` occurs whenever the `bounding-box` or `bounding-box-metadata` key \(or both\) is missing\. For more information, see [Creating a Manifest File](cd-manifest-files.md)\.
+The label attribute or the label attribute `-metadata` key name \(or both\) is invalid or missing\. In the following example, `ERROR_NO_LABEL_ATTRIBUTES` occurs whenever the `bounding-box` or `bounding-box-metadata` key \(or both\) is missing\. For more information, see [Creating a manifest file](cd-manifest-files.md)\.
 
 ```
 {
@@ -89,7 +89,7 @@ The label attribute or the label attribute `-metadata` key name \(or both\) is i
 }
 ```
 
- A `ERROR_NO_LABEL_ATTRIBUTES` error typically occurs in a manually created manifest file\. For more information, see [Creating a Manifest File](cd-manifest-files.md)\. 
+ A `ERROR_NO_LABEL_ATTRIBUTES` error typically occurs in a manually created manifest file\. For more information, see [Creating a manifest file](cd-manifest-files.md)\. 
 
 **To fix `ERROR_NO_LABEL_ATTRIBUTES`**
 
@@ -101,13 +101,13 @@ You can't use the Amazon Rekognition Custom Labels console to fix `ERROR_NO_LABE
 
 ## ERROR\_INVALID\_LABEL\_ATTRIBUTE\_FORMAT<a name="tm-error-ERROR_INVALID_LABEL_ATTRIBUTE_FORMAT"></a>
 
-### Error Message<a name="tm-error-message-ERROR_INVALID_LABEL_ATTRIBUTE_FORMAT"></a>
+### Error message<a name="tm-error-message-ERROR_INVALID_LABEL_ATTRIBUTE_FORMAT"></a>
 
 The format of the label attribute \{\} is invalid\.
 
-### More Information<a name="tm-error-description-ERROR_INVALID_LABEL_ATTRIBUTE_FORMAT"></a>
+### More information<a name="tm-error-description-ERROR_INVALID_LABEL_ATTRIBUTE_FORMAT"></a>
 
-The schema for the label attribute key is missing or invalid\. An ERROR\_INVALID\_LABEL\_ATTRIBUTE\_FORMAT error typically occurs in manually created manifest files\. for more information, see [Creating a Manifest File](cd-manifest-files.md)\. 
+The schema for the label attribute key is missing or invalid\. An ERROR\_INVALID\_LABEL\_ATTRIBUTE\_FORMAT error typically occurs in manually created manifest files\. for more information, see [Creating a manifest file](cd-manifest-files.md)\. 
 
 **To fix `ERROR_INVALID_LABEL_ATTRIBUTE_FORMAT`**
 
@@ -144,13 +144,13 @@ You can't use the Amazon Rekognition Custom Labels console to fix this error\.
 
 ## ERROR\_INVALID\_LABEL\_ATTRIBUTE\_METADATA\_FORMAT<a name="tm-error-ERROR_INVALID_LABEL_ATTRIBUTE_METADATA_FORMAT"></a>
 
-### Error Message<a name="tm-error-message-ERROR_INVALID_LABEL_ATTRIBUTE_METADATA_FORMAT"></a>
+### Error message<a name="tm-error-message-ERROR_INVALID_LABEL_ATTRIBUTE_METADATA_FORMAT"></a>
 
 The format of the label attribute metadata is invalid\.
 
-### More Information<a name="tm-error-description-ERROR_INVALID_LABEL_ATTRIBUTE_METADATA_FORMAT"></a>
+### More information<a name="tm-error-description-ERROR_INVALID_LABEL_ATTRIBUTE_METADATA_FORMAT"></a>
 
-The schema for the label attribute metadata key is missing or invalid\. An ERROR\_INVALID\_LABEL\_ATTRIBUTE\_METADATA\_FORMAT error typically occurs in manually created manifest files\. For more information, see [Creating a Manifest File](cd-manifest-files.md)\.
+The schema for the label attribute metadata key is missing or invalid\. An ERROR\_INVALID\_LABEL\_ATTRIBUTE\_METADATA\_FORMAT error typically occurs in manually created manifest files\. For more information, see [Creating a manifest file](cd-manifest-files.md)\.
 
 **To fix `ERROR_INVALID_LABEL_ATTRIBUTE_FORMAT`**
 
@@ -184,33 +184,33 @@ You can't use the Amazon Rekognition Custom Labels console to fix this error\.
 
 ## ERROR\_NO\_VALID\_LABEL\_ATTRIBUTES<a name="tm-error-ERROR_NO_VALID_LABEL_ATTRIBUTES"></a>
 
-### Error Message<a name="tm-error-message-ERROR_NO_VALID_LABEL_ATTRIBUTES"></a>
+### Error message<a name="tm-error-message-ERROR_NO_VALID_LABEL_ATTRIBUTES"></a>
 
 No valid label attributes found\.
 
-### More Information<a name="tm-error-description-ERROR_NO_VALID_LABEL_ATTRIBUTES"></a>
+### More information<a name="tm-error-description-ERROR_NO_VALID_LABEL_ATTRIBUTES"></a>
 
-No valid label attributes were found in the JSON Line\. Amazon Rekognition Custom Labels checks both the label attribute and the label attribute identifier\. An ERROR\_INVALID\_LABEL\_ATTRIBUTE\_FORMAT error typically occurs in manually created manifest files\. for more information, see [Creating a Manifest File](cd-manifest-files.md)\. 
+No valid label attributes were found in the JSON Line\. Amazon Rekognition Custom Labels checks both the label attribute and the label attribute identifier\. An ERROR\_INVALID\_LABEL\_ATTRIBUTE\_FORMAT error typically occurs in manually created manifest files\. for more information, see [Creating a manifest file](cd-manifest-files.md)\. 
 
-If a JSON Line isn't in a supported SageMaker manifest format, Amazon Rekognition Custom Labels marks the JSON Line as invalid and an `ERROR_NO_VALID_LABEL_ATTRIBUTES` error is reported\. Currently, Amazon Rekognition Custom Labels supports classification job and bounding box formats\. For more information, see [Creating a Manifest File](cd-manifest-files.md)\.
+If a JSON Line isn't in a supported SageMaker manifest format, Amazon Rekognition Custom Labels marks the JSON Line as invalid and an `ERROR_NO_VALID_LABEL_ATTRIBUTES` error is reported\. Currently, Amazon Rekognition Custom Labels supports classification job and bounding box formats\. For more information, see [Creating a manifest file](cd-manifest-files.md)\.
 
 **To fix `ERROR_NO_VALID_LABEL_ATTRIBUTES`**
 
 1. Check that the JSON for the label attribute key and label attribute metadata is correct\.
 
-1. Update, or remove, the JSON Line in the manifest file\. For more information, see [Creating a Manifest File](cd-manifest-files.md)\.
+1. Update, or remove, the JSON Line in the manifest file\. For more information, see [Creating a manifest file](cd-manifest-files.md)\.
 
 You can't use the Amazon Rekognition Custom Labels console to fix this error\.
 
 ## ERROR\_MISSING\_BOUNDING\_BOX\_CONFIDENCE<a name="tm-error-ERROR_MISSING_BOUNDING_BOX_CONFIDENCE"></a>
 
-### Error Message<a name="tm-error-message-ERROR_MISSING_BOUNDING_BOX_CONFIDENCE"></a>
+### Error message<a name="tm-error-message-ERROR_MISSING_BOUNDING_BOX_CONFIDENCE"></a>
 
 One or more bounding boxes has a missing confidence value\.
 
-### More Information<a name="tm-error-description-ERROR_MISSING_BOUNDING_BOX_CONFIDENCE"></a>
+### More information<a name="tm-error-description-ERROR_MISSING_BOUNDING_BOX_CONFIDENCE"></a>
 
-The confidence key is missing for one or more object location bounding boxes\. The confidence key for a bounding box is in the label attribute metadata, as shown in the following example\. A ERROR\_MISSING\_BOUNDING\_BOX\_CONFIDENCE error typically occurs in manually created manifest files\. For more information, see [Object Localization in Manifest Files](cd-manifest-files-object-detection.md)\.
+The confidence key is missing for one or more object location bounding boxes\. The confidence key for a bounding box is in the label attribute metadata, as shown in the following example\. A ERROR\_MISSING\_BOUNDING\_BOX\_CONFIDENCE error typically occurs in manually created manifest files\. For more information, see [Object localization in manifest files](cd-manifest-files-object-detection.md)\.
 
 ```
 	"bounding-box-metadata": {
@@ -233,13 +233,13 @@ You can't use the Amazon Rekognition Custom Labels console to fix this error\.
 
 ## ERROR\_MISSING\_CLASS\_MAP\_ID<a name="tm-error-ERROR_MISSING_CLASS_MAP_ID"></a>
 
-### Error Message<a name="tm-error-message-ERROR_MISSING_CLASS_MAP_ID"></a>
+### Error message<a name="tm-error-message-ERROR_MISSING_CLASS_MAP_ID"></a>
 
 One of more class ids is missing from the class map\.
 
-### More Information<a name="tm-error-description-ERROR_MISSING_CLASS_MAP_ID"></a>
+### More information<a name="tm-error-description-ERROR_MISSING_CLASS_MAP_ID"></a>
 
-The `class_id` in an annotation \(bounding box\) object doesn't have a matching entry in the label attribute metadata class map \(`class-map`\)\. For more information, see [Object Localization in Manifest Files](cd-manifest-files-object-detection.md)\. A ERROR\_MISSING\_CLASS\_MAP\_ID error typically occurs in manually created manifest files\.
+The `class_id` in an annotation \(bounding box\) object doesn't have a matching entry in the label attribute metadata class map \(`class-map`\)\. For more information, see [Object localization in manifest files](cd-manifest-files-object-detection.md)\. A ERROR\_MISSING\_CLASS\_MAP\_ID error typically occurs in manually created manifest files\.
 
 **To fix ERROR\_MISSING\_CLASS\_MAP\_ID**
 
@@ -292,13 +292,13 @@ You can't use the Amazon Rekognition Custom Labels console to fix this error\.
 
 ## ERROR\_INVALID\_JSON\_LINE<a name="tm-error-ERROR_INVALID_JSON_LINE"></a>
 
-### Error Message<a name="tm-error-message-ERROR_INVALID_JSON_LINE"></a>
+### Error message<a name="tm-error-message-ERROR_INVALID_JSON_LINE"></a>
 
 The JSON Line has an invalid format\.
 
-### More Information<a name="tm-error-description-ERROR_INVALID_JSON_LINE"></a>
+### More information<a name="tm-error-description-ERROR_INVALID_JSON_LINE"></a>
 
-An unexpected character was found in the JSON Line\. The JSON Line is replaced with a new JSON Line that contains only the error information\. An ERROR\_INVALID\_JSON\_LINE error typically occurs in manually created manifest files\. For more information, see [Object Localization in Manifest Files](cd-manifest-files-object-detection.md)\. 
+An unexpected character was found in the JSON Line\. The JSON Line is replaced with a new JSON Line that contains only the error information\. An ERROR\_INVALID\_JSON\_LINE error typically occurs in manually created manifest files\. For more information, see [Object localization in manifest files](cd-manifest-files-object-detection.md)\. 
 
 You can't use the Amazon Rekognition Custom Labels console to fix this error\.
 
@@ -312,15 +312,15 @@ You can't use the Amazon Rekognition Custom Labels console to fix this error\.
 
 ## ERROR\_INVALID\_IMAGE<a name="tm-error-ERROR_INVALID_IMAGE"></a>
 
-### Error Message<a name="tm-error-message-ERROR_INVALID_IMAGE"></a>
+### Error message<a name="tm-error-message-ERROR_INVALID_IMAGE"></a>
 
 The image is invalid\. Check S3 path and/or image properties\.
 
-### More Information<a name="tm-error-description-ERROR_INVALID_IMAGE"></a>
+### More information<a name="tm-error-description-ERROR_INVALID_IMAGE"></a>
 
 The file referenced by `source-ref` is not a valid image\. Potential causes include the image aspect ratio, the size of the image, and the image format\.
 
-For more information, see [Limits in Amazon Rekognition Custom Labels](limits.md)\.
+For more information, see [Guidelines and quotas in Amazon Rekognition Custom Labels](limits.md)\.
 
 **To fix `ERROR_INVALID_IMAGE`**
 
@@ -338,15 +338,15 @@ You can't use the Amazon Rekognition Custom Labels console to fix this error\.
 
 ## ERROR\_INVALID\_BOUNDING\_BOX<a name="tm-error-ERROR_INVALID_BOUNDING_BOX"></a>
 
-### Error Message<a name="tm-error-message-ERROR_INVALID_BOUNDING_BOX"></a>
+### Error message<a name="tm-error-message-ERROR_INVALID_BOUNDING_BOX"></a>
 
 The bounding box has off frame values\.
 
-### More Information<a name="tm-error-description-ERROR_INVALID_BOUNDING_BOX"></a>
+### More information<a name="tm-error-description-ERROR_INVALID_BOUNDING_BOX"></a>
 
 The bounding box information specifies an image that is either off the image frame or contains negative values\.
 
-For more information, see [Limits in Amazon Rekognition Custom Labels](limits.md)\.
+For more information, see [Guidelines and quotas in Amazon Rekognition Custom Labels](limits.md)\.
 
 **To fix `ERROR_INVALID_BOUNDING_BOX`**
 
@@ -375,17 +375,17 @@ You can't use the Amazon Rekognition Custom Labels console to fix this error\.
 
 ## ERROR\_NO\_VALID\_ANNOTATIONS<a name="tm-error-ERROR_NO_VALID_ANNOTATIONS"></a>
 
-### Error Message<a name="tm-error-message-ERROR_NO_VALID_ANNOTATIONS"></a>
+### Error message<a name="tm-error-message-ERROR_NO_VALID_ANNOTATIONS"></a>
 
 No valid annotations found\.
 
-### More Information<a name="tm-error-description-ERROR_NO_VALID_ANNOTATIONS"></a>
+### More information<a name="tm-error-description-ERROR_NO_VALID_ANNOTATIONS"></a>
 
 None of the annotation objects in the JSON Line contain valid bounding box information\. 
 
 **To fix `ERROR_NO_VALID_ANNOTATIONS`**
 
-1. Update the `annotations` array to include valid bounding box objects\. Also, check that corresponding bounding box information \(`confidence` and `class_map`\) in the label attribute metadata is correct\. For more information, see [Object Localization in Manifest Files](cd-manifest-files-object-detection.md)\.
+1. Update the `annotations` array to include valid bounding box objects\. Also, check that corresponding bounding box information \(`confidence` and `class_map`\) in the label attribute metadata is correct\. For more information, see [Object localization in manifest files](cd-manifest-files-object-detection.md)\.
 
    ```
    {
@@ -437,15 +437,15 @@ You can't use the Amazon Rekognition Custom Labels console to fix this error\.
 
 ## ERROR\_BOUNDING\_BOX\_TOO\_SMALL<a name="tm-error-ERROR_BOUNDING_BOX_TOO_SMALL"></a>
 
-### Error Message<a name="tm-error-message-ERROR_BOUNDING_BOX_TOO_SMALL"></a>
+### Error message<a name="tm-error-message-ERROR_BOUNDING_BOX_TOO_SMALL"></a>
 
 The height and width of the bounding box is too small\.
 
-### More Information<a name="tm-error-description-ERROR_BOUNDING_BOX_TOO_SMALL"></a>
+### More information<a name="tm-error-description-ERROR_BOUNDING_BOX_TOO_SMALL"></a>
 
 The bounding box dimensions \(height and width\) have to be greater than 1 x 1 pixels\.
 
-During training, Amazon Rekognition Custom Labels resizes an image if any of its dimensions are greater than 1280 pixels \(the source images aren't affected\)\. The resulting bounding box heights and widths must be greater than 1 x 1 pixels\. A bounding box location is stored in the `annotations` array of an object location JSON Line\. For more information, see [Object Localization in Manifest Files](cd-manifest-files-object-detection.md) 
+During training, Amazon Rekognition Custom Labels resizes an image if any of its dimensions are greater than 1280 pixels \(the source images aren't affected\)\. The resulting bounding box heights and widths must be greater than 1 x 1 pixels\. A bounding box location is stored in the `annotations` array of an object location JSON Line\. For more information, see [Object localization in manifest files](cd-manifest-files-object-detection.md) 
 
 ```
 	"bounding-box": {
@@ -478,11 +478,11 @@ The error information is added to the annotation object\.
 
 ## ERROR\_TOO\_MANY\_BOUNDING\_BOXES<a name="tm-error-ERROR_TOO_MANY_BOUNDING_BOXES"></a>
 
-### Error Message<a name="tm-error-message-ERROR_TOO_MANY_BOUNDING_BOXES"></a>
+### Error message<a name="tm-error-message-ERROR_TOO_MANY_BOUNDING_BOXES"></a>
 
 There are more bounding boxes than the allowed maximum\.
 
-### More Information<a name="tm-error-description-ERROR_TOO_MANY_BOUNDING_BOXES"></a>
+### More information<a name="tm-error-description-ERROR_TOO_MANY_BOUNDING_BOXES"></a>
 
 There are more bounding boxes than the allowed limit \(50\)\. You can remove excess bounding boxes in the Amazon Rekognition Custom Labels console, or you can remove them from the JSON Line\.
 
@@ -583,7 +583,7 @@ There are more bounding boxes than the allowed limit \(50\)\. You can remove exc
 
 Record is unannotated\.
 
-### More Information<a name="tm-warning-description-WARNING_UNANNOTATED_RECORD"></a>
+### More information<a name="tm-warning-description-WARNING_UNANNOTATED_RECORD"></a>
 
 An image added to a dataset by using the Amazon Rekognition Custom Labels console wasn't labeled\. The JSON line for the image isn't used for training\. 
 
@@ -600,7 +600,7 @@ An image added to a dataset by using the Amazon Rekognition Custom Labels consol
 ```
 
 **To fix WARNING\_UNANNOTATED\_RECORD**
-+ Label the image by using the Amazon Rekognition Custom Labels console\. For instructions, see [Assigning Image\-Level Labels to an Image](rv-assign-labels.md)\.
++ Label the image by using the Amazon Rekognition Custom Labels console\. For instructions, see [Assigning image\-level labels to an image](rv-assign-labels.md)\.
 
 
 
@@ -612,9 +612,9 @@ An image added to a dataset by using the Amazon Rekognition Custom Labels consol
 
 No annotations provided\.
 
-### More Information<a name="tm-warning-description-WARNING_NO_ANNOTATIONS"></a>
+### More information<a name="tm-warning-description-WARNING_NO_ANNOTATIONS"></a>
 
-A JSON Line in Object Localization format doesn't contain any bounding box information, despite being annotated by a human \(`human-annotated = yes`\)\. The JSON Line is valid, but isn't used for training\. For more information, see [Understanding Training and Testing Validation Result Manifests](tm-debugging-scope-json-line.md)\. 
+A JSON Line in Object Localization format doesn't contain any bounding box information, despite being annotated by a human \(`human-annotated = yes`\)\. The JSON Line is valid, but isn't used for training\. For more information, see [Understanding training and testing validation result manifests](tm-debugging-scope-json-line.md)\. 
 
 ```
 {
@@ -660,7 +660,7 @@ A JSON Line in Object Localization format doesn't contain any bounding box infor
 
 **To fix WARNING\_NO\_ANNOTATIONS**
 + Choose one of the following options\.
-  + Add the bounding box \(`annotations`\) information to the JSON Line\. For more information, see [Object Localization in Manifest Files](cd-manifest-files-object-detection.md)\. 
+  + Add the bounding box \(`annotations`\) information to the JSON Line\. For more information, see [Object localization in manifest files](cd-manifest-files-object-detection.md)\. 
   + Remove the image \(JSON Line\) from the manifest\.
 
 ## WARNING\_NO\_ATTRIBUTE\_ANNOTATIONS<a name="tm-warning-WARNING_NO_ATTRIBUTE_ANNOTATIONS"></a>
@@ -669,9 +669,9 @@ A JSON Line in Object Localization format doesn't contain any bounding box infor
 
 No attribute annotations provided\.
 
-#### More Information<a name="tm-warning-description-WARNING_NO_ATTRIBUTE_ANNOTATIONS"></a>
+#### More information<a name="tm-warning-description-WARNING_NO_ATTRIBUTE_ANNOTATIONS"></a>
 
-A JSON Line in Object Localization format doesn't contain any bounding box annotation information, despite being annotated by a human \(`human-annotated = yes`\)\. The `annotations` array is not present or is not populuated\. The JSON Line is valid, but isn't used for training\. For more information, see [Understanding Training and Testing Validation Result Manifests](tm-debugging-scope-json-line.md)\. 
+A JSON Line in Object Localization format doesn't contain any bounding box annotation information, despite being annotated by a human \(`human-annotated = yes`\)\. The `annotations` array is not present or is not populuated\. The JSON Line is valid, but isn't used for training\. For more information, see [Understanding training and testing validation result manifests](tm-debugging-scope-json-line.md)\. 
 
 ```
 {
@@ -717,6 +717,6 @@ A JSON Line in Object Localization format doesn't contain any bounding box annot
 
 **To fix WARNING\_NO\_ATTRIBUTE\_ANNOTATIONS**
 + Choose one of the following options\.
-  + Add one or more bounding box `annotation` objects to the JSON Line\. For more information, see [Object Localization in Manifest Files](cd-manifest-files-object-detection.md)\. 
+  + Add one or more bounding box `annotation` objects to the JSON Line\. For more information, see [Object localization in manifest files](cd-manifest-files-object-detection.md)\. 
   + Remove the bounding box attribute\.
   + Remove the image \(JSON Line\) from the manifest\. If other valid bounding box attributes exist in the JSON Line, you can instead remove just the invalid bounding box attribute from the JSON Line\.

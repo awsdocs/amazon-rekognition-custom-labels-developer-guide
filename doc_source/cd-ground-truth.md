@@ -1,6 +1,6 @@
-# SageMaker Ground Truth<a name="cd-ground-truth"></a>
+# Amazon SageMaker Ground Truth<a name="cd-ground-truth"></a>
 
-With SageMaker Ground Truth, you can use workers from either Amazon Mechanical Turk, a vendor company that you choose, or an internal, private workforce along with machine learning to enable you to create a labeled set of images\. Amazon Rekognition Custom Labels imports SageMaker Ground Truth manifest files from an Amazon S3 bucket that you specify\.
+With Amazon SageMaker Ground Truth, you can use workers from either Amazon Mechanical Turk, a vendor company that you choose, or an internal, private workforce along with machine learning to enable you to create a labeled set of images\. Amazon Rekognition Custom Labels imports SageMaker Ground Truth manifest files from an Amazon S3 bucket that you specify\.
 
 Amazon Rekognition Custom Labels supports the following SageMaker Ground Truth tasks\.
 + [Image Classification](https://docs.aws.amazon.com/sagemaker/latest/dg/sms-image-classification.html)
@@ -8,11 +8,11 @@ Amazon Rekognition Custom Labels supports the following SageMaker Ground Truth t
 
 The files you import are the images and a manifest file\. The manifest file contains label and bounding box information for the images you import\.
 
-If your images and labels aren't in the format of an SageMaker Ground Truth manifest file, you can create a SageMaker format manifest file and use it to import your labeled images\. For more information, see [Creating a Manifest File](cd-manifest-files.md)\.
+If your images and labels aren't in the format of a SageMaker Ground Truth manifest file, you can create a SageMaker format manifest file and use it to import your labeled images\. For more information, see [Creating a manifest file](cd-manifest-files.md)\.
 
-Amazon Rekognition needs permissions to access the Amazon S3 bucket where your images are stored\. If you are using the console bucket set up for you by Amazon Rekognition Custom Labels, the required permissions are already set up\. If you are not using the console bucket, see [External Amazon S3 Buckets](su-console-policy.md#su-external-buckets)\.
+Amazon Rekognition needs permissions to access the Amazon S3 bucket where your images are stored\. If you are using the console bucket set up for you by Amazon Rekognition Custom Labels, the required permissions are already set up\. If you are not using the console bucket, see [Accessing external Amazon S3 Buckets](su-console-policy.md#su-external-buckets)\.
 
-The following procedure shows you how to create a dataset by using images labeled by an SageMaker Ground Truth job\. The job output files are stored in your Amazon Rekognition Custom Labels console bucket\.
+The following procedure shows you how to create a dataset by using images labeled by a SageMaker Ground Truth job\. The job output files are stored in your Amazon Rekognition Custom Labels console bucket\.
 
 <a name="create-dataset-procedure-ground-truth"></a>
 
@@ -22,7 +22,7 @@ The following procedure shows you how to create a dataset by using images labele
 
 1. In the console bucket, [create a folder](https://docs.aws.amazon.com/AmazonS3/latest/user-guide/create-folder.html) to hold your images\. 
 **Note**  
-The console bucket is created when you first open the Amazon Rekognition Custom Labels console in an AWS Region\. For more information, see [Step 2: Create Your First Project](gs-step-create-bucket.md)\.
+The console bucket is created when you first open the Amazon Rekognition Custom Labels console in an AWS Region\. For more information, see [Step 3: Create your project](tutorial-step-create-bucket.md)\.
 
 1. [Upload your images](https://docs.aws.amazon.com/AmazonS3/latest/user-guide/upload-objects.html) to the folder that you just created\.
 

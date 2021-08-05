@@ -1,4 +1,4 @@
-# Labeling the Dataset<a name="rv-editing-labels"></a>
+# Labeling the dataset<a name="rv-editing-labels"></a>
 
 You can use the Amazon Rekognition Custom Labels console to add, change, or remove labels from a dataset\. To add a label to a dataset, you can add a new label that you create or import labels from an existing dataset in Rekognition\.
 

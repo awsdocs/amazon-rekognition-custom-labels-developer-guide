@@ -1,18 +1,18 @@
-# Understanding the Manifest Summary<a name="tm-debugging-summary"></a>
+# Understanding the manifest summary<a name="tm-debugging-summary"></a>
 
 The manifest summary contains the following information\.
-+ Error information about [Terminal Manifest Content Errors](tm-debugging.md#tm-error-category-combined-terminal) encountered during validation\. 
-+ Error location information for [Non Terminal JSON Line Validation Errors](tm-debugging.md#tm-error-category-non-terminal-errors) in the training and testing datasets\.
++ Error information about [Terminal manifest content errors](tm-debugging.md#tm-error-category-combined-terminal) encountered during validation\. 
++ Error location information for [Non terminal JSON line validation errors](tm-debugging.md#tm-error-category-non-terminal-errors) in the training and testing datasets\.
 + Error statistics such as the total number of invalid JSON Lines found in the training and testing datasets\. 
 
-The manifest summary is created during training if there are no [Terminal Manifest File Errors](tm-debugging.md#tm-error-category-terminal)\. To get the location of the manifest summary file \(*manifest\_summary\.json*\), see [Getting the Validation Results](tm-debugging-getting-validation-data.md)\.
+The manifest summary is created during training if there are no [Terminal manifest file errors](tm-debugging.md#tm-error-category-terminal)\. To get the location of the manifest summary file \(*manifest\_summary\.json*\), see [Getting the validation results](tm-debugging-getting-validation-data.md)\.
 
 **Note**  
-[Service errors](tm-debugging.md#tm-error-category-service) and [manifest file errors](tm-debugging.md#tm-error-category-terminal) are not reported in the manifest summary\. For more information, see [Terminal Errors](tm-debugging.md#tm-error-categories-terminal)\. 
+[Service errors](tm-debugging.md#tm-error-category-service) and [manifest file errors](tm-debugging.md#tm-error-category-terminal) are not reported in the manifest summary\. For more information, see [Terminal errors](tm-debugging.md#tm-error-categories-terminal)\. 
 
-For information about specific manifest content errors, see [Terminal Manifest Content Errors](tm-debugging-aggregate-errors.md)\.
+For information about specific manifest content errors, see [Terminal manifest content errors](tm-debugging-aggregate-errors.md)\.
 
-## Manifest Summary File Format<a name="tm-manifest-summary-file"></a>
+## Manifest summary file format<a name="tm-manifest-summary-file"></a>
 
 A manifest file has 2 sections, `statistics` and `errors`\.
 
@@ -26,7 +26,7 @@ A manifest file has 2 sections, `statistics` and `errors`\.
 
 Objects in the `errors` array contain the error code and message for manifest content errors\. ``
 
-The `error_line_indices` array contains the line numbers for each JSON Line in the training or test manifest that has an error\. For more information, see [Fixing Training Errors](tm-debugging-fixing-validation-errors.md)\. 
+The `error_line_indices` array contains the line numbers for each JSON Line in the training or test manifest that has an error\. For more information, see [Fixing training errors](tm-debugging-fixing-validation-errors.md)\. 
 
 ### errors<a name="tm-manifest-summary-errors"></a>
 
@@ -75,7 +75,7 @@ Errors spanning both the training and testing dataset\. For example, an [ERROR\_
 }
 ```
 
-## Example Manifest Summary<a name="tm-debugging-manifest-summary-example"></a>
+## Example manifest summary<a name="tm-debugging-manifest-summary-example"></a>
 
 The following example is a partial manifest summary that shows a terminal manifest content error \([ERROR\_TOO\_MANY\_INVALID\_ROWS\_IN\_MANIFEST](tm-debugging-aggregate-errors.md#tm-error-ERROR_TOO_MANY_INVALID_ROWS_IN_MANIFEST)\)\. The `error_json_line_indices` array contains the line numbers of non\-terminal JSON Line errors in the corresponding training or testing validation manifest\.
 

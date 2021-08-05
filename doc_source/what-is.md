@@ -4,7 +4,7 @@ With Amazon Rekognition Custom Labels, you can identify the objects and scenes i
 
 Developing a custom model to analyze images is a significant undertaking that requires time, expertise, and resources\. It often takes months to complete\. Additionally, it can require thousands or tens of thousands of hand\-labeled images to provide the model with enough data to accurately make decisions\. Generating this data can take months to gather, and can require large teams of labelers to prepare it for use in machine learning\.
 
-Amazon Rekognition Custom Labels builds off of Amazon Rekognition’s existing capabilities, which are already trained on tens of millions of images across many categories\. Instead of thousands of images, you can upload a small set of training images \(typically a few hundred images or less\) that are specific to your use case\. You can do this by using the easy\-to\-use console\. If your images are already labeled, Amazon Rekognition Custom Labels can begin training a model in a short time\. If not, you can label the images directly within the labeling interface, or you can use Amazon SageMaker Ground Truth to label them for you\. 
+Amazon Rekognition Custom Labels extends Amazon Rekognition’s existing capabilities, which are already trained on tens of millions of images across many categories\. Instead of thousands of images, you can upload a small set of training images \(typically a few hundred images or less\) that are specific to your use case\. You can do this by using the easy\-to\-use console\. If your images are already labeled, Amazon Rekognition Custom Labels can begin training a model in a short time\. If not, you can label the images directly within the labeling interface, or you can use Amazon SageMaker Ground Truth to label them for you\. 
 
 After Amazon Rekognition Custom Labels begins training from your image set, it can produce a custom image analysis model for you in just a few hours\. Behind the scenes, Amazon Rekognition Custom Labels automatically loads and inspects the training data, selects the right machine learning algorithms, trains a model, and provides model performance metrics\. You can then use your custom model through the Amazon Rekognition Custom Labels API and integrate it into your applications\.
 
@@ -23,6 +23,8 @@ You evaluate your custom model’s performance on your test set\. For every imag
 
 If you're a first\-time user of Amazon Rekognition Custom Labels, we recommend that you read the following sections in order:
 
-1. **[Setting Up Amazon Rekognition Custom Labels](su-set-up.md)** – In this section, you set your account details\.
+1. **[Setting up Amazon Rekognition Custom Labels](su-set-up.md)** – In this section, you set your account details\.
 
-1. **[Getting Started with Amazon Rekognition Custom Labels](gs-introduction.md)** – In this section, you create your first Amazon Rekognition Custom Labels custom model\.
+1. **[Getting started with Amazon Rekognition Custom Labels](gs-introduction.md)** – In this section, you train a model using example projects created by Amazon Rekognition Custom Labels\.
+
+1. **[Tutorials: Training an Amazon Rekognition Custom Labels model](tutorial-introduction.md)** – In this section, you train a Amazon Rekognition Custom Labels model using your own datasets\.

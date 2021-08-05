@@ -1,4 +1,4 @@
-# Evaluation Manifest Snapshot<a name="tr-evaluation-manifest-snapshot-api"></a>
+# Evaluation manifest snapshot<a name="tr-evaluation-manifest-snapshot-api"></a>
 
 The evaluation manifest snapshot contains detailed information about the test results\. The snapshot includes the confidence rating for each prediction, and the classification of the prediction compared \(true positive, true negative, false positive, or false negative\) to the actual classification of the image\. 
 

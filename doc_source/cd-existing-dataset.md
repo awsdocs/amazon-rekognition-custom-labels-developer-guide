@@ -1,4 +1,4 @@
-# Existing Dataset<a name="cd-existing-dataset"></a>
+# Existing dataset<a name="cd-existing-dataset"></a>
 
 If you've previously created a dataset, you can copy the dataset contents to a new dataset\.<a name="create-dataset-procedure-copy-dataset"></a>
 

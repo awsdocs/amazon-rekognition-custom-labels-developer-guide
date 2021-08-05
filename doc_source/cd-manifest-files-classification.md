@@ -1,4 +1,4 @@
-# Image\-Level Labels in Manifest Files<a name="cd-manifest-files-classification"></a>
+# Image\-Level labels in manifest files<a name="cd-manifest-files-classification"></a>
 
 To import image\-level labels \(images labeled with scenes, concepts, or objects that don't require localization information\), you add SageMaker Ground Truth [Classification Job Output](https://docs.aws.amazon.com/sagemaker/latest/dg/sms-data-output.html#sms-output-class) format JSON lines to a manifest file\. A manifest file is made of one or more JSON lines, one for each image that you want to import\. 
 
@@ -14,7 +14,7 @@ To import image\-level labels \(images labeled with scenes, concepts, or objects
 
 1. Save the file\. You can use the extension `.manifest`, but it is not required\. 
 
-1. Create a dataset using the manifest file that you created\. For more information, see [To create a dataset using an SageMaker Ground Truth format manifest file \(console\)](cd-manifest-files.md#create-dataset-procedure-manifest-file)\. 
+1. Create a dataset using the manifest file that you created\. For more information, see [To create a dataset using a SageMaker Ground Truth format manifest file \(console\)](cd-manifest-files.md#create-dataset-procedure-manifest-file)\. 
 
  
 
@@ -43,15 +43,15 @@ The JSON line for the preceding image, with the scene *Sunrise*, might be the fo
 
 Note the following information\.
 
-### source\-ref<a name="w4aac23c17c35b9c13"></a>
+### source\-ref<a name="w41aac26c17c35b9c13"></a>
 
 \(Required\) The Amazon S3 location of the image\. The format is `"s3://BUCKET/OBJECT_PATH"`\. Images in an imported dataset must be stored in the same Amazon S3 bucket\. 
 
-### *testdataset\-classification\_Sunrise*<a name="w4aac23c17c35b9c15"></a>
+### *testdataset\-classification\_Sunrise*<a name="w41aac26c17c35b9c15"></a>
 
 \(Required\) The label attribute\. You choose the field name\.  The field value \(1 in the preceding example\) is a label attribute identifier\. It is not used by Amazon Rekognition Custom Labels and can be any integer value\. There must be corresponding metadata identified by the field name with *\-metadata* appended\. For example, `"testdataset-classification_Sunrise-metadata"`\. 
 
-### *testdataset\-classification\_Sunrise*\-metadata<a name="w4aac23c17c35b9c17"></a>
+### *testdataset\-classification\_Sunrise*\-metadata<a name="w41aac26c17c35b9c17"></a>
 
 \(Required\) Metadata about the label attribute\. The field name must be the same as the label attribute with *\-metadata* appended\. 
 
@@ -73,7 +73,7 @@ Note the following information\.
 *type*  
 \(Required\) The type of processing that should be applied to the image\. For image\-level labels, the value is `"groundtruth/image-classification"`\. 
 
-### Adding Multiple Labels to an Image<a name="cd-classification-multiple-labels"></a>
+### Adding multiple image\-level labels to an image<a name="cd-classification-multiple-labels"></a>
 
 You can add multiple labels to an image\. For example, the follow JSON adds two labels, *football* and *ball* to a single image\. 
 

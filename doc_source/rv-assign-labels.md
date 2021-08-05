@@ -1,10 +1,10 @@
-# Assigning Image\-Level Labels to an Image<a name="rv-assign-labels"></a>
+# Assigning image\-level labels to an image<a name="rv-assign-labels"></a>
 
 To train an Amazon Rekognition Custom Labels model that finds objects, scenes or concepts, your dataset images need to be labeled with image\-level labels\. An image\-level label indicates that an image contains an object, scene or concept\.
 
 For example, the following image shows the Columbia river\. To train a model to detect rivers, you would add a 'river' label that applies to the entire image\. You can add other labels, as needed\.
 
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/rekognition/latest/customlabels-dg/images/pateros.png)
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/rekognition/latest/customlabels-dg/images/pateros.jpg)
 
 A dataset that contains image\-level labels, needs at least two labels defined\. Each image needs at least one assigned label that identifies the object, scene, or concept in the image\.
 

@@ -1,16 +1,16 @@
-# Deleting an Amazon Rekognition Custom Labels Project<a name="cp-delete"></a>
+# Deleting an Amazon Rekognition Custom Labels project<a name="cp-delete"></a>
 
 You can delete a project by using the Amazon Rekognition console or by calling the [DeleteProject](https://docs.aws.amazon.com/rekognition/latest/dg/API_DeleteProject) API\. To delete a project, you must first delete each associated model\. A deleted project or model can't be undeleted\. 
 
 **Topics**
-+ [Deleting an Amazon Rekognition Custom Labels Project \(Console\)](#cp-delete-console)
-+ [Deleting an Amazon Rekognition Custom Labels Project \(SDK\)](#cp-delete-sdk)
++ [Deleting an Amazon Rekognition Custom Labels project \(Console\)](#cp-delete-console)
++ [Deleting an Amazon Rekognition Custom Labels project \(SDK\)](#cp-delete-sdk)
 
-## Deleting an Amazon Rekognition Custom Labels Project \(Console\)<a name="cp-delete-console"></a>
+## Deleting an Amazon Rekognition Custom Labels project \(Console\)<a name="cp-delete-console"></a>
 
 You can delete a project from the projects page, or you can delete a project from a project's detail page\. The following procedure shows you how to delete a project using the projects page\.
 
-The Amazon Rekognition Custom Labels console deletes associated models for you during project deletion, except when a model is running or training\. If a model is running, use the [StopProjectVersion](https://docs.aws.amazon.com/rekognition/latest/dg/API_StopProjectVersion) API to stop the model\. For more information, see [Stopping an Amazon Rekognition Custom Labels Model \(SDK\)](rm-stop-model-sdk.md)\. If a model is training, wait until it finishes before you delete the project\.
+The Amazon Rekognition Custom Labels console deletes associated models for you during project deletion, except when a model is running or training\. If a model is running, use the [StopProjectVersion](https://docs.aws.amazon.com/rekognition/latest/dg/API_StopProjectVersion) API to stop the model\. For more information, see [Stopping an Amazon Rekognition Custom Labels model \(SDK\)](stop-running-model.md#rm-stop-model-sdk)\. If a model is training, wait until it finishes before you delete the project\.
 
 **To delete a project \(console\)**
 
@@ -48,19 +48,19 @@ If you **Close** the dialog box during model deletion, the models are still dele
    1. Choose **Delete** to delete the project\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/rekognition/latest/customlabels-dg/images/delete-project.png)
 
-## Deleting an Amazon Rekognition Custom Labels Project \(SDK\)<a name="cp-delete-sdk"></a>
+## Deleting an Amazon Rekognition Custom Labels project \(SDK\)<a name="cp-delete-sdk"></a>
 
 You delete an Amazon Rekognition Custom Labels project by calling [DeleteProject](https://docs.aws.amazon.com/rekognition/latest/dg/API_DeleteProject) and supplying the Amazon Resource Name \(ARN\) of the project that you want to delete\. To get the ARNs of the projects in your account, call [DescribeProjects](https://docs.aws.amazon.com/rekognition/latest/dg/API_DescribeProjects)\. The response includes an array of [ProjectDescription](https://docs.aws.amazon.com/rekognition/latest/dg/API_ProjectDescription) objects\. The project ARN is the `ProjectArn` field\. You can use the project name to identify the ARN of the project\. For example, `arn:aws:rekognition:us-east-1:123456789010:project/project name/1234567890123`\. 
 
-Before you can delete a project, you must first delete all models in the project\. For more information, see [Deleting an Amazon Rekognition Custom Labels Model \(SDK\)](tm-delete.md#tm-delete-sdk)\. The project might take a few moments to delete\. During that time, the status of the project is `DELETING`\. The project is deleted if a subsequent call to [DescribeProjects](https://docs.aws.amazon.com/rekognition/latest/dg/API_DescribeProjects) doesn't include the project that you deleted\.
+Before you can delete a project, you must first delete all models in the project\. For more information, see [Deleting an Amazon Rekognition Custom Labels model \(SDK\)](tm-delete.md#tm-delete-sdk)\. The project might take a few moments to delete\. During that time, the status of the project is `DELETING`\. The project is deleted if a subsequent call to [DescribeProjects](https://docs.aws.amazon.com/rekognition/latest/dg/API_DescribeProjects) doesn't include the project that you deleted\.
 
 **To delete a project \(SDK\)**
 
 1. If you haven't already:
 
-   1. Create or update an IAM user with `AmazonRekognitionFullAccess` permissions\. For more information, see [Step 2: Create an IAM Administrator User and Group](su-account-user.md)\.
+   1. Create or update an IAM user with `AmazonRekognitionFullAccess` permissions\. For more information, see [Step 2: Create an IAM administrator user and group](su-account-user.md)\.
 
-   1. Install and configure the AWS CLI and the AWS SDKs\. For more information, see [Step 2: Set Up the AWS CLI and AWS SDKs](su-awscli-sdk.md)\.
+   1. Install and configure the AWS CLI and the AWS SDKs\. For more information, see [Step 3: Set Up the AWS CLI and AWS SDKs](su-awscli-sdk.md)\.
 
 1. Use the following code to delete a project\. 
 

@@ -1,8 +1,8 @@
-# Reference: Training Results Summary File<a name="tr-summary-file"></a>
+# Reference: Training results summary file<a name="tr-summary-file"></a>
 
-The training results summary contains metrics you can use to evaluate your model\. The summary file is also used to display metrics in the console training results page\. The summary file is stored in an Amazon S3 bucket after training\. To get the summary file, call `DescribeProjectVersion`\. For example code, see [Accessing the Summary File and Evaluation Manifest Snapshot \(SDK\)](tr-sdk.md)\. 
+The training results summary contains metrics you can use to evaluate your model\. The summary file is also used to display metrics in the console training results page\. The summary file is stored in an Amazon S3 bucket after training\. To get the summary file, call `DescribeProjectVersion`\. For example code, see [Accessing the summary file and evaluation manifest snapshot \(SDK\)](tr-sdk.md)\. 
 
-## Summary File<a name="tr-summary-reference"></a>
+## Summary file<a name="tr-summary-reference"></a>
 
 The following JSON is the format of the summary file\.
 

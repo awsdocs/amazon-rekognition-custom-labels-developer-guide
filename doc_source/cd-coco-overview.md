@@ -1,4 +1,4 @@
-# COCO Format<a name="cd-coco-overview"></a>
+# COCO format<a name="cd-coco-overview"></a>
 
 A COCO dataset consists of 5 sections of information that provide information for the entire dataset\. The format for a COCO object detection dataset is documented at [COCO Data Format](http://cocodataset.org/#format-data)\. 
 + info – general information about the dataset\. 
@@ -33,7 +33,7 @@ To create a Custom Labels manifest, you use the `images`, `annotations`, and `ca
 }
 ```
 
-## images List<a name="cd-coco-images"></a>
+## images list<a name="cd-coco-images"></a>
 
 The images referenced by a COCO dataset are listed in the images array\. Each image object contains information about the image such as the image file name\. In the following example image object, note the following information and which fields are required to create an Amazon Rekognition Custom Labels manifest file\.
 + `id` – \(Required\) A unique identifier for the image\. The `id` field maps to the `id` field in the annotations array \(where bounding box information is stored\)\.
@@ -58,7 +58,7 @@ The images referenced by a COCO dataset are listed in the images array\. Each im
 }
 ```
 
-## annotations \(Bounding Boxes\) List<a name="cd-coco-annotations"></a>
+## annotations \(bounding boxes\) list<a name="cd-coco-annotations"></a>
 
 Bounding box information for all objects on all images is stored the annotations list\. A single annotation object contains bounding box information for a single object and the object's label on an image\. There is an annotation object for each instance of an object on an image\. 
 
@@ -85,7 +85,7 @@ In the following example, note the following information and which fields are re
 }
 ```
 
-## categories List<a name="cd-coco-categories"></a>
+## categories list<a name="cd-coco-categories"></a>
 
 Label information is stored the categories array\. In the following example category object, note the following information and which fields are required to create an Amazon Rekognition Custom Labels manifest file\. 
 + `supercategory` – \(Not required\) The parent category for a label\. 

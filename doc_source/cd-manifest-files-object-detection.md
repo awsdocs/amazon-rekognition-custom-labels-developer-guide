@@ -1,4 +1,4 @@
-# Object Localization in Manifest Files<a name="cd-manifest-files-object-detection"></a>
+# Object localization in manifest files<a name="cd-manifest-files-object-detection"></a>
 
 You can import images labeled with object localization information by adding SageMaker Ground Truth [Bounding Box Job Output](https://docs.aws.amazon.com/sagemaker/latest/dg/sms-data-output.html#sms-output-box) format JSON lines to a manifest file\. 
 
@@ -18,11 +18,11 @@ A manifest file is made of one or more JSON lines, each line contains the inform
 
 1. Save the file\. You can use the extension `.manifest`, but it is not required\. 
 
-1. Create a dataset using the file that you just created\. For more information, see [To create a dataset using an SageMaker Ground Truth format manifest file \(console\)](cd-manifest-files.md#create-dataset-procedure-manifest-file)\. 
+1. Create a dataset using the file that you just created\. For more information, see [To create a dataset using a SageMaker Ground Truth format manifest file \(console\)](cd-manifest-files.md#create-dataset-procedure-manifest-file)\. 
 
 
 
-## Object Bounding Box JSON Lines<a name="cd-manifest-object-localization-json"></a>
+## Object bounding Box JSON lines<a name="cd-manifest-object-localization-json"></a>
 
 In this section, we show you how to create a JSON line for a single image\. The following image shows bounding boxes around Amazon Echo and Amazon Echo Dot devices\.
 

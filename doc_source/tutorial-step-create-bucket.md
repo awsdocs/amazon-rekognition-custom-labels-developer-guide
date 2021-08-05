@@ -1,8 +1,10 @@
-# Step 2: Create Your First Project<a name="gs-step-create-bucket"></a>
+# Step 3: Create your project<a name="tutorial-step-create-bucket"></a>
 
 The Amazon Rekognition Custom Labels console is where you create and manage your models\. The first time you use the console, Amazon Rekognition Custom Labels asks to create an Amazon S3 bucket in your account\. The bucket is used to store your Amazon Rekognition Custom Labels projects, datasets, and models\. You can't use the Amazon Rekognition Custom Labels console unless the bucket is created\.
 
-Within Amazon Rekognition Custom Labels, you use projects to manage the models that you create\. A project manages the input images and labels, datasets, model training, model evaluation, and running the model\. For more information, see [Creating an Amazon Rekognition Custom Labels Project](cp-create-project.md)\.
+Within Amazon Rekognition Custom Labels, you use projects to manage the models that you create\. A project manages the input images and labels, datasets, model training, model evaluation, and running the model\. For more information, see [Creating an Amazon Rekognition Custom Labels project](cp-create-project.md)\.
+
+The first time you open the Amazon Rekognition Custom Labels console in a supported AWS Region, you are asked to create an Amazon S3 bucket \(console bucket\) to store your project files\. The format of the bucket name is *custom\-labels\-console\-\{region\}\-\{random value\}*\. The random value ensures that there isn't a collision between bucket names\.
 
 **To create an Amazon Rekognition Custom Labels project**
 
@@ -16,10 +18,8 @@ Within Amazon Rekognition Custom Labels, you use projects to manage the models t
 
    1. Note the name of the Amazon S3 bucket that's shown\.
 
-   1. Choose **Create S3 bucket** to let Amazon Rekognition Custom Labels create an Amazon S3 bucket \(console bucket\) on your behalf\.   
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/rekognition/latest/customlabels-dg/images/first-time.png)
+   1. Choose **Create S3 bucket** to let Amazon Rekognition Custom Labels create an Amazon S3 bucket \(console bucket\) on your behalf\. 
 
 1. In the **Create Project** section, enter a name for your project\. 
 
-1. Choose **Create project** to create your project\. The project page is shown\. A success message should be shown at the top of the page\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/rekognition/latest/customlabels-dg/images/create-project.png)
+1. Choose **Create project** to create your project\. The project page is shown\. A success message should be shown at the top of the page\.

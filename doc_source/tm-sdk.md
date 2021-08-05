@@ -1,4 +1,4 @@
-# Training a Model \(SDK\)<a name="tm-sdk"></a>
+# Training a model \(SDK\)<a name="tm-sdk"></a>
 
 You train a model by calling [CreateProjectVersion](https://docs.aws.amazon.com/rekognition/latest/dg/API_CreateProjectVersion)\. To train a model, the following information is needed:
 + Name – A unique name for the model version\.
@@ -13,11 +13,9 @@ The response from `CreateProjectVersion` is an ARN that you use to identify the 
 
 1. If you haven't already:
 
-   1. Create or update an IAM user with `AmazonRekognitionFullAccess` and permissions\. For more information, see [Step 2: Create an IAM Administrator User and Group](su-account-user.md)\.
+   1. Create or update an IAM user with `AmazonRekognitionFullAccess` and permissions\. For more information, see [Step 2: Create an IAM administrator user and group](su-account-user.md)\.
 
-   1. Install and configure the AWS CLI and the AWS SDKs\. For more information, see [Step 2: Set Up the AWS CLI and AWS SDKs](su-awscli-sdk.md)\.
-
-   1. If you are using an external Amazon S3 bucket, set the permissions\. For more information, see [Step 4: Set Up Amazon S3 Bucket Permissions for SDK Use](su-sdk-bucket-permssions.md)\.
+   1. Install and configure the AWS CLI and the AWS SDKs\. For more information, see [Step 3: Set Up the AWS CLI and AWS SDKs](su-awscli-sdk.md)\.
 
 1. Use the following example code to train a project\.
 
@@ -31,6 +29,7 @@ The response from `CreateProjectVersion` is an ARN that you use to identify the 
    + `output_folder` with the name of the folder where the training results are saved\.
    + `training_bucket` with the name of the Amazon S3 bucket that contains the manifest file and images\.
    + `training_manifest` with the name and path to the manifest file\.
+   + \(optional parameter\) `--kms-key-id` with identifier for your AWS Key Management Service customer master key\.
 
    ```
    aws rekognition create-project-version\
@@ -39,6 +38,7 @@ The response from `CreateProjectVersion` is an ARN that you use to identify the 
      --output-config '{"S3Bucket":"output bucket", "S3KeyPrefix":"output_folder"}'\
      --training-data '{"Assets": [{ "GroundTruthManifest": { "S3Object": { "Bucket": "training_bucket", "Name": "training_manifest" } } } ] }'\
      --testing-data '{"AutoCreate":true }'
+     ----kms-key-id AWS KMS customer master key
    ```
 
 ------
@@ -249,4 +249,4 @@ The response from `CreateProjectVersion` is an ARN that you use to identify the 
 
 ------
 
-1. If training fails, read [Debugging a Failed Model Training](tm-debugging.md)\. 
+1. If training fails, read [Debugging a failed model training](tm-debugging.md)\. 

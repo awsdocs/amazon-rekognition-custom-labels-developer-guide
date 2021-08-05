@@ -71,7 +71,7 @@ An image label specifies whether a scene \(such as a wedding or a beach\), or an
 
 Metrics are values that Amazon Rekognition Custom Labels provides after testing\. You use metrics to improve the performance of your model\. 
 
-The Amazon Rekognition Custom Labels console provides metrics for the overall performance of a model and metrics for individual labels\. The Amazon Rekognition Custom Labels console provides metrics for F1 score, precision, and recall\. For more information, see [Metrics for Evaluating Your Model](tr-metrics-use.md)\. The Amazon Rekognition Custom Labels API provides other metrics\. For more information, see [Accessing Amazon Rekognition Custom Labels Training Results \(SDK\)](tr-metrics-api.md)\. 
+The Amazon Rekognition Custom Labels console provides metrics for the overall performance of a model and metrics for individual labels\. The Amazon Rekognition Custom Labels console provides metrics for F1 score, precision, and recall\. For more information, see [Metrics for evaluating your model](tr-metrics-use.md)\. The Amazon Rekognition Custom Labels API provides other metrics\. For more information, see [Accessing Amazon Rekognition Custom Labels training results \(SDK\)](tr-metrics-api.md)\. 
 
 ## Training<a name="ud-train"></a>
 

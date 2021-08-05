@@ -1,4 +1,4 @@
-# Step 2: Create an IAM Administrator User and Group<a name="su-account-user"></a>
+# Step 2: Create an IAM administrator user and group<a name="su-account-user"></a>
 
 When you create an AWS account, you get a single sign\-in identity that has complete access to all of the AWS services and resources in the account\. This identity is called the AWS account *root user*\. Signing in to the AWS Management Console by using the email address and password that you used to create the account gives you complete access to all of the AWS resources in your account\. 
 
@@ -8,7 +8,7 @@ We strongly recommend that you do *not* use the root user for everyday tasks, ev
 
 1. Create an administrator user in your AWS account\. For instructions, see [Creating Your First IAM User and Administrators Group](https://docs.aws.amazon.com/IAM/latest/UserGuide/getting-started_create-admin-group.html) in the *IAM User Guide*\.
 **Note**  
-An IAM user with administrator permissions has unrestricted access to the AWS services in your account\. You can restrict permissions as necessary\. The code examples in this guide assume that you have a user with the `AmazonRekognitionFullAccess` permissions\. You also have to provide permissions to access the console\. For more information, see [Step 5: Set Up Amazon Rekognition Custom Labels Console Permissions](su-console-policy.md)\.
+An IAM user with administrator permissions has unrestricted access to the AWS services in your account\. You can restrict permissions as necessary\. The code examples in this guide assume that you have a user with the `AmazonRekognitionFullAccess` permissions\. You also have to provide permissions to access the console\. For more information, see [Step 4: Set up Amazon Rekognition Custom Labels permissions](su-console-policy.md)\.
 
 1. Sign in to the AWS Management Console\. 
 

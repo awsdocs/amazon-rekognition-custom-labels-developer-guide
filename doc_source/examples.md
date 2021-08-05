@@ -5,7 +5,8 @@ This section contains information about examples that you can use with Amazon Re
 
 | Example | Description | 
 | --- | --- | 
-|  [Model Feedback Solution](ex-feedback.md)  |  Shows how to improve a model using human verification to create a new training dataset\.  | 
-|  [Custom Labels Demonstration](ex-custom-labels-demo.md)  |  Demonstration of a user interface that displays the results of a call to `DetectCustomLabels`\.  | 
-|  [Video Analysis](ex-video-extraction.md)  |  Shows how you can use `DetectCustomLabels` with frames extracted from a video\.  | 
-|  [Creating an AWS Lambda Function](ex-lambda.md)  |  Shows how you can use `DetectCustomLabels` with a Lambda function\.  | 
+|  [Model feedback solution](ex-feedback.md)  |  Shows how to improve a model using human verification to create a new training dataset\.  | 
+|  [Amazon Rekognition Custom Labels demonstration](ex-custom-labels-demo.md)  |  Demonstration of a user interface that displays the results of a call to `DetectCustomLabels`\.  | 
+|  [Video analysis](ex-video-extraction.md)  |  Shows how you can use `DetectCustomLabels` with frames extracted from a video\.  | 
+|  [Creating an AWS Lambda function](ex-lambda.md)  |  Shows how you can use `DetectCustomLabels` with a Lambda function\.  | 
+| [Copying a dataset to a different AWS region](dataset-region-transfer.md) | Shows how to copy a dataset to a different AWS Region\. | 

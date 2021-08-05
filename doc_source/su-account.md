@@ -1,4 +1,4 @@
-# Step 1: Create an AWS Account<a name="su-account"></a>
+# Step 1: Create an AWS account<a name="su-account"></a>
 
 In this section, you sign up for an AWS account\. If you already have an AWS account, skip this step\.
 

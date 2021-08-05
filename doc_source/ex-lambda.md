@@ -1,4 +1,4 @@
-# Creating an AWS Lambda Function<a name="ex-lambda"></a>
+# Creating an AWS Lambda function<a name="ex-lambda"></a>
 
 You can call Amazon Rekognition Custom Labels API operations from within an AWS Lambda function\. The following instructions show how to create a Lambda function in Python that calls `DetectCustomLabels`\. It returns a list of custom label objects\. To run this example, you need an Amazon S3 bucket that contains an image in PNG or JPEG format\.<a name="create-deployment-package"></a>
 

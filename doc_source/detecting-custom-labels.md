@@ -1,4 +1,4 @@
-# Analyzing an Image with a Trained Model<a name="detecting-custom-labels"></a>
+# Analyzing an image with a trained model<a name="detecting-custom-labels"></a>
 
 To analyze an image with a trained Amazon Rekognition Custom Labels model, you call the [DetectCustomLabels](https://docs.aws.amazon.com/rekognition/latest/dg/API_DetectCustomLabels) API\. The result from `DetectCustomLabels` is a prediction that the image contains specific objects, scenes, or concepts\.
 
@@ -10,12 +10,35 @@ To call `DetectCustomLabels`, you specify the following:
 
 Custom labels are returned in an array of [Custom Label](https://docs.aws.amazon.com/rekognition/latest/dg/API_CustomLabel) objects\. Each custom label represents a single object, scene, or concept found in the image\. A custom label includes:
 + A label for the object, scene, or concept found in the image\.
-+ A bounding box for objects found in the image\. The bounding box coordinates show where the object is located on the source image\. The coordinate values are a ratio of the overall image size\. For more information, see [BoundingBox](https://docs.aws.amazon.com/rekognition/latest/dg/API_BoundingBox)\.
++ A bounding box for objects found in the image\. The bounding box coordinates show where the object is located on the source image\. The coordinate values are a ratio of the overall image size\. For more information, see [BoundingBox](https://docs.aws.amazon.com/rekognition/latest/dg/API_BoundingBox)\. `DetectCustomLabels` returns bounding boxes only if the model is trained to detect object locations\.
 + The confidence that Amazon Rekognition Custom Labels has in the accuracy of the label and bounding box\.
 
-During training a model calculates a threshold value that determines if a prediction for a label is true\. By default, `DetectCustomLabels` doesn't return labels whose confidence value is below the model's calculated threshold value\. To filter labels that are returned, specify a value for `MinConfidence` that is higher than the model's calculated threshold\. You can get the model's calculated threshold from the model's training results shown in the Amazon Rekognition Custom Labels console\. To get all labels, regardless of confidence, specify a `MinConfidence` value of 0\. 
+  To filter labels based on the detection confidence, specify a value for `MinConfidence` that matches your desired confidence level\. For example, if you need to be very confident of the prediction, specify a high value for `MinConfidence`\. To get all labels, regardless of confidence, specify a `MinConfidence` value of 0\. 
 
-If you're finding the confidence values returned by `DetectCustomLabels` are too low, consider retraining the model\. For more information, see [Training an Amazon Rekognition Custom Labels Model](tm-train-model.md)\. You can restrict the number of custom labels returned from `DetectCustomLabels` by specifying the `MaxResults` input parameter\. The results are returned sorted from the highest confidence to the lowest\. 
+The performance of your model is measured, in part, by the recall and precision metrics calculated during model training\. For more information, see [Metrics for evaluating your model](tr-metrics-use.md)\.
+
+To increase the precision of your model, set a higher value for `MinConfidence`\. For more information, see [Reducing false positives \(better precision\)](tr-improve-model.md#tr-reduce-false-positives)\.
+
+To increase the recall of your model, use a lower value for `MinConfidence`\. For more information, see [Reducing false negatives \(better recall\)](tr-improve-model.md#tr-reduce-false-negatives)\. 
+
+If you don't specify a value for `MinConfidence`, Amazon Rekognition Custom Labels returns a label based on the assumed threshold for that label\. For more information, see [Assumed threshold](tr-metrics-use.md#tr-assumed-threshold)\. You can get the value of the assumed threshold for a label from the model's training results\. For more information, see [Accessing training results \(Console\)](tr-console.md)\.
+
+By using the `MinConfidence` input parameter, you are specifying a desired threshold for the call\. Labels detected with a confidence below the value of `MinConfidence` aren't returned in the response\. Also, the assumed threshold for a label doesn't affect the inclusion of the label in the response\.
+
+**Note**  
+Amazon Rekognition Custom Labels metrics express an assumed threshold as a floating point value between 0\-1\. The range of `MinConfidence` normalizes the threshold to a percentage value \(0\-100\)\. Confidence responses from DetectCustomLabels are also returned as a percentage\. 
+
+ You might want to specify a threshold for specific labels\. For example, when the precision metric is acceptable for Label A, but not for Label B\. When specifying a different threshold \(`MinConfidence`\), consider the following\. 
++ If you're only interested in a single label \(A\), set the value of `MinConfidence` to the desired threshold value\. In the response, predictions for label A are returned \(along with other labels\) only if the confidence is greater than `MinConfidence`\. You need to filter out any other labels that are returned\. 
++ If you want to apply different thresholds to multiple labels, do the following:
+
+  1. Use a value of 0 for `MinConfidence`\. A value 0 ensures that all labels are returned, regardless of the detection confidence\.
+
+  1. For each label returned, apply the desired threshold by checking that the label confidence is greater than the threshold that you want for the label\.
+
+For more information, see [Improving an Amazon Rekognition Custom Labels model](tr-improve-model.md)\.
+
+If you're finding the confidence values returned by `DetectCustomLabels` are too low, consider retraining the model\. For more information, see [Training an Amazon Rekognition Custom Labels model](tm-train-model.md)\. You can restrict the number of custom labels returned from `DetectCustomLabels` by specifying the `MaxResults` input parameter\. The results are returned sorted from the highest confidence to the lowest\. 
 
 For other examples that call `DetectCustomLabels`, see [Examples](examples.md)\.
 
@@ -25,11 +48,11 @@ For information about securing `DetectCustomLabels`, see [Securing DetectCustomL
 
 1. If you haven't already:
 
-   1. Create or update an IAM user with `AmazonRekognitionFullAccess` and `AmazonS3ReadOnlyAccess` permissions\. For more information, see [Step 2: Create an IAM Administrator User and Group](su-account-user.md)\.
+   1. Create or update an IAM user with `AmazonRekognitionFullAccess` and `AmazonS3ReadOnlyAccess` permissions\. For more information, see [Step 2: Create an IAM administrator user and group](su-account-user.md)\.
 
-   1. Install and configure the AWS CLI and the AWS SDKs\. For more information, see [Step 2: Set Up the AWS CLI and AWS SDKs](su-awscli-sdk.md)\.
+   1. Install and configure the AWS CLI and the AWS SDKs\. For more information, see [Step 3: Set Up the AWS CLI and AWS SDKs](su-awscli-sdk.md)\.
 
-1. Train and deploy your model\. For more information, see [Getting Started with Amazon Rekognition Custom Labels](gs-introduction.md)\.
+1. Train and deploy your model\. For more information, see [Getting started with Amazon Rekognition Custom Labels](gs-introduction.md)\.
 
 1. Ensure the IAM user calling `DetectCustomLabels` has access to the model you used in step 3\. For more information, see [Securing DetectCustomLabels](sc-introduction.md#sc-detect-custom-labels)\.
 
@@ -68,74 +91,118 @@ For information about securing `DetectCustomLabels`, see [Securing DetectCustomL
    
    import boto3
    import io
+   import logging
    from PIL import Image, ImageDraw, ExifTags, ImageColor, ImageFont
    
-   def show_custom_labels(model,bucket,photo, min_confidence):
-        
+   from botocore.exceptions import ClientError
    
-       client=boto3.client('rekognition')
+   logger = logging.getLogger(__name__)
    
-       # Load image from S3 bucket
-       s3_connection = boto3.resource('s3')
+   def show_custom_labels(rek_client,s3_connection, model,bucket,photo, min_confidence):
+       """
+       :param rek_client: The Amazon Rekognition Boto3 client.
+       :param s3_connection: The Amazon S3 Boto3 S3 connection object.
+       :param model: The ARN of the Amazon Rekognition Custom Labels model that you want to use.
+       :param bucket: The name of the S3 bucket that contains the image that you want to analyze.
+       :param photo: The name of the photo that you want to analyze.
+       :param min_confidence: The desired threshold/confidence for the call.
+       """
    
-       s3_object = s3_connection.Object(bucket,photo)
-       s3_response = s3_object.get()
+       try:
    
-       stream = io.BytesIO(s3_response['Body'].read())
-       image=Image.open(stream)
-       
-       #Call DetectCustomLabels 
-       response = client.detect_custom_labels(Image={'S3Object': {'Bucket': bucket, 'Name': photo}},
-           MinConfidence=min_confidence,
-           ProjectVersionArn=model)
-      
-      
-       imgWidth, imgHeight = image.size  
-       draw = ImageDraw.Draw(image)  
+           font_size=15
+           line_width=3
+           text_buffer=2
    
-          
-       # calculate and display bounding boxes for each detected custom label       
-       print('Detected custom labels for ' + photo)    
-       for customLabel in response['CustomLabels']:
-           print('Label ' + str(customLabel['Name'])) 
-           print('Confidence ' + str(customLabel['Confidence'])) 
-           if 'Geometry' in customLabel:
-               box = customLabel['Geometry']['BoundingBox']
-               left = imgWidth * box['Left']
-               top = imgHeight * box['Top']
-               width = imgWidth * box['Width']
-               height = imgHeight * box['Height']
-                 
-               fnt = ImageFont.truetype('/Library/Fonts/Arial.ttf', 50)
-               draw.text((left,top), customLabel['Name'], fill='#00d400', font=fnt) 
+           #Get image from S3 bucket.
+           s3_object = s3_connection.Object(bucket,photo)
+           s3_response = s3_object.get()
    
-               print('Left: ' + '{0:.0f}'.format(left))
-               print('Top: ' + '{0:.0f}'.format(top))
-               print('Label Width: ' + "{0:.0f}".format(width))
-               print('Label Height: ' + "{0:.0f}".format(height))
+           stream = io.BytesIO(s3_response['Body'].read())
+           image=Image.open(stream)
    
-               points = (
-                   (left,top),
-                   (left + width, top),
-                   (left + width, top + height),
-                   (left , top + height),
-                   (left, top))
-               draw.line(points, fill='#00d400', width=5)
+           imgWidth, imgHeight = image.size  
+           draw = ImageDraw.Draw(image)  
            
+           #Call DetectCustomLabels 
+           response = rek_client.detect_custom_labels(Image={'S3Object': {'Bucket': bucket, 'Name': photo}},
+               MinConfidence=min_confidence,
+               ProjectVersionArn=model)
    
-       image.show()
+   
+           
+           # calculate and display bounding boxes for each detected custom label       
+           print('Detected custom labels for ' + photo)    
+   
+           for index, customLabel in enumerate(response['CustomLabels']):
+               confidence=int(round(customLabel['Confidence'],0))
+               label_text=f"{customLabel['Name']}:{confidence}%"
+               fnt = ImageFont.truetype('/Library/Fonts/Arial.ttf', font_size)
+               text_width, text_height = draw.textsize(label_text,fnt)
+   
+               logger.info(f"Label: {customLabel['Name']}") 
+               logger.info(f"Confidence:  {confidence}%")
+               
+               # Draw bounding boxes, if present
+               if 'Geometry' in customLabel:
+                   box = customLabel['Geometry']['BoundingBox']
+                   left = imgWidth * box['Left']
+                   top = imgHeight * box['Top']
+                   width = imgWidth * box['Width']
+                   height = imgHeight * box['Height']
+                   
+                   logger.info("Bounding box")
+                   logger.info("\tLeft: {0:.0f}".format(left))
+                   logger.info("\tTop: {0:.0f}".format(top))
+                   logger.info("\tLabel Width: {0:.0f}".format(width))
+                   logger.info("\tLabel Height: {0:.0f}".format(height))
+                   
+                   points = (
+                       (left,top),
+                       (left + width, top),
+                       (left + width, top + height),
+                       (left , top + height),
+                       (left, top))
+                   #Draw bounding box and label text
+                   draw.line(points, fill="lawngreen", width=line_width)
+                   draw.rectangle([(left + line_width , top+line_width), (left + text_width + line_width, top + line_width + text_height)],fill="black")
+                   draw.text((left + line_width ,top), label_text, fill="white", font=fnt) 
+               
+               #draw image-level label text.
+               else:
+                   draw.rectangle([(10 , index*font_size), (text_width + 10, (index*font_size)+text_height)],fill="black")
+                   draw.text((10,index*font_size), label_text, fill="white", font=fnt)  
+               
+   
+           image.show()
+       
+       except ClientError as err:
+           logger.info(format(err))
+           raise
    
        return len(response['CustomLabels'])
    
+   
    def main():
    
-       bucket="bucket"
-       photo="image"
-       model='model_arn'
-       min_confidence=95
+   
+       try:
+           logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
+   
+           bucket="bucket"
+           photo="image"
+           model="model_arn"
+           min_confidence=60
+   
+   
+           rek_client=boto3.client('rekognition')
+           s3_connection = boto3.resource('s3')
+   
+           label_count=show_custom_labels(rek_client,s3_connection,model,bucket,photo, min_confidence)
+           logger.info(f"Custom labels detected: {label_count}")
        
-       label_count=show_custom_labels(model,bucket,photo, min_confidence)
-       print("Custom labels detected: " + str(label_count))
+       except ClientError as err:
+           print("A service client error occured: " + format(err.response["Error"]["Message"]))
    
    
    if __name__ == "__main__":
@@ -155,7 +222,7 @@ For information about securing `DetectCustomLabels`, see [Securing DetectCustomL
    //Copyright 2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
    //PDX-License-Identifier: MIT-0 (For details, see https://github.com/awsdocs/amazon-rekognition-custom-labels-developer-guide/blob/master/LICENSE-SAMPLECODE.)
    
-   package com.amazonaws.samples;
+   package com.example.rekognition;
    
    //Import the basic graphics classes.
    import java.awt.*;
@@ -178,7 +245,7 @@ For information about securing `DetectCustomLabels`, see [Securing DetectCustomL
    import com.amazonaws.services.s3.model.S3ObjectInputStream;
    
    // Calls DetectCustomLabels and displays a bounding box around each detected image.
-   public class DisplayCustomLabels extends JPanel {
+   public class DetectCustomLabels extends JPanel {
    
    
        private static final long serialVersionUID = 1L;
@@ -187,7 +254,7 @@ For information about securing `DetectCustomLabels`, see [Securing DetectCustomL
        static int scale;
        DetectCustomLabelsResult result;
    
-       public  DisplayCustomLabels(DetectCustomLabelsResult labelsResult, BufferedImage bufImage) throws Exception {
+       public  DetectCustomLabels(DetectCustomLabelsResult labelsResult, BufferedImage bufImage) throws Exception {
            super();
            scale = 4; // increase to shrink image size.
    
@@ -228,10 +295,10 @@ For information about securing `DetectCustomLabels`, see [Securing DetectCustomL
    
        public static void main(String arg[]) throws Exception {
            		
-           String photo = "image";
+           String photo = "photo";
            String bucket = "bucket";
            String projectVersionArn ="model_arn";		
-           float minConfidence=90;
+           float minConfidence=50;
            int height = 0;
            int width = 0;
    
@@ -256,7 +323,9 @@ For information about securing `DetectCustomLabels`, see [Securing DetectCustomL
            
            //Show the bounding box info for each custom label.
            List<CustomLabel> customLabels = result.getCustomLabels();
+          
            for (CustomLabel customLabel : customLabels) {
+               System.out.println(customLabel.getName());
    
            	if (customLabel.getGeometry()!=null)
                {
@@ -272,12 +341,13 @@ For information about securing `DetectCustomLabels`, see [Securing DetectCustomL
            		System.out.println("Label Height: " + String.valueOf((int) (height * box.getHeight())));
            		System.out.println();
                }
+   
            }
    
            // Create frame and panel.
-           JFrame frame = new JFrame("RotateImage");
+           JFrame frame = new JFrame("CustomLabels");
            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-           DisplayCustomLabels panel = new DisplayCustomLabels(result, image);
+           DetectCustomLabels panel = new DetectCustomLabels(result, image);
            panel.setPreferredSize(new Dimension(image.getWidth() / scale, image.getHeight() / scale));
            frame.setContentPane(panel);
            frame.pack();
@@ -289,7 +359,7 @@ For information about securing `DetectCustomLabels`, see [Securing DetectCustomL
 
 ------
 
-## DetectCustomLabels Operation Request<a name="detecttext-request"></a>
+## DetectCustomLabels operation request<a name="detecttext-request"></a>
 
 In the `DetectCustomLabels` operation, you supply an input image either as a base64\-encoded byte array or as an image stored in an Amazon S3 bucket\. The following example JSON request shows the image loaded from an Amazon S3 bucket\.
 
@@ -308,7 +378,7 @@ In the `DetectCustomLabels` operation, you supply an input image either as a bas
 }
 ```
 
-## DetectCustomLabels Operation Response<a name="text-response"></a>
+## DetectCustomLabels operation response<a name="text-response"></a>
 
 The following JSON response from the `DetectCustomLabels` operation shows the custom labels that were detected in the following image\.
 

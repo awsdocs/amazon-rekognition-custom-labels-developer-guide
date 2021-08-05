@@ -1,8 +1,8 @@
-# Transforming COCO Datasets<a name="cd-transform-coco"></a>
+# Transforming COCO datasets<a name="cd-transform-coco"></a>
 
 [COCO](http://cocodataset.org/#home) is a format for specifying large\-scale object detection, segmentation, and captioning datasets\. This Python [example](cd-coco-transform-example.md) shows you how to transform a COCO object detection format dataset into an Amazon Rekognition Custom Labels [bounding box format manifest file](cd-manifest-files-object-detection.md)\. This section also includes information that you can use to write your own code\.
 
-A COCO format JSON file consists of 5 sections providing information for *an entire dataset*\. For more information, see [COCO Format](cd-coco-overview.md)\. 
+A COCO format JSON file consists of 5 sections providing information for *an entire dataset*\. For more information, see [COCO format](cd-coco-overview.md)\. 
 + `info` – general information about the dataset\. 
 + `licenses `– license information for the images in the dataset\.
 + [`images`](cd-coco-overview.md#cd-coco-images) – a list of images in the dataset\.
@@ -11,13 +11,13 @@ A COCO format JSON file consists of 5 sections providing information for *an ent
 
 You need information from the `images`, `annotations`, and `categories` lists to create an Amazon Rekognition Custom Labels manifest file\.
 
-An Amazon Rekognition Custom Labels manifest file is in JSON lines format where each line has the bounding box and label information for one or more objects *on an image*\. For more information, see [Object Localization in Manifest Files](cd-manifest-files-object-detection.md)\.
+An Amazon Rekognition Custom Labels manifest file is in JSON lines format where each line has the bounding box and label information for one or more objects *on an image*\. For more information, see [Object localization in manifest files](cd-manifest-files-object-detection.md)\.
 
 ## Mapping COCO Objects to a Custom Labels JSON Line<a name="cd-mapping-coco"></a>
 
-To transform a COCO format dataset, you map the COCO dataset to an Amazon Rekognition Custom Labels manifest file for object localization\. For more information, see [Object Localization in Manifest Files](cd-manifest-files-object-detection.md)\. To build a JSON line for each image, the manifest file needs to map the COCO dataset `image`, `annotation`, and `category` object field IDs\. 
+To transform a COCO format dataset, you map the COCO dataset to an Amazon Rekognition Custom Labels manifest file for object localization\. For more information, see [Object localization in manifest files](cd-manifest-files-object-detection.md)\. To build a JSON line for each image, the manifest file needs to map the COCO dataset `image`, `annotation`, and `category` object field IDs\. 
 
-The following is an example COCO manifest file\. For more information, see [COCO Format](cd-coco-overview.md)\.
+The following is an example COCO manifest file\. For more information, see [COCO format](cd-coco-overview.md)\.
 
 ```
 {
@@ -53,13 +53,13 @@ The following diagram shows how the COCO dataset lists for a *dataset* map to Am
 
 1. For each annotation matched in step 1, read through the `categories` list and get each `category` where the value of the `category` field `id` matches the `annotation` object `category_id` field\.
 
-1. Create a JSON line for the image using the matched `image`, `annotation`, and `category` objects\. To map the fields, see [Mapping COCO Object Fields to a Custom Labels JSON Line Object Fields](#cd-mapping-fields-coco)\. 
+1. Create a JSON line for the image using the matched `image`, `annotation`, and `category` objects\. To map the fields, see [Mapping COCO object fields to a Custom Labels JSON line object fields](#cd-mapping-fields-coco)\. 
 
 1. Repeat steps 1 \- 3 until you have created JSON lines for each `image` object in the `images` list\.
 
 For example code, see [Transforming a COCO dataset](cd-coco-transform-example.md)\.
 
-## Mapping COCO Object Fields to a Custom Labels JSON Line Object Fields<a name="cd-mapping-fields-coco"></a>
+## Mapping COCO object fields to a Custom Labels JSON line object fields<a name="cd-mapping-fields-coco"></a>
 
 After you identify the COCO objects for an Amazon Rekognition Custom Labels JSON line, you need to map the COCO object fields to the respective Amazon Rekognition Custom Labels JSON line object fields\. The following example Amazon Rekognition Custom Labels JSON line maps one image \(`id`=`000000245915`\) to the preceding COCO JSON example\. Note the following information\.
 + `source-ref` is the location of the image in an Amazon S3 bucket\. If your COCO images aren't stored in an Amazon S3 bucket, you need to move them to an Amazon S3 bucket\.

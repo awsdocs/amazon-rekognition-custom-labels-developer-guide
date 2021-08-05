@@ -1,4 +1,4 @@
-# Step 5: Identify Objects, Scenes and Concepts with Image\-Level Labels<a name="gs-add-image-labels"></a>
+# Step 6: Identify objects, scenes and concepts with image\-level labels<a name="tutorial-add-image-labels"></a>
 
 To train your model to detect objects, scenes, and concepts in your images, Amazon Rekognition Custom Labels requires the images in your dataset to be labeled with image\-level labels\. 
 
@@ -9,7 +9,7 @@ An image\-level label applies to an image as a whole\. For example, to train a m
 
  
 
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/rekognition/latest/customlabels-dg/images/pateros.png)
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/rekognition/latest/customlabels-dg/images/pateros.jpg)
 
 **To assign image\-level labels to images**
 
