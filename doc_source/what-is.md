@@ -23,8 +23,10 @@ You evaluate your custom model’s performance on your test set\. For every imag
 
 If you're a first\-time user of Amazon Rekognition Custom Labels, we recommend that you read the following sections in order:
 
-1. **[Setting up Amazon Rekognition Custom Labels](su-set-up.md)** – In this section, you set your account details\.
+1. **[Setting up Amazon Rekognition Custom Labels](setting-up.md)** – In this section, you set your account details\.
 
-1. **[Getting started with Amazon Rekognition Custom Labels](gs-introduction.md)** – In this section, you train a model using example projects created by Amazon Rekognition Custom Labels\.
+1. **[Understanding Amazon Rekognition Custom Labels](understanding-custom-labels.md)** – In this section, you learn about the workflow for creating a model\.
 
-1. **[Tutorials: Training an Amazon Rekognition Custom Labels model](tutorial-introduction.md)** – In this section, you train a Amazon Rekognition Custom Labels model using your own datasets\.
+1. **[Getting started with Amazon Rekognition Custom Labels](getting-started.md)** – In this section, you train a model using example projects created by Amazon Rekognition Custom Labels\.
+
+1. **[Tutorial: Classifying images](tutorial-classification.md)** – In this section, you learn how to train a model that classifies images with datasets that you create\.

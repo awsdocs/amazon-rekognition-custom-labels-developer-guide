@@ -2,7 +2,7 @@
 
 In this step you start your model\. After your model starts, you can use it to analyze images\.
 
-You are charged for the amount of time that your model runs\. Stop your model if you don't need to analyze images\. You can restart your model at a later time\. For more information, see [Running a trained Amazon Rekognition Custom Labels model](rm-run-model.md)\. 
+You are charged for the amount of time that your model runs\. Stop your model if you don't need to analyze images\. You can restart your model at a later time\. For more information, see [Running a trained Amazon Rekognition Custom Labels model](running-model.md)\. 
 
 **To start your model**
 

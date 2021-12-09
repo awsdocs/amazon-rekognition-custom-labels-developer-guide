@@ -9,4 +9,3 @@ This section contains information about examples that you can use with Amazon Re
 |  [Amazon Rekognition Custom Labels demonstration](ex-custom-labels-demo.md)  |  Demonstration of a user interface that displays the results of a call to `DetectCustomLabels`\.  | 
 |  [Video analysis](ex-video-extraction.md)  |  Shows how you can use `DetectCustomLabels` with frames extracted from a video\.  | 
 |  [Creating an AWS Lambda function](ex-lambda.md)  |  Shows how you can use `DetectCustomLabels` with a Lambda function\.  | 
-| [Copying a dataset to a different AWS region](dataset-region-transfer.md) | Shows how to copy a dataset to a different AWS Region\. | 

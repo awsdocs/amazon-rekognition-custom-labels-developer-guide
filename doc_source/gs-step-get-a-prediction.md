@@ -16,12 +16,12 @@ For more information, see [Analyzing an image with a trained model](detecting-cu
 1. If you haven't already, start running your model\. For more information, see [Step 2: Train your model](gs-step-train-model.md)\.
 
 1. Choose the **Use Model** tab and then choose **API code**\.   
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/rekognition/latest/customlabels-dg/images/get-started-use-model-api-code.jpg)
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/rekognition/latest/customlabels-dg/images/get-started-use-model-api-code.png)
 
 1. Choose **AWS CLI command**\.
 
 1. In the **Analyze image** section, copy the AWS CLI command that calls `detect-custom-labels`\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/rekognition/latest/customlabels-dg/images/get-started-cli-code-analyze.jpg)
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/rekognition/latest/customlabels-dg/images/get-started-cli-code-analyze.png)
 
 1. Upload an example image to an Amazon S3 bucket\. For instructions, see [Getting an example image](#gs-example-images)\.
 
@@ -84,7 +84,7 @@ You can use the following images with the `DetectCustomLabels` operation\. There
 
 1. Upload the image to an Amazon S3 bucket that's owned by your AWS account and is in the same AWS region in which you are using Amazon Rekognition Custom Labels\.
 
-   For instructions, see [Uploading Objects into Amazon S3](https://docs.aws.amazon.com/AmazonS3/latest/user-guide/UploadingObjectsintoAmazonS3.html) in the *Amazon Simple Storage Service Console User Guide*\.
+   For instructions, see [Uploading Objects into Amazon S3](https://docs.aws.amazon.com/AmazonS3/latest/user-guide/UploadingObjectsintoAmazonS3.html) in the *Amazon Simple Storage Service User Guide*\.
 
 ### Image classification<a name="gs-example-image-classification"></a>
 

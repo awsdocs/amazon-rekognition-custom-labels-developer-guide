@@ -1,8 +1,8 @@
 # Step 1: Choose an example project<a name="gs-step-choose-example-project"></a>
 
-In this step you use choose an example project\. Amazon Rekognition Custom Labels then creates a project and a dataset for you\. A project manages the files used to train your model\. For more information, see [Managing an Amazon Rekognition Custom Labels Project](cp-manage-project.md)\. Datasets contain the images, assigned labels, and bounding boxes that you use to train and test a model\. For more information, see [Managing an Amazon Rekognition Custom Labels dataset](cd-managing-datasets.md)\. 
+In this step you use choose an example project\. Amazon Rekognition Custom Labels then creates a project and a dataset for you\. A project manages the files used to train your model\. For more information, see [Managing an Amazon Rekognition Custom Labels project](managing-project.md)\. Datasets contain the images, assigned labels, and bounding boxes that you use to train and test a model\. For more information, see [Managing datasets](managing-dataset.md)\. 
 
-For information about the example projects, see [Example projects](gs-introduction.md#gs-example-projects)\.
+For information about the example projects, see [Example projects](getting-started.md#gs-example-projects)\.
 
 **Choose an example project**
 

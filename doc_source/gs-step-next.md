@@ -1,6 +1,6 @@
 # Step 6: Next steps<a name="gs-step-next"></a>
 
-After you finished trying the examples projects, you can use your own images to create your own model\. The [Tutorial: Training a model with the Amazon Rekognition Custom Labels console](training-model-console.md) model shows you how to train a model by creating a dataset with your own images\.
+After you finished trying the examples projects, you can use your own images and datasets to create your own model\. For more information, see [Understanding Amazon Rekognition Custom Labels](understanding-custom-labels.md)\.
 
 Use the labeling information in the following table to train models similar to the example projects\.
 
@@ -12,10 +12,6 @@ Use the labeling information in the following table to train models similar to t
 |  Brand detection \(Logos\)  |  image level\-labels \(you can also use Labeled bounding boxes\)  |  Labeled bounding boxes  | 
 |  Image localization \(Circuit boards\)  |  Labeled bounding boxes  |  Labeled bounding boxes  | 
 
-The example models can return multiple labels in the response from `DetectCustomLabels`\. For information, see [Example projects](gs-introduction.md#gs-example-projects)\.
+The [Tutorial: Classifying images](tutorial-classification.md) shows you how to create a project, datasets, and models for an Image classification model\.
 
-For detailed information about creating datasets and training models, see [Managing an Amazon Rekognition Custom Labels dataset](cd-managing-datasets.md) and [Managing an Amazon Rekognition Custom Labels model](um-use-model.md)\.
-
-You can also use the AWS SDK to train a model\. For more information, see [Tutorial: Training a model with the Amazon Rekognition Custom Labels SDK](tutorial-cli.md)\.
-
-For other examples, see [Examples](examples.md)\.
+For detailed information about creating datasets and training models, see [Creating an Amazon Rekognition Custom Labels model](creating-model.md)\.

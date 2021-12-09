@@ -24,11 +24,11 @@ For information about correcting JSON Line errors, see [Fixing training errors](
 
 ## JSON line error format<a name="tm-json-line-error-format"></a>
 
-Amazon Rekognition Custom Labels adds non\-terminal validation error information to image level and object localization format JSON Lines\. For more information, see [Creating a manifest file](cd-manifest-files.md)\.
+Amazon Rekognition Custom Labels adds non\-terminal validation error information to image level and object localization format JSON Lines\. For more information, see [Creating a manifest file](md-create-manifest-file.md)\.
 
 ### Image Level Errors<a name="tm-debugging-image-level"></a>
 
-The following example shows the `Error` arrays in an image level JSON Line\. There are two sets of errors\. Errors related to label attribute metadata \(in this example, sport\-metadata\) and errors related to the image\. An error includes an error code \(code\), error message \(message\)\. For more information, see [Image\-Level labels in manifest files](cd-manifest-files-classification.md)\. 
+The following example shows the `Error` arrays in an image level JSON Line\. There are two sets of errors\. Errors related to label attribute metadata \(in this example, sport\-metadata\) and errors related to the image\. An error includes an error code \(code\), error message \(message\)\. For more information, see [Image\-Level labels in manifest files](md-create-manifest-file-classification.md)\. 
 
 ```
 {
@@ -65,7 +65,7 @@ The following example show the error arrays in an object localization JSON Line\
 + *label attribute\-metadata* – Errors for the label attribute metadata\. See `bounding-box-metadata` in the example\.
 + *image* – Errors not related to the label attribute, annotation, and label attribute metadata fields\. 
 
-For more information, see [Object localization in manifest files](cd-manifest-files-object-detection.md)\. 
+For more information, see [Object localization in manifest files](md-create-manifest-file-object-detection.md)\. 
 
 ```
 {

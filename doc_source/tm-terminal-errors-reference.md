@@ -21,7 +21,7 @@ The training or testing manifest file used for training exists, but it is empty\
 
 1. Check which of the training or testing manifests are empty\.
 
-1. Add JSON Lines to the empty manifest file\. For more information, see [Creating a manifest file](cd-manifest-files.md)\. Alternatively, create a new dataset with the console\. For more information, see [Creating an Amazon Rekognition Custom Labels dataset](cd-create-dataset.md)\.
+1. Add JSON Lines to the empty manifest file\. For more information, see [Creating a manifest file](md-create-manifest-file.md)\. Alternatively, create a new dataset with the console\. For more information, see [Creating training and test datasets \(Console\)](md-create-dataset.md)\.
 
 
 
@@ -37,7 +37,7 @@ You can't use the Amazon Rekognition Custom Labels console to fix error *The man
 
 1. Check which of the training and testing manifests exceed the maximum file size\.
 
-1. Reduce the number of JSON Lines in the manifest files that are too large\. For more information, see [Creating a manifest file](cd-manifest-files.md)\.
+1. Reduce the number of JSON Lines in the manifest files that are too large\. For more information, see [Creating a manifest file](md-create-manifest-file.md)\.
 
 ## The S3 bucket permissions are incorrect\.<a name="tm-error-message-ERROR_INVALID_PERMISSIONS_MANIFEST_S3_BUCKET"></a>
 

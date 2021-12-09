@@ -17,17 +17,17 @@ After training completes or fails, you can download the validation results by us
 
 If you are using the console to train your model, you can download the validation results from a project's list of models, as shown in the following diagram\. 
 
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/rekognition/latest/customlabels-dg/images/models-validation-results.png)
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/rekognition/latest/customlabels-dg/images/models-validation-results.jpg)
 
 You can also access download the validation results from a model's details page\.
 
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/rekognition/latest/customlabels-dg/images/model-validation-results.png)
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/rekognition/latest/customlabels-dg/images/model-validation-results.jpg)
 
-For more information, see [Training a model \(Console\)](tm-console.md)\. 
+For more information, see [Training a model \(Console\)](training-model.md#tm-console)\. 
 
 ## Getting validation results \(SDK\)<a name="tm-debugging-getting-validation-data-sdk"></a>
 
-After model training completes, Amazon Rekognition Custom Labels stores the validation results in the Amazon S3 bucket specified during training\. You can get the S3 bucket location by calling the [DescribeProjectVersions](https://docs.aws.amazon.com/rekognition/latest/dg/API_DescribeProjectVersions) API, after training completes\. To train a model, see [Training a model \(SDK\)](tm-sdk.md)\.
+After model training completes, Amazon Rekognition Custom Labels stores the validation results in the Amazon S3 bucket specified during training\. You can get the S3 bucket location by calling the [DescribeProjectVersions](https://docs.aws.amazon.com/rekognition/latest/dg/API_DescribeProjectVersions) API, after training completes\. To train a model, see [Training a model \(SDK\)](training-model.md#tm-sdk)\.
 
 A [ValidationData](https://docs.aws.amazon.com/rekognition/latest/dg/API_ValidationData) object is returned for the training dataset \([TrainingDataResult](https://docs.aws.amazon.com/rekognition/latest/dg/API_TrainingDataResult)\) and the testing dataset \([TestingDataResult](https://docs.aws.amazon.com/rekognition/latest/dg/API_TestingDataResult)\)\. The manifest summary is returned in `ManifestSummary`\.
 
@@ -46,7 +46,7 @@ After you get the Amazon S3 bucket location, you can download the validation res
 ------
 #### [ Python ]
 
-   Replace `project_arn` with the Amazon Resource Name \(ARN\) of the project that contains the model\. For more information, see [Creating an Amazon Rekognition Custom Labels project](cp-create-project.md)\. Replace `version_name` with the name of the model version\. For more information, see [Training a model \(SDK\)](tm-sdk.md)\. 
+   Replace `project_arn` with the Amazon Resource Name \(ARN\) of the project that contains the model\. For more information, see [Managing an Amazon Rekognition Custom Labels project](managing-project.md)\. Replace `version_name` with the name of the model version\. For more information, see [Training a model \(SDK\)](training-model.md#tm-sdk)\. 
 
    ```
    import boto3

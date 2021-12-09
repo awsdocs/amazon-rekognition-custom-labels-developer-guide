@@ -49,7 +49,6 @@ Non terminal JSON Line errors are also reported in seperate training and testing
 You must fix manifest content errors before you can train your model\. 
 
 The following are the error messages for manifest content errors\. 
-+ [The manifest file has too many rows\.](tm-debugging-aggregate-errors.md#tm-error-message-ERROR_MANIFEST_ROWS_EXCEEDS_MAXIMUM)
 + [The manifest file contains too many invalid rows\.](tm-debugging-aggregate-errors.md#tm-error-message-ERROR_TOO_MANY_INVALID_ROWS_IN_MANIFEST)
 + [The manifest file contains images from multiple S3 buckets\.](tm-debugging-aggregate-errors.md#tm-error-message-ERROR_IMAGES_IN_MULTIPLE_S3_BUCKETS)
 + [Invalid owner id for images S3 bucket\.](tm-debugging-aggregate-errors.md#tm-error-message-ERROR_INVALID_IMAGES_S3_BUCKET_OWNER)
@@ -67,7 +66,7 @@ JSON Line validation errors are non\-terminal errors that don't require Amazon R
 
 JSON Line validation errors are not shown in the console\. 
 
-In the training and testing datasets, a JSON Line represents the training or testing information for a single image\. Validation errors in a JSON Line, such as an invalid image, are reported in the training and testing validation manifests\. Amazon Rekognition Custom Labels completes training using the other, valid, JSON Lines that are in the manifest\. For more information, see [Understanding training and testing validation result manifests](tm-debugging-scope-json-line.md)\. For information about validation rules, see [Validation rules for manifest files](cd-manifest-files-validation-rules.md)\.
+In the training and testing datasets, a JSON Line represents the training or testing information for a single image\. Validation errors in a JSON Line, such as an invalid image, are reported in the training and testing validation manifests\. Amazon Rekognition Custom Labels completes training using the other, valid, JSON Lines that are in the manifest\. For more information, see [Understanding training and testing validation result manifests](tm-debugging-scope-json-line.md)\. For information about validation rules, see [Validation rules for manifest files](md-create-manifest-file-validation-rules.md)\.
 
 **Note**  
 Training fails if there are too many JSON Line errors\.
