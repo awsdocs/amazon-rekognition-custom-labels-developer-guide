@@ -26,8 +26,8 @@ You can use the `DescribeProjects` API to get information about your projects\.
    + project\_name``— the name of the project that you want to describe\. If you don't specify a name, descriptions for all projects are returned\.
 
    ```
-   #Copyright 2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-   #PDX-License-Identifier: MIT-0 (For details, see https://github.com/awsdocs/amazon-rekognition-custom-labels-developer-guide/blob/master/LICENSE-SAMPLECODE.)
+   # Copyright 2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+   # PDX-License-Identifier: MIT-0 (For details, see https://github.com/awsdocs/amazon-rekognition-custom-labels-developer-guide/blob/master/LICENSE-SAMPLECODE.)
    
    import boto3
    import argparse
@@ -37,48 +37,65 @@ You can use the `DescribeProjects` API to get information about your projects\.
    
    logger = logging.getLogger(__name__)
    
+   
+   def display_project_info(project):
+       """
+       Displays information about a Custom Labels project.
+       :param project: The project that you want to display information about.
+       """
+       print(f"Arn: {project['ProjectArn']}")
+       print(f"Status: {project['Status']}")
+   
+       if len(project['Datasets']) == 0:
+           print("Datasets: None")
+       else:
+           print("Datasets:")
+   
+       for dataset in project['Datasets']:
+           print(f"\tCreated: {str(dataset['CreationTimestamp'])}")
+           print(f"\tType: {dataset['DatasetType']}")
+           print(f"\tARN: {dataset['DatasetArn']}")
+           print(f"\tStatus: {dataset['Status']}")
+           print(f"\tStatus message: {dataset['StatusMessage']}")
+           print(f"\tStatus code: {dataset['StatusMessageCode']}")
+           print()
+       print()
+   
+   
    def describe_projects(rek_client, project_name):
        """
-       Describes an Amazon Rekognition Custom Labels project
+       Describes an Amazon Rekognition Custom Labels project, or all projects.
        :param rek_client: The Amazon Rekognition Custom Labels Boto3 client.
        :param project_name: The project you want to describe. Pass None to describe all projects.
        """
    
        try:
-           #Describing the project
-           logger.info(f"Describing project: {project_name}")
+           # Describe the project
+           if project_name == None:
+               logger.info(f"Describing all projects.")
+           else:
+               logger.info(f"Describing project: {project_name}.")
    
-           if project_name==None:
-               response=rek_client.describe_projects()
+           if project_name == None:
+               response = rek_client.describe_projects()
            else:
                project_names = json.loads('["' + project_name + '"]')
-               response=rek_client.describe_projects(ProjectNames=project_names)
-      
-           print('Project:')
-           for project in response['ProjectDescriptions']:
-               print(f"Arn: {project['ProjectArn']}")
-               print(f"Status: {project['Status']}")
-               print("Datasets:")
-               if 'Datasets' in project:
-                   for dataset in project['Datasets']:
-                       print(f"\tCreated: {str(dataset['CreationTimestamp'])}")
-                       print(f"\tType: {dataset['DatasetType']}")
-                       print(f"\tARN: {dataset['DatasetArn']}")
-                       print(f"\tStatus: {dataset['Status']}")
-                       print(f"\tStatus message: {dataset['StatusMessage']}")
-                       print(f"\tStatus code: {dataset['StatusMessageCode']}")
-                       print()
-               print()
-           
-           
-           logger.info(f"Finished describing projects.")
+               response = rek_client.describe_projects(ProjectNames=project_names)
    
+           print('Projects\n--------')
+           if len(response['ProjectDescriptions']) == 0:
+               print("Project(s) not found.")
+           else:
+               for project in response['ProjectDescriptions']:
+                   display_project_info(project)
    
-      
-       
-       except ClientError as err:  
-           logger.exception(f"Couldn't create project - {project_name}: {err.response['Error']['Message']}")
+           logger.info(f"Finished project description.")
+   
+       except ClientError as err:
+           logger.exception(
+               f"Couldn't describe project - {project_name}: {err.response['Error']['Message']}")
            raise
+   
    
    def add_arguments(parser):
        """
@@ -93,26 +110,29 @@ You can use the `DescribeProjects` API to get information about your projects\.
    
    def main():
    
-       logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
+       logging.basicConfig(level=logging.INFO,
+                           format="%(levelname)s: %(message)s")
    
        try:
    
-           #get command line arguments
+           # get command line arguments
            parser = argparse.ArgumentParser(usage=argparse.SUPPRESS)
            add_arguments(parser)
-           
+   
            args = parser.parse_args()
    
            print(f"Describing projects: {args.project_name}")
    
-           #Describe the project
-           rek_client=boto3.client('rekognition')
+           # Describe the project
+           rek_client = boto3.client('rekognition')
    
-           describe_projects(rek_client, 
-               args.project_name)
+           describe_projects(rek_client,
+                             args.project_name)
    
-           print(f"Finished describing projects: {args.project_name}")
-        
+           if args.project_name == None:
+               print(f"Finished describing all projects.")
+           else:
+               print(f"Finished describing project {args.project_name}.")
    
        except ClientError as err:
            logger.exception(f"Problem describing project: {err}")

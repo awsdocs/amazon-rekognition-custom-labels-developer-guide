@@ -180,7 +180,7 @@ You can add a train or test dataset to an existing project in the following ways
    
            dataset_arn=create_empty_dataset(rek_client, 
                args.project_arn,
-               args.dataset_type)
+               args.dataset_type.lower())
    
            print(f"Finished creating empty dataset: {dataset_arn}")
    

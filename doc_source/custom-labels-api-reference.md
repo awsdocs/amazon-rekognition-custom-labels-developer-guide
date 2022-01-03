@@ -26,7 +26,7 @@ The Amazon Rekognition Custom Labels API is documented as part of the Amazon Rek
 + [DistributeDatasetEntries](https://docs.aws.amazon.com/rekognition/latest/dg/API_DistributeDatasetEntries) — Distributes the entries \(images\) in a training dataset across the training dataset and the test dataset for a project\.
 + [ListDatasetEntries](https://docs.aws.amazon.com/rekognition/latest/dg/API_ListDatasetEntries) — Returns a list of entries \(images\) in an Amazon Rekognition Custom Labels dataset\. 
 + [ListDatasetLabels](https://docs.aws.amazon.com/rekognition/latest/dg/API_ListDatasetLabels) — Returns a list of labels assigned to an Amazon Rekognition Custom Labels dataset\. 
-+ [UpdateDatasetEntries](https://docs.aws.amazon.com/rekognition/latest/dg/UpdateDatasetEntries) — Adds or updates entries \(images\) in an Amazon Rekognition Custom Labels dataset\. 
++ [UpdateDatasetEntries](https://docs.aws.amazon.com/rekognition/latest/dg/API_UpdateDatasetEntries) — Adds or updates entries \(images\) in an Amazon Rekognition Custom Labels dataset\. 
 
 ### Models<a name="ref-models"></a>
 + [CreateProjectVersion](https://docs.aws.amazon.com/rekognition/latest/dg/API_CreateProjectVersion) — Trains your Amazon Rekognition Custom Labels model\.

@@ -88,8 +88,8 @@ If you are using the Amazon Rekognition Custom Labels console and start with a s
            print(f"ARN: {project_arn}")
    
        except ClientError as err:
-           logger.exception(f"Problem creating model: {err}")
-           print(f"Problem creating model: {err}")
+           logger.exception(f"Problem creating project: {err}")
+           print(f"Problem creating project: {err}")
    
    
    if __name__ == "__main__":

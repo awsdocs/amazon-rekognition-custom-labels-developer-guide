@@ -85,13 +85,36 @@ The project might take a few moments to delete\. During that time, the status of
    #Copyright 2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
    #PDX-License-Identifier: MIT-0 (For details, see https://github.com/awsdocs/amazon-rekognition-custom-labels-developer-guide/blob/master/LICENSE-SAMPLECODE.)
    
+   """
+   Purpose
+   Amazon Rekognition Custom Labels project example used in the service documentation:
+   https://docs.aws.amazon.com/rekognition/latest/customlabels-dg/mp-delete-project.html
+   Shows how to delete an existing Amazon Rekognition Custom Labels project. 
+   You must first delete any models and datasets that belong to the project.
+   """
+   
    import boto3
    import argparse
    import logging
    import time
+   import json
+   
    from botocore.exceptions import ClientError
    
    logger = logging.getLogger(__name__)
+   
+   
+   def find_forward_slash(input_string, n):
+       """
+       Returns the location of '/' after n number of occurences. 
+       :param input_string: The string you want to search
+       : n: the occurence that you want to find.
+       """
+       position = input_string.find('/')
+       while position >= 0 and n > 1:
+           position = input_string.find('/', position + 1)
+           n -= 1
+       return position
    
    def delete_project(rek_client, project_arn):
        """
@@ -110,14 +133,22 @@ The project might take a few moments to delete\. During that time, the status of
    
            deleted=False
    
-           logger.info(f"waiting for project deletion {project_arn}")    
+           logger.info(f"waiting for project deletion {project_arn}")   
    
+           # Get the project name
+           start=find_forward_slash(project_arn,1) +1
+           end=find_forward_slash(project_arn,2)
+           project_name=project_arn[start:end] 
+   
+           project_names = [project_name]
+    
            while deleted==False:
    
-               project_descriptions=rek_client.describe_projects()['ProjectDescriptions'] 
+               project_descriptions=rek_client.describe_projects(ProjectNames=project_names)['ProjectDescriptions'] 
    
-               if (next((project for project in project_descriptions if project['ProjectArn'] == project_arn), None) == None):
+               if len(project_descriptions) == 0:
                    deleted=True
+     
                else:
                    time.sleep(5)
    

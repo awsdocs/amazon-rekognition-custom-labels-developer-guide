@@ -122,7 +122,7 @@ The following procedure shows you how to create a dataset from an existing datas
       )
   
       parser.add_argument(
-          "dataset_arn", help="The S3 bucket that contains the manifest file."
+          "dataset_arn", help="The ARN of the dataset that you want to copy from."
       )
   
   

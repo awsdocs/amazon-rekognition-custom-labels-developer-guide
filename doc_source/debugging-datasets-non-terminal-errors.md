@@ -10,6 +10,7 @@ The following errors are are also returned during training\. We recommend that y
 + [ERROR\_INVALID\_LABEL\_ATTRIBUTE\_METADATA\_FORMAT](tm-debugging-json-line-errors.md#tm-error-ERROR_INVALID_LABEL_ATTRIBUTE_METADATA_FORMAT)
 + [ERROR\_NO\_VALID\_LABEL\_ATTRIBUTES](tm-debugging-json-line-errors.md#tm-error-ERROR_NO_VALID_LABEL_ATTRIBUTES)
 + [ERROR\_INVALID\_BOUNDING\_BOX](tm-debugging-json-line-errors.md#tm-error-ERROR_INVALID_BOUNDING_BOX)
++ [ERROR\_INVALID\_IMAGE\_DIMENSION](tm-debugging-json-line-errors.md#tm-error-ERROR_INVALID_IMAGE_DIMENSION)
 + [ERROR\_BOUNDING\_BOX\_TOO\_SMALL](tm-debugging-json-line-errors.md#tm-error-ERROR_BOUNDING_BOX_TOO_SMALL)
 + [ERROR\_NO\_VALID\_ANNOTATIONS](tm-debugging-json-line-errors.md#tm-error-ERROR_NO_VALID_ANNOTATIONS)
 + [ERROR\_MISSING\_BOUNDING\_BOX\_CONFIDENCE](tm-debugging-json-line-errors.md#tm-error-ERROR_MISSING_BOUNDING_BOX_CONFIDENCE)

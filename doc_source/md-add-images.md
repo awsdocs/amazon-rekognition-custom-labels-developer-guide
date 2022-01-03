@@ -78,7 +78,7 @@ Use `source-ref` field as a key to identify images that you want to update\. If 
    import logging
    import time
    import json
-   import base64
+   
    from botocore.exceptions import ClientError
    
    logger = logging.getLogger(__name__)
@@ -98,15 +98,10 @@ Use `source-ref` field as a key to identify images that you want to update\. If 
            #Update dataset entries
            logger.info(f"Updating dataset {dataset_arn}")
    
-           #with open(updates_file,'rb' ) as f:
-           #    manifest_file = f.read()
    
            with open(updates_file) as f:
                manifest_file = f.read()
    
-           #changes=json.loads('{ "GroundTruth" : ' +
-           #    json.dumps(manifest_file.decode('UTF-8')) + 
-           #    '}')
            
            changes=json.loads('{ "GroundTruth" : ' +
                json.dumps(manifest_file) + 

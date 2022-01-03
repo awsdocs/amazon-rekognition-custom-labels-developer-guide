@@ -76,6 +76,13 @@ You can't delete a model if it is running or is training\. To determine if the m
    #Copyright 2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
    #PDX-License-Identifier: MIT-0 (For details, see https://github.com/awsdocs/amazon-rekognition-custom-labels-developer-guide/blob/master/LICENSE-SAMPLECODE.)
    
+   """
+   Purpose
+   Amazon Rekognition Custom Labels model example used in the service documentation:
+   https://docs.aws.amazon.com/rekognition/latest/customlabels-dg/tm-delete-model.html
+   Shows how to delete an existing Amazon Rekognition Custom Labels model.
+   """
+   
    import boto3
    import argparse
    import logging
@@ -84,12 +91,17 @@ You can't delete a model if it is running or is training\. To determine if the m
    
    logger = logging.getLogger(__name__)
    
-   def find_forward_slash(model_arn, n):
-       start = model_arn.find('/')
-       while start >= 0 and n > 1:
-           start = model_arn.find('/', start+ 1)
+   def find_forward_slash(input_string, n):
+       """
+       Returns the location of '/' after n number of occurences. 
+       :param input_string: The string you want to search
+       : n: the occurence that you want to find.
+       """
+       position = input_string.find('/')
+       while position >= 0 and n > 1:
+           position = input_string.find('/', position + 1)
            n -= 1
-       return start
+       return position
    
    def delete_model(rek_client, project_arn, model_arn):
        """
@@ -111,7 +123,7 @@ You can't delete a model if it is running or is training\. To determine if the m
            
            deleted=False
    
-           #model might not be deleted yet, so wait.
+           #model might not be deleted yet, so wait deletion finishes.
            while deleted==False:
                describe_response=rek_client.describe_project_versions(ProjectArn=project_arn,
                    VersionNames=[version_name])
@@ -145,6 +157,19 @@ You can't delete a model if it is running or is training\. To determine if the m
            "model_arn", help="The ARN of the model version that you want to delete."
        )
    
+   def confirm_model_deletion(model_arn):
+       """
+       Confirms deletion of the model. Returns True if delete entered.
+       :param model_arn: The ARN of the model that you want to delete.
+       """
+       print(f"Are you sure you wany to delete model {model_arn} ?\n", model_arn)
+   
+       start = input("Enter delete to delete your model: ")
+       if start == "delete":
+           return True
+       else:
+           return False
+   
    
    def main():
    
@@ -157,16 +182,19 @@ You can't delete a model if it is running or is training\. To determine if the m
            add_arguments(parser)
            args = parser.parse_args()
    
-           print(f"Deleting model: {args.model_arn}")
+           if confirm_model_deletion(args.model_arn)==True:
+               print(f"Deleting model: {args.model_arn}")
    
-           #Delete the model
-           rek_client=boto3.client('rekognition')
+               #Delete the model
+               rek_client=boto3.client('rekognition')
    
-           delete_model(rek_client, 
-               args.project_arn,
-               args.model_arn)
+               delete_model(rek_client, 
+                   args.project_arn,
+                   args.model_arn)
            
-           print(f"Finished deleting model: {args.model_arn}")
+               print(f"Finished deleting model: {args.model_arn}")
+           else:
+               print(f"Not deleting model {args.model_arn}")
    
      
        except ClientError as err:

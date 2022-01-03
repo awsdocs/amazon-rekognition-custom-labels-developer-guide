@@ -336,6 +336,83 @@ For more information, see [Guidelines and quotas in Amazon Rekognition Custom La
 
 You can't use the Amazon Rekognition Custom Labels console to fix this error\.
 
+## ERROR\_INVALID\_IMAGE\_DIMENSION<a name="tm-error-ERROR_INVALID_IMAGE_DIMENSION"></a>
+
+### Error message<a name="tm-error-message-ERROR_INVALID_IMAGE_DIMENSION"></a>
+
+The image dimension\(s\) do not conform to allowed dimensions\. 
+
+### More information<a name="tm-error-description-ERROR_INVALID_IMAGE_DIMENSION"></a>
+
+The image referenced by `source-ref` doesn't conform to the allowed image dimensions\. The minimum dimension is 64 pixels\. The maximum dimension is 4096 pixels\. `ERROR_INVALID_IMAGE_DIMENSION` is reported for images with bounding boxes\. 
+
+For more information, see [Guidelines and quotas in Amazon Rekognition Custom Labels](limits.md)\.
+
+**To fix `ERROR_INVALID_IMAGE_DIMENSION` \(Console\)**
+
+1. Update the image in the Amazon S3 bucket with dimensions that Amazon Rekognition Custom Labels can process\.
+
+1. In the Amazon Rekognition Custom Labels console, do the following:
+
+   1. Remove the existing bounding boxes from the image\.
+
+   1. Re\-add the bounding boxes to the image\.
+
+   1. Save your changes\.
+
+   For more information, [Locating objects with bounding boxes](md-localize-objects.md)\.
+
+**To fix `ERROR_INVALID_IMAGE_DIMENSION` \(SDK\)**
+
+1. Update the image in the Amazon S3 bucket with dimensions that Amazon Rekognition Custom Labels can process\.
+
+1. Get the existing JSON Line for the image by calling [ListDatasetEntries](https://docs.aws.amazon.com/rekognition/latest/dg/API_ListDatasetEntries)\. For the `SourceRefContains` input parameter specify the Amazon S3 location and filename of the image\.
+
+1. Call [UpdateDatasetEntries](https://docs.aws.amazon.com/rekognition/latest/dg/API_UpdateDatasetEntries) and provide the JSON line for the image\. Make sure the value of `source-ref` matches the image location in the Amazon S3 bucket\. Update the bounding box annotations to match the bounding box dimensions needed for the updated image\.
+
+   ```
+   {
+   	"source-ref": "s3://custom-labels-bucket/images/IMG_1186.png",
+   	"bounding-box": {
+   		"image_size": [{
+   			"width": 640,
+   			"height": 480,
+   			"depth": 3
+   		}],
+   		"annotations": [{
+   			"class_id": 1,
+   			"top": 251,
+   			"left": 399,
+   			"width": 155,
+   			"height": 101
+   		}, {
+   			"class_id": 0,
+   			"top": 65,
+   			"left": 86,
+   			"width": 220,
+   			"height": 334
+   		}]
+   	},
+   	"bounding-box-metadata": {
+   		"objects": [{
+   			"confidence": 1
+   		}, {
+   			"confidence": 1
+   		}],
+   		"class-map": {
+   			"0": "Echo",
+   			"1": "Echo Dot"
+   		},
+   		"type": "groundtruth/object-detection",
+   		"human-annotated": "yes",
+   		"creation-date": "2013-11-18T02:53:27",
+   		"job-name": "my job"
+   	}
+   }
+   ```
+
+    
+
 ## ERROR\_INVALID\_BOUNDING\_BOX<a name="tm-error-ERROR_INVALID_BOUNDING_BOX"></a>
 
 ### Error message<a name="tm-error-message-ERROR_INVALID_BOUNDING_BOX"></a>

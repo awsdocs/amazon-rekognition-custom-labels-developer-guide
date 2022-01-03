@@ -47,7 +47,6 @@ You can use the `DescribeProjectVersions` API to get information about a version
        Describes an Amazon Rekognition Custom Labels model.
        :param rek_client: The Amazon Rekognition Custom Labels Boto3 client.
        :param dataset_arn: The ARN of the modelthat you want to describe.
-   
        """
    
        try:
