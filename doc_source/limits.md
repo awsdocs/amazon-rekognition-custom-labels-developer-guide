@@ -8,7 +8,7 @@ For a list of AWS Regions where Amazon Rekognition Custom Labels is available, s
 
 ## Quotas<a name="quotas"></a>
 
-The following is a list of limits in Amazon Rekognition Custom Labels\. For information about limits you can change, see [AWS Service Limits](https://docs.aws.amazon.com/general/latest/gr/rekognition_region.html)\. To change a limit, see [Create Case](https://console.aws.amazon.com/support/v1#/case/create?issueType=service-limit-increase)\.
+The following is a list of limits in Amazon Rekognition Custom Labels\. For information about limits you can change, see [AWS Service Limits](https://docs.aws.amazon.com/general/latest/gr/rekognition.html)\. To change a limit, see [Create Case](https://console.aws.amazon.com/support/v1#/case/create?issueType=service-limit-increase)\.
 
 ### Training<a name="limits-training"></a>
 + Supported file formats are PNG and JPEG image formats\. 
@@ -59,6 +59,7 @@ The following is a list of limits in Amazon Rekognition Custom Labels\. For info
 ### Detection<a name="limits-detection"></a>
 + Maximum size of images passed as raw bytes is 4 MB\.
 + Maximum file size for an image in an Amazon S3 bucket is 15 MB\.
++ Maximum number of running models per account is 2.
 + Minimum image dimension of an input image file \(stored in an Amazon S3 bucket or supplied as image bytes\) is 64 pixels x 64 pixels\.
 + Maximum image dimension of an input image file \(stored in an Amazon S3 or supplied as image bytes\) is 4096 pixels x 4096 pixels\.
 + Supported file formats are PNG and JPEG image formats\. 
