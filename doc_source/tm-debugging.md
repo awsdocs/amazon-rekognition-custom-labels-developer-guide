@@ -44,7 +44,7 @@ Manifest content errors are terminal errors that relate to the content within a 
 
 As well as being reported in the console and in the response from `DescribeProjectVersions`, the error is reported in the manifest summary along with any other terminal manifest content errors\. For more information, see [Understanding the manifest summary](tm-debugging-summary.md)\.
 
-Non terminal JSON Line errors are also reported in seperate training and testing validation results manifests\. The non\-terminal JSON Line errors found by Amazon Rekognition Custom Labels are not necessarily related to the manifest content error\(s\) that stop training\. For more information, see [Understanding training and testing validation result manifests](tm-debugging-scope-json-line.md)\. 
+Non terminal JSON Line errors are also reported in separate training and testing validation results manifests\. The non\-terminal JSON Line errors found by Amazon Rekognition Custom Labels are not necessarily related to the manifest content error\(s\) that stop training\. For more information, see [Understanding training and testing validation result manifests](tm-debugging-scope-json-line.md)\. 
 
 You must fix manifest content errors before you can train your model\. 
 
